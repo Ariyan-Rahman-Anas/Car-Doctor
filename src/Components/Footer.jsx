@@ -10,7 +10,7 @@ const Footer = () => {
           </div>
           <p className="text-sm my-4">
             Edwin Diaz is a software and web technologies engineer, a life coach
-            trainer who is also a serial .
+            trainer who is also a serial.
           </p>
           <div className="socials text-gray-200 flex items-center justify-start gap-4">
             <Link>
