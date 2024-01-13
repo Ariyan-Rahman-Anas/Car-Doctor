@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import Logo from "./../assets/logo.svg"
+import PrimaryBtn from "./PrimaryBtn";
 
 const Navbar = () => {
     return (
@@ -45,8 +46,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <Link to={"/"} className="px-5 py-2 border-[.09rem] border-[#ff3811] font-semibold rounded-md text-[#ff3811] hv
-            hover:bg-[#ff3811] hover:text-white duration-500 ">Appointment</Link>
+            <PrimaryBtn value={"Appointment"}></PrimaryBtn>
+            {/* <Link to={"/"} className="px-5 py-2 border-[.09rem] border-[#ff3811] font-semibold rounded-md text-[#ff3811] hv
+            hover:bg-[#ff3811] hover:text-white duration-500 ">Appointment</Link> */}
           </div>
         </nav>
       </div>
