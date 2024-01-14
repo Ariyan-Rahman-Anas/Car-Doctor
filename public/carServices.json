@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/QjL67Fn/1.png",
+    "name": "Full-Service Tune-Up",
+    "description": "Ensure the longevity of your vehicle with our comprehensive Full-Service Tune-Up. Our expert technicians conduct a thorough inspection, addressing engine performance, fuel efficiency, and overall functionality. From spark plug replacement to air and fuel filter checks, we cover it all to keep your vehicle running smoothly on the road.",
+    "price": 99.99
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/h7ssgcz/2.png",
+    "name": "Oil Change and Filter Replacement",
+    "description": "Pamper your engine with our Oil Change and Filter Replacement service. Regular oil changes are essential for maintaining optimal engine health. Our skilled technicians use quality oil and replace filters to ensure proper lubrication, prevent engine wear, and improve overall performance. Treat your vehicle to the care it deserves.",
+    "price": 49.99
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/tm73sX0/3.png",
+    "name": "Brake System Check",
+    "description": "Safety first! Our Brake System Check involves a meticulous examination and maintenance of your vehicle's braking system. From brake pad inspection to rotor resurfacing, we prioritize your safety on the road. Trust us to keep your brakes in top condition, providing reliable stopping power when you need it the most.",
+    "price": 79.99
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/wzc6GKV/4.png",
+    "name": "Tire Rotation and Alignment",
+    "description": "Maximize the lifespan of your tires with our Tire Rotation and Alignment service. Regular rotation ensures even tire wear, while precise alignment promotes optimal handling and fuel efficiency. Let our experts take care of your tires, providing a smooth and safe driving experience on every journey.",
+    "price": 59.99
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/MRbPvMM/5.png",
+    "name": "Diagnostic Services",
+    "description": "Uncover the mysteries of your vehicle's health with our Diagnostic Services. Our advanced diagnostic tools and skilled technicians identify and address any issues affecting performance. From engine troubles to electrical glitches, we provide accurate diagnoses, ensuring your vehicle operates at its best.",
+    "price": 89.99
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co/C1PCdq3/6.png",
+    "name": "Air Conditioning Service",
+    "description": "Stay cool and comfortable with our Air Conditioning Service. We recharge and maintain your vehicle's air conditioning system for optimal performance. Our technicians inspect components, replace filters, and address refrigerant levels, ensuring your journeys are always refreshing, regardless of the weather outside.",
+    "price": 69.99
+  },
+  {
+    "id": 7,
+    "img": "https://i.ibb.co/4NKp5hp/7.png",
+    "name": "Electrical System Repairs",
+    "description": "Illuminate the path ahead with our Electrical System Repairs. From faulty wiring to malfunctioning components, our skilled technicians tackle various electrical issues with precision. Trust us to restore proper functionality, ensuring your vehicle's lights, sensors, and other electrical systems operate seamlessly.",
+    "price": 99.99
+  },
+  {
+    "id": 8,
+    "img": "https://i.ibb.co/JKB4Mg5/8.png",
+    "name": "Transmission Fluid Flush",
+    "description": "Promote smooth shifting and extend the life of your transmission with our Transmission Fluid Flush service. Our technicians flush and replace old transmission fluid, preventing wear and maintaining optimal performance. Trust us to keep your vehicle's transmission in top-notch condition.",
+    "price": 79.99
+  },
+  {
+    "id": 9,
+    "img": "https://i.ibb.co/yWbKGYS/9.png",
+    "name": "Exhaust System Maintenance",
+    "description": "Keep emissions in check and ensure your vehicle runs efficiently with our Exhaust System Maintenance. Our technicians inspect, repair, and replace exhaust system components to minimize noise and environmental impact. Drive confidently, knowing your exhaust system is in excellent condition.",
+    "price": 89.99
+  },
+  {
+    "id": 10,
+    "img": "https://i.ibb.co/kypxzZr/10.png",
+    "name": "Battery Replacement",
+    "description": "Don't let a failing battery leave you stranded. Our Battery Replacement service ensures prompt replacement of old or failing batteries, providing your vehicle with reliable starting power. Trust our experts to keep your battery in optimal condition, ready to tackle any journey.",
+    "price": 69.99
+  },
+  {
+    "id": 11,
+    "img": "https://i.ibb.co/ScdzfNR/11.png",
+    "name": "Fluid Leak Detection",
+    "description": "Prevent potential damage with our Fluid Leak Detection service. Our technicians identify and repair fluid leaks, whether it's oil, coolant, or other vital fluids. Trust us to keep your vehicle leak-free, preserving the integrity of your engine and other critical components.",
+    "price": 59.99
+  },
+  {
+    "id": 12,
+    "img": "https://i.ibb.co/PFPgybR/12.png",
+    "name": "Detailing Services",
+    "description": "Indulge your vehicle with our Detailing Services. From interior deep cleaning to exterior polishing, we offer comprehensive detailing to keep your vehicle looking pristine. Treat your car to the ultimate spa day, ensuring it not only runs smoothly but looks stunning on the road.",
+    "price": 129.99
+  }
+]
