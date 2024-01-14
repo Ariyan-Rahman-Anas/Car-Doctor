@@ -1,7 +1,6 @@
 import timeTable from "./../assets//icons/timetable.svg"
 import location from "./../assets//icons/location.svg"
 import contact from "./../assets//icons/contact.svg"
-
 const Contact = () => {
     return (
       <div className="px-2">
@@ -39,5 +38,4 @@ const Contact = () => {
       </div>
     );
 };
-
 export default Contact;
