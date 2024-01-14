@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/BBgb8fG/1.png",
+    "name": "John Doe",
+    "specialist_on": "Mechanical Engineer",
+    "fbURL": "https://facebook.com/johndoe",
+    "mailURL": "mailto:johndoe@example.com",
+    "linkedinURL": "https://linkedin.com/in/johndoe"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/k4Lf0sG/2.png",
+    "name": "Jane Smith",
+    "specialist_on": "Auto Technician",
+    "fbURL": "https://facebook.com/janesmith",
+    "mailURL": "mailto:janesmith@example.com",
+    "linkedinURL": "https://linkedin.com/in/janesmith"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/Bz0yLcz/3.png",
+    "name": "Michael Johnson",
+    "specialist_on": "Body Shop Expert",
+    "fbURL": "https://facebook.com/michaeljohnson",
+    "mailURL": "mailto:michaeljohnson@example.com",
+    "linkedinURL": "https://linkedin.com/in/michaeljohnson"
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/1XN48YF/4.png",
+    "name": "Emily Davis",
+    "specialist_on": "Electrical Systems Specialist",
+    "fbURL": "https://facebook.com/emilydavis",
+    "mailURL": "mailto:emilydavis@example.com",
+    "linkedinURL": "https://linkedin.com/in/emilydavis"
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/r6GJNG2/5.png",
+    "name": "Alex Wilson",
+    "specialist_on": "Diagnostic Technician",
+    "fbURL": "https://facebook.com/alexwilson",
+    "mailURL": "mailto:alexwilson@example.com",
+    "linkedinURL": "https://linkedin.com/in/alexwilson"
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co/qsscZmT/6.png",
+    "name": "Olivia Turner",
+    "specialist_on": "Paint Specialist",
+    "fbURL": "https://facebook.com/oliviaturner",
+    "mailURL": "mailto:oliviaturner@example.com",
+    "linkedinURL": "https://linkedin.com/in/oliviaturner"
+  }
+]
