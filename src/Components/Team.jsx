@@ -37,7 +37,7 @@ const Team = () => {
             clickable: true,
           }}
           modules={[Pagination]}
-          className={`mySwiper w-full lg:w-[80%]    `}
+          className={`mySwiper lg:w-[85vw]    `}
           breakpoints={{
             // when window width is >= 1200px (for large screens)
             1200: {
@@ -55,9 +55,9 @@ const Team = () => {
         >
           {members?.map((member) => (
             <SwiperSlide key={member.id}>
-              <div className="group">
-                <div className="parent shadow- border2 p-5 relative">
-                  <img src={member.img} alt="" className="w-full rounded-md" />
+              <div className=" mt-4 group border-[.09rem] border-gray-200 hover:bg-gray-200 duration-500 rounded-lg p-5  ">
+                <div className="p-5">
+                  <img src={member.img} alt="" className="w-full rounded-md group-hover:scale-110 duration-500  " />
                 </div>
                 <div>
                   <p className="text-center text-xl font-semibold ">
