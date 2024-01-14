@@ -3,7 +3,7 @@ import React from "react";
  
 const ProductCard = ({ product }) => {
     const { name, img, rating, price } = product || {};
-const [rated, setRated] = React.useState(rating);
+    const [rated, setRated] = React.useState(rating);
     
   return (
     <div className="p-6 shadow-md rounded-xl hover:bg-gray-20 duration-500 group  ">
