@@ -6,12 +6,20 @@ import SectionHead from "./SectionHead";
 const About = () => {
     return (
       <div className="lg:w-[85vw] mx-auto my-[5rem] flex flex-col-reverse md:flex-row items-start justify-between gap-8 px-2">
-        <div className="media flex-1 h-[20rem] xl:h-[25rem] 2xl:h-[30rem] 2xl:border-4 border-red-500 relative ">
+        <div className="media flex-1 h-[20rem] xl:h-[25rem] 2xl:h-[30rem] relative group overflow-hidden ">
           <div className=" w-[90%]  h-[90%] ">
-            <img src={person} alt="" className="w-full h-[100%] rounded-md " />
+            <img
+              src={person}
+              alt=""
+              className="w-full h-[100%] rounded-md group-hover:scale-110 duration-500"
+            />
           </div>
           <div className="absolute right-0 bottom-0 w-[10rem] md:w-[14rem] ">
-            <img src={parts} alt="" className="w-full rounded-md " />
+            <img
+              src={parts}
+              alt=""
+              className="w-full rounded-md border-4 border-gray-300 group-hover:scale-125 duration-500  "
+            />
           </div>
         </div>
         <div className="info flex-1">
