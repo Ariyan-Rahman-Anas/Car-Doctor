@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import loginMedia from "./../../../assets/images/login/login.svg"
-import Logo from "./../../../assets/logo.svg"
-import { FaGoogle, FaLinkedin, FaInstagram, FaFacebookF } from "react-icons/fa";
+import loginMedia from "./../../assets/images/login/login.svg"
+import Logo from "./../../assets/logo.svg"
+import { FaGoogle, FaLinkedin, FaFacebookF } from "react-icons/fa";
 
 const LogIn = () => {
     return (
@@ -38,7 +38,7 @@ const LogIn = () => {
                 ></input>
                 <input
                   type="submit"
-                  value={"Sign In"}
+                  value={"Sign in"}
                   className="text-[#ff3811] bg-white p-2 rounded-md hover:text-white hover:bg-[#ff3811] font-semibold duration-500 "
                 />
               </form>

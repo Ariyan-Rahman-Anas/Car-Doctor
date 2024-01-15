@@ -4,7 +4,7 @@ import Footer from "../Components/Footer";
 
 const MainLayout = () => {
   const location = useLocation();
-  const noHeaderFooter = location.pathname.includes("logIn") ;
+  const noHeaderFooter = location.pathname.includes("logIn") || location.pathname.includes("register") ;
   return (
     <div>
       {noHeaderFooter || <Navbar></Navbar>}
