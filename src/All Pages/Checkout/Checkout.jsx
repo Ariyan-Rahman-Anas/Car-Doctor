@@ -1,17 +1,21 @@
 import { useLoaderData } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import imgBG from "./../../assets/images/checkout/checkout.png"
+import { useContext } from "react";
+import { AuthContext } from './../../Provider/AuthProvider';
 
 const Checkout = () => {
+    const {user} = useContext(AuthContext)
     const service = useLoaderData()
-    const { name, img, description, price } = service
+    const { name } = service
 
     return (
       <div className="px-2">
         <PageShortBanner
           BGImg={imgBG}
           pageTitle={"Checkout"}
-          location={"Home > Checkout"}
+          location={"Home >> Service Details > Checkout"}
+          serviceTitle={name}
         ></PageShortBanner>
         <div className="bg-gray-200 lg:w-[85vw] mx-auto p-4 md:p-16 my-16 rounded-md ">
           <form className="w-full">
@@ -19,25 +23,26 @@ const Checkout = () => {
               <input
                 type="text"
                 name="first-name"
-                placeholder="First Name"
+                placeholder="First Name:"
                 className="p-2 rounded-md border-y-[.20rem] border-transparent focus:border-b-[#ff3811] focus:outline-none "
               />
               <input
                 type="text"
                 name="last-name"
-                placeholder="Last Name"
+                placeholder="Last Name:"
                 className="p-2 rounded-md border-y-[.20rem] border-transparent focus:border-b-[#ff3811] focus:outline-none "
               />
               <input
                 type="number"
                 name="phone"
-                placeholder="Phone"
+                placeholder="Phone:"
                 className="p-2 rounded-md border-y-[.20rem] border-transparent focus:border-b-[#ff3811] focus:outline-none "
               />
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Example@e-mail.com"
+                defaultValue={user ? user.email : ""}
                 className="p-2 rounded-md border-y-[.20rem] border-transparent focus:border-b-[#ff3811] focus:outline-none "
               />
             </div>
