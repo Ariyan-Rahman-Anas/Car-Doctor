@@ -1,8 +1,24 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "./../assets/logo.svg"
 import PrimaryBtn from "./PrimaryBtn";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext)
+  const navigate = useNavigate()
+  const handleLogOut = () => {
+    logOut()
+      .then(result => {
+        navigate("/logIn")
+        toast.success("Log out Successful!");
+        
+      })
+      .catch(error => {
+      console.log(error.message)
+    })
+  }
     return (
       <div>
         <nav className="flex items-center justify-between p-2">
@@ -43,12 +59,21 @@ const Navbar = () => {
                   <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
                 </NavLink>
               </li>
-              <li className="tex-white relative group">
-                <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">
-                  Log in
-                  <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
-                </NavLink>
-              </li>
+              {user ? (
+                <li onClick={handleLogOut} className="tex-white relative group">
+                  <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">
+                    Log out
+                    <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
+                  </NavLink>
+                </li>
+              ) : (
+                <li className="tex-white relative group">
+                  <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">
+                    Log in
+                    <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </div>
           {/* <div className="navbar-center-right">

@@ -1,8 +1,7 @@
-import { IoArrowForward } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-  const { img, name, price } = service || {};
+  const {_id, img, name, price } = service || {};
   return (
     <div className="shadow-md rounded-lg px-8 py-6 group hover:bg-gray-200 duration-500 ">
       <div className="">
@@ -10,11 +9,14 @@ const ServiceCard = ({ service }) => {
       </div>
       <div className="">
         <h1 className="text-xl mt-4 mb-2 font-normal text-left ">{name}</h1>
-        <div className="flex items-center justify-between text-[#ff3811] font-semibold ">
-          <p>Price: {price}</p>
-          <Link>
-            <IoArrowForward className="text-2xl opacity-45 group-hover:opacity-100 duration-500 "></IoArrowForward>
+        <div className="mt-5 flex items-center justify-between text-[#ff3811] fontsemibold ">
+          <Link
+            to={`/serviceDetails/${_id}`}
+            className="text-gray-100 bg-gray-500 px-4 py-1.5 rounded-md hover:bg-[#ff3811] hover:text-gray-200 duration-500 "
+          >
+            Book now
           </Link>
+          <p>Price: {price}</p>
         </div>
       </div>
     </div>

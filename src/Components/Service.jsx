@@ -7,7 +7,7 @@ import PrimaryBtn from './PrimaryBtn';
 const Service = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch("/carServices.json")
+        fetch("http://localhost:5001/services")
           .then((res) => res.json())
           .then((data) => setServices(data));
     },[])
@@ -21,11 +21,11 @@ const Service = () => {
               "The majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable, words which don't look even slightly believable."
             }
           ></SectionHead>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10 ">
-                {
-                    services.slice(0,6).map(service=><ServiceCard key={service.id} service={service}></ServiceCard>)
-}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10 ">
+          {services.slice(0, 6).map((service) => (
+            <ServiceCard key={service.id} service={service}></ServiceCard>
+          ))}
         </div>
         <PrimaryBtn value={"See All Services"}></PrimaryBtn>
       </div>
