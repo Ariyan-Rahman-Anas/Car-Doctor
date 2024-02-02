@@ -3,7 +3,7 @@ import PageShortBanner from "./PageShortBanner";
 import imgBG from "./../assets/images/checkout/checkout.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
-import logo from "./../assets/logo.svg"
+import logo from "./../assets/Logo2.svg"
 
 const ServiceDetails = () => {
   const service = useLoaderData();
@@ -146,13 +146,13 @@ const ServiceDetails = () => {
               </div>
             </div>
           </div>
-          <div className="help relative bg-gray-200 rounded-md p-5 pb- my-5 text-center text-sm ">
+          <div className="help relative text-white bg-black rounded-md p-5 pb- my-5 text-center text-sm ">
             <div className="w-1/3  mx-auto mb-3">
               <img src={logo} alt="car doctor logo" className="w-full" />
             </div>
             <strong>Need Help?</strong>
             <p>We Are Here To Help You</p>
-            <div className="text-white bg-black p-5 pb-10 rounded-md w-full lg:w-[85%] mx-auto mt-4 ">
+            <div className="text-black bg-white p-5 pb-10 rounded-md w-full lg:w-[85%] mx-auto mt-4 ">
               <strong className="text-xl">
                 <span className="text-[#ff3511] ">Car Doctor </span>
                 Special

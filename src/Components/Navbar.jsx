@@ -60,12 +60,31 @@ const Navbar = () => {
                 </NavLink>
               </li>
               {user ? (
-                <li onClick={handleLogOut} className="tex-white relative group">
-                  <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">
-                    Log out
-                    <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
-                  </NavLink>
-                </li>
+                <>
+                  <li
+                    className="tex-white relative group"
+                  >
+                    <NavLink
+                      to={"/myBookings"}
+                      className="group-hover:text-[#ff3811]"
+                    >
+                      My Bookings
+                      <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
+                    </NavLink>
+                  </li>
+                  <li
+                    onClick={handleLogOut}
+                    className="tex-white relative group"
+                  >
+                    <NavLink
+                      to={"/logIn"}
+                      className="group-hover:text-[#ff3811]"
+                    >
+                      Log out
+                      <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
+                    </NavLink>
+                  </li>
+                </>
               ) : (
                 <li className="tex-white relative group">
                   <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">

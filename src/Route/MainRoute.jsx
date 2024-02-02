@@ -5,11 +5,14 @@ import LogIn from "./../All Pages/LogIn/LogIn";
 import Registration from "../All Pages/Registration/Registration";
 import Checkout from './../All Pages/Checkout/Checkout';
 import ServiceDetails from "../Components/ServiceDetails";
+import ErrorPage from './../All Pages/Error/ErrorPage';
+import MyBookings from "../All Pages/MyBookings/MyBookings";
 
 const MainRoute = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -30,6 +33,10 @@ const MainRoute = createBrowserRouter([
           fetch(
             `http://localhost:5001/services/${params.id}`
           ),
+      },
+      {
+        path: "myBookings",
+        element:<MyBookings></MyBookings>
       },
       {
         path: "logIn",

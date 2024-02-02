@@ -8,6 +8,10 @@ import { PiWarningCircle } from "react-icons/pi";
 import Swal from "sweetalert2";
 
 const Checkout = () => {
+    const { user } = useContext(AuthContext);
+    const service = useLoaderData();
+    const {_id, name, price, img } = service;
+
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: "btn btn-success",
@@ -22,42 +26,63 @@ const Checkout = () => {
       formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-        // swl2
-        swalWithBootstrapButtons
-          .fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, Confirm it!",
-            cancelButtonText: "No, cancel!",
-            reverseButtons: true,
-          })
-          .then((result) => {
-              if (result.isConfirmed) {
-                console.log(data);
-              swalWithBootstrapButtons.fire({
-                title: "Confirmed!",
-                text: "Your order has been accepted. We will contact you soon.",
-                icon: "success",
-              });
-            } else if (
-              /* Read more about handling dismissals below */
-              result.dismiss === Swal.DismissReason.cancel
-            ) {
-              swalWithBootstrapButtons.fire({
-                title: "Cancelled",
-                text: "You are Canceling the order :)",
-                icon: "error",
-              });
-            }
-          });
-        // swl2
-    }
-    const {user} = useContext(AuthContext)
-    const service = useLoaderData()
-    const { name, price } = service
+      const bookingDetails = {
+        name: data?.name,
+        email: data?.email,
+        phone: data?.phone,
+        address: data?.address,
+        date: data?.date,
+        price: price,
+        serviceName: name,
+        img,
+        service_Id: _id,
+      };
 
+      // swl2
+      swalWithBootstrapButtons
+        .fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes, Confirm it!",
+          cancelButtonText: "No, cancel!",
+          reverseButtons: true,
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+              console.log(bookingDetails);
+              fetch("http://localhost:5001/bookings", {
+                method: "POST",
+                headers: {
+                  "content-type": "application/json",
+                },
+                body: JSON.stringify(bookingDetails),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log(data);
+                });
+
+            swalWithBootstrapButtons.fire({
+              title: "Confirmed!",
+              text: "Your order has been accepted. We will contact you soon.",
+              icon: "success",
+            });
+          } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) {
+            swalWithBootstrapButtons.fire({
+              title: "Cancelled",
+              text: "You are Canceling the order :)",
+              icon: "error",
+            });
+          }
+        });
+      // swl2
+    }
+    
     return (
       <div className="px-2">
         <PageShortBanner
