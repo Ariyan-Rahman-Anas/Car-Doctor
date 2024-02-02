@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import imgBG from "./../../assets/images/checkout/checkout.png"
 import { useContext } from "react";
@@ -10,7 +10,8 @@ import Swal from "sweetalert2";
 const Checkout = () => {
     const { user } = useContext(AuthContext);
     const service = useLoaderData();
-    const {_id, name, price, img } = service;
+  const { _id, name, price, img } = service;
+  const navigate = useNavigate();
 
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -51,7 +52,8 @@ const Checkout = () => {
         })
         .then((result) => {
           if (result.isConfirmed) {
-              console.log(bookingDetails);
+            console.log(bookingDetails);
+            navigate("/myBookings")
               fetch("http://localhost:5001/bookings", {
                 method: "POST",
                 headers: {
