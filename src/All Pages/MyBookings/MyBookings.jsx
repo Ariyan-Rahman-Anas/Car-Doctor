@@ -6,9 +6,11 @@ import { RxCrossCircled } from "react-icons/rx";
 import {
   Card,
   Typography,
-  CardBody,
+  CardBody
 } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import PrimaryBtn from './../../Components/PrimaryBtn';
+import Swal from "sweetalert2";
+
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
@@ -21,7 +23,63 @@ const MyBookings = () => {
         setBookings(data);
       });
   }, [url]);
-  console.log(bookings);
+
+  const TABLE_HEAD = ["N/A", "Service", "Price", "Date", "Status"];
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: true,
+  });
+
+  const handleDeleteCartItem = id => {
+    // swl2 starts from here
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, Confirm it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          fetch(
+            `http://localhost:5001/bookings/${id}`, {
+              method: "DELETE"
+            }
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.deletedCount > 0) {
+                // alert("Deleted!")
+                const remainingCartItems = bookings.filter(booking => booking._id !== id)
+                setBookings(remainingCartItems)
+              }
+            });
+          swalWithBootstrapButtons.fire({
+            title: "Deleted!",
+            text: "Service has been deleted with canceling the order.",
+            icon: "success",
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your ordered service is in the safe zone :)",
+            icon: "error",
+          });
+        }
+      });
+    // swl2 ends here
+  }
 
   return (
     <div>
@@ -37,82 +95,124 @@ const MyBookings = () => {
             <Card className="h-full w-full shadow-none">
               <h1 className="font-extralight text-4xl border-b-2 border-[#ff3811] w-fit mx-auto rounded-md mt-6 ">{`You have confirmed total ${bookings.length} services`}</h1>
               <CardBody className="overflow-scroll px-0">
-                <table className="mt-4 w-full min-w-max table-auto text-left ">
+                <table className="mt-4 w-full min-w-max table-auto text-left">
+                  <thead>
+                    <tr>
+                      {TABLE_HEAD.map((head) => (
+                        <th
+                          key={head}
+                          className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                        >
+                          <Typography
+                            variant="small"
+                            color="blue-gray"
+                            className="font-normal leading-none opacity-70"
+                          >
+                            {head}
+                          </Typography>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
                   <tbody>
                     {bookings.map(
                       (
-                        { img, serviceName, name, price, date, address, phone },
+                        {
+                          _id,
+                          img,
+                          serviceName,
+                          address,
+                          phone,
+                          price,
+                          name,
+                          email,
+                          date,
+                        },
                         index
                       ) => {
                         const isLast = index === bookings.length - 1;
                         const classes = isLast
                           ? "p-4"
                           : "p-4 border-b border-blue-gray-50";
+
                         return (
-                          <tr
-                            key={name}
-                            className="border-[.09rem] border-gray-200 my-4 py-4 rounded-md flex items-center justify-between "
-                          >
-                            <td className="w-[33rem] border2 ">
-                              <div className="flex items-center gap-3 w-fit ">
-                                <RxCrossCircled className="ml-5 mr-2 font-semibold text-2xl"></RxCrossCircled>
+                          <tr key={name} className="border- ">
+                            <td>
+                              <RxCrossCircled
+                                onClick={() => handleDeleteCartItem(_id)}
+                                className="text-3xl text-white bg-[#ff3811] rounded-full w-fit hover:text-[#ff3811] hover:bg-white duration-500 cursor-pointer "
+                              ></RxCrossCircled>
+                            </td>
+                            <td className={classes}>
+                              <div className="flex items-center gap-3">
                                 <img
                                   src={img}
                                   alt={serviceName}
-                                  sizes="sm"
-                                  className="w-[8rem] rounded-md bg-red-500 "
+                                  className="w-[6rem] rounded-md "
                                 />
                                 <div className="flex flex-col">
                                   <Typography
                                     variant="small"
                                     color="blue-gray"
-                                    className="font-semibold text-lg "
+                                    className="font-normal"
                                   >
-                                    {serviceName}
+                                    <b className="text-xl">{serviceName}</b>
                                   </Typography>
                                   <Typography
                                     variant="small"
                                     color="blue-gray"
                                     className="font-normal opacity-70"
                                   >
-                                    Location: {address}
+                                    <b>Location:</b> {address}
                                   </Typography>
                                   <Typography
                                     variant="small"
                                     color="blue-gray"
                                     className="font-normal opacity-70"
                                   >
-                                    Call: {phone}
+                                    <b>Email:</b> {email}
+                                  </Typography>
+                                  <Typography
+                                    variant="small"
+                                    color="blue-gray"
+                                    className="font-normal opacity-70"
+                                  >
+                                    <b>Call:</b> {phone}
                                   </Typography>
                                 </div>
+                              </div>
+                            </td>
+                            <td className={classes}>
+                              <div className="flex flex-col">
+                                <Typography
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  {price}
+                                </Typography>
                               </div>
                             </td>
                             <td className={classes}>
                               <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-semibold"
+                                className="font-normal"
                               >
-                                ${price}
+                                {date}
                               </Typography>
                             </td>
                             <td className={classes}>
                               <Typography
                                 variant="small"
                                 color="blue-gray"
-                                className="font-semibold"
+                                className="font-normal"
                               >
-                                {date}
+                                <PrimaryBtn
+                                  value={"Pending"}
+                                  link={"/"}
+                                ></PrimaryBtn>
                               </Typography>
-                            </td>
-                            <td className="pr-8">
-                              <Link
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal text-white bg-[#ff3811] w-fit px-4 py-2 rounded-md  hover:text-[#ff3811] hover:bg-white border-[.09rem] border-[#ff3811] duration-500 "
-                              >
-                                Pending
-                              </Link>
                             </td>
                           </tr>
                         );
@@ -127,7 +227,7 @@ const MyBookings = () => {
           <div className="flex items-center justify-center text-center">
             <div>
               <strong className="font-medium text-5xl">Oops!</strong>
-              <p className="font-extralight text-2xl mt-2 ">
+              <p className="font-extralight text-2xl mt-2 text-center ">
                 You did not confirm any service yet!
               </p>
             </div>

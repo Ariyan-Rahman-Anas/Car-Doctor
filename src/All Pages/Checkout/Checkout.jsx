@@ -39,11 +39,11 @@ const Checkout = () => {
         service_Id: _id,
       };
 
-      // swl2
+      // swl2 starts from here
       swalWithBootstrapButtons
         .fire({
           title: "Are you sure?",
-          text: "You won't be able to revert this!",
+          text: "You won't be able to recheck this!",
           icon: "warning",
           showCancelButton: true,
           confirmButtonText: "Yes, Confirm it!",
@@ -67,8 +67,8 @@ const Checkout = () => {
                 });
 
             swalWithBootstrapButtons.fire({
-              title: "Confirmed!",
-              text: "Your order has been accepted. We will contact you soon.",
+              title: "Order Confirmed!",
+              text: "We will contact you soon.",
               icon: "success",
             });
           } else if (
@@ -82,7 +82,7 @@ const Checkout = () => {
             });
           }
         });
-      // swl2
+      // swl2 ends here
     }
     
     return (
