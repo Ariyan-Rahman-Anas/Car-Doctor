@@ -1,16 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import PageShortBanner from "../../Components/PageShortBanner";
-import bannerBG from "./../../assets/images/checkout/checkout.png"
+import bannerBG from "./../../assets/images/checkout/checkout.png";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { RxCrossCircled } from "react-icons/rx";
-import {
-  Card,
-  Typography,
-  CardBody
-} from "@material-tailwind/react";
-import PrimaryBtn from './../../Components/PrimaryBtn';
+import { Card, Typography, CardBody } from "@material-tailwind/react";
+import PrimaryBtn from "./../../Components/PrimaryBtn";
 import Swal from "sweetalert2";
-
+import toast from "react-hot-toast";
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
@@ -34,7 +30,31 @@ const MyBookings = () => {
     buttonsStyling: true,
   });
 
-  const handleDeleteCartItem = id => {
+  // updatingCartItem
+  const handleUpdateItem = (id) => {
+    fetch(`http://localhost:5001/bookings/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "Confirmed" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          toast.success("Update Successful!");
+          const remaining = bookings.filter((booking) => booking._id !== id);
+          const updated = bookings.find((booking) => booking._id === id);
+          updated.status = "Confirmed";
+          const newBookings = [updated, ...remaining];
+          setBookings(newBookings);
+        }
+      });
+  };
+
+  //deleting cart item
+  const handleDeleteCartItem = (id) => {
     // swl2 starts from here
     swalWithBootstrapButtons
       .fire({
@@ -48,18 +68,18 @@ const MyBookings = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(
-            `http://localhost:5001/bookings/${id}`, {
-              method: "DELETE"
-            }
-          )
+          fetch(`http://localhost:5001/bookings/${id}`, {
+            method: "DELETE",
+          })
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
               if (data.deletedCount > 0) {
                 // alert("Deleted!")
-                const remainingCartItems = bookings.filter(booking => booking._id !== id)
-                setBookings(remainingCartItems)
+                const remainingCartItems = bookings.filter(
+                  (booking) => booking._id !== id
+                );
+                setBookings(remainingCartItems);
               }
             });
           swalWithBootstrapButtons.fire({
@@ -79,7 +99,7 @@ const MyBookings = () => {
         }
       });
     // swl2 ends here
-  }
+  };
 
   return (
     <div>
@@ -127,6 +147,7 @@ const MyBookings = () => {
                           name,
                           email,
                           date,
+                          status,
                         },
                         index
                       ) => {
@@ -138,10 +159,16 @@ const MyBookings = () => {
                         return (
                           <tr key={name} className="border- ">
                             <td>
-                              <RxCrossCircled
-                                onClick={() => handleDeleteCartItem(_id)}
-                                className="text-3xl text-white bg-[#ff3811] rounded-full w-fit hover:text-[#ff3811] hover:bg-white duration-500 cursor-pointer "
-                              ></RxCrossCircled>
+                              {status === "Confirmed" ? (
+                                <RxCrossCircled
+                                  className="text-3xl text-white bg-gray-400 rounded-full w-fit cursor-pointer "
+                                ></RxCrossCircled>
+                              ) : (
+                                <RxCrossCircled
+                                  onClick={() => handleDeleteCartItem(_id)}
+                                  className="text-3xl text-white bg-[#ff3811] rounded-full w-fit hover:text-[#ff3811] hover:bg-white duration-500 cursor-pointer "
+                                ></RxCrossCircled>
+                              )}
                             </td>
                             <td className={classes}>
                               <div className="flex items-center gap-3">
@@ -203,16 +230,26 @@ const MyBookings = () => {
                               </Typography>
                             </td>
                             <td className={classes}>
-                              <Typography
-                                variant="small"
-                                color="blue-gray"
-                                className="font-normal"
-                              >
-                                <PrimaryBtn
-                                  value={"Pending"}
-                                  link={"/"}
-                                ></PrimaryBtn>
-                              </Typography>
+                              {status === "Confirmed" ? (
+                                <Typography
+                                  variant="small"
+                                  color="blue-gray"
+                                  className="font-normal"
+                                >
+                                  <PrimaryBtn
+                                    value={"Order Confirmed"}
+                                  ></PrimaryBtn>
+                                </Typography>
+                              ) : (
+                                <Typography
+                                  variant="small"
+                                  color="blue-gray"
+                                  onClick={() => handleUpdateItem(_id)}
+                                  className="font-normal"
+                                >
+                                  <PrimaryBtn value={"Pending"}></PrimaryBtn>
+                                </Typography>
+                              )}
                             </td>
                           </tr>
                         );

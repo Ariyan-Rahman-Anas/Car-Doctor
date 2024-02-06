@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate } from "react-router-dom";
-import spinner from "./../assets/Spinner.gif"
+import spinner from "./../assets/Spinner.gif";
+import toast from "react-hot-toast";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -16,6 +17,8 @@ const PrivateRoute = ({ children }) => {
 
   if (user?.email) {
     return children;
+  } else {
+    toast.error("Please login first for order a service");
   }
   return <Navigate to={"/login"} replace></Navigate>;
 };
