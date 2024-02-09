@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import Logo from "./../assets/Logo2.svg"
+import Logo from "./../assets/Logo2.svg";
 import { FaGoogle, FaLinkedin, FaInstagram, FaFacebookF } from "react-icons/fa";
 const Footer = () => {
-    return (
-      <div className="text-gray-400 bg-black pt-10 pb-6 grid text-sm grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:place-items-center gap-5 px-2 ">
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  return (
+    <div className="text-gray-400 bg-black px-2 ">
+      <div className=" pt-10 pb-6 grid text-sm grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:place-items-center gap-5">
         <div>
           <div className="w-[5rem] ">
             <img src={Logo} alt="" className="w-full" />
@@ -70,7 +73,20 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-    );
+      <p className="pt-10 pb-2 text-center">
+        Copy Right-{currentYear} || All rights reserved by Car Doctor ||
+        Developed by
+        <a
+          target="_blank"
+          rel="noopener noreferrer "
+          href="https://ariyanrahmananas.netlify.app/"
+        >
+          {" "}
+          Ariyan Rahman Anas
+        </a>
+      </p>
+    </div>
+  );
 };
 
 export default Footer;
