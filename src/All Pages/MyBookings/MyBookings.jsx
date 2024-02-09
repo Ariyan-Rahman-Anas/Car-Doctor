@@ -14,12 +14,9 @@ const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
   const url = `http://localhost:5001/bookings?email=${user?.email}`;
   useEffect(() => {
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     setBookings(data);
-    //   });
-    axios.get(url).then((res) => setBookings(res.data));
+    axios
+      .get(url, { withCredentials: true })
+      .then((res) => setBookings(res.data));
   }, [url]);
 
   const TABLE_HEAD = ["N/A", "Service", "Price", "Date", "Status"];

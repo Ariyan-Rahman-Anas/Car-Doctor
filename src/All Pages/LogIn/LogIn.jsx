@@ -19,7 +19,6 @@ const LogIn = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
     signIn(data.email, data.password)
       .then((result) => {
         //getting access token from jwt
@@ -33,7 +32,6 @@ const LogIn = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.success) {
               navigate(location?.state ? location?.state : "/");
             }
