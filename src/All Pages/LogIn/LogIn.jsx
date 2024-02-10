@@ -21,22 +21,31 @@ const LogIn = () => {
   const onSubmit = (data) => {
     signIn(data.email, data.password)
       .then((result) => {
+        const loggedEmail = { email: data.email };
+        console.log(loggedEmail);
         //getting access token from jwt
-        fetch("http://localhost:5001/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({ email: data?.email }),
-          credentials: "include",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.success) {
-              navigate(location?.state ? location?.state : "/");
-            }
-          });
+        // fetch("http://localhost:5001/jwt", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify({ email: data?.email }),
+        //   credentials: "include",
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     if (data.success) {
+        //       navigate(location?.state ? location?.state : "/");
+        //     }
+        //   });
 
+        // axios.post("http://localhost:5001/jwt", loggedEmail).then((res) => {
+        //   console.log(res.data);
+        //   if (res.data.success) {
+        //     navigate(location?.state ? location?.state : "/");
+        //   }
+        // });
+              navigate(location?.state ? location?.state : "/");
         toast.success("Registration Successful!");
         setLogInError("");
         console.log(result.user);
