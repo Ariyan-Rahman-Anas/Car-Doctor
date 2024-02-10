@@ -16,7 +16,6 @@ const ProductCard = ({ product }) => {
       </div>
           <h1 className="mt4 text-l font-semibold ">{name}</h1>
           <p className="font-semibold text-[#ff3811] " >${price} </p>
-
     </div>
   );
 };

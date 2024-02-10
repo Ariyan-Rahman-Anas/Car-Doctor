@@ -4,12 +4,12 @@ import Logo from "./../../assets/logo.svg";
 import { FaGoogle, FaLinkedin, FaFacebookF } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { PiWarningCircle } from "react-icons/pi";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
 
 const LogIn = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const [logInError, setLogInError] = useState("");

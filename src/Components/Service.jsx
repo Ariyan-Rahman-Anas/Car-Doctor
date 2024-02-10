@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import SectionHead from "./SectionHead";
 import ServiceCard from "./ServiceCard";
-import { Link } from "react-router-dom";
 import PrimaryBtn from './PrimaryBtn';
 
 const Service = () => {
@@ -31,5 +30,4 @@ const Service = () => {
       </div>
     );
 };
-
 export default Service;

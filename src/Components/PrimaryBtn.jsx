@@ -10,5 +10,4 @@ const PrimaryBtn = ({value, link}) => {
       </Link>
     );
 };
-
 export default PrimaryBtn;

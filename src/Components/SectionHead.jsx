@@ -9,5 +9,4 @@ const SectionHead = ({heading, subHeading, details}) => {
       </div>
     );
 };
-
 export default SectionHead;
