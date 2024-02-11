@@ -3,11 +3,11 @@ import PageShortBanner from "./PageShortBanner";
 import imgBG from "./../assets/images/checkout/checkout.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
-import logo from "./../assets/Logo2.svg"
+import logo from "./../assets/Logo2.svg";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
-  const {_id, name, price, img, description, facility } = service || {};
+  const { _id, name, price, img, description, facility } = service || {};
 
   return (
     <div className="px-2">
@@ -167,7 +167,7 @@ const ServiceDetails = () => {
           </div>
           <p className="font-semibold text-3xl mt-8 mb-5">Price: ${price}</p>
           <Link to={`/checkout/${_id}`}>
-            <div className="text-white bg-[#ff3811] font-semibold rounded-md w-full py-1.5 mt-2 text-center hover:text-[#ff3811] hover:bg-white border-[.09rem] border-transparent hover:border-[#ff3811] duration-500 ">
+            <div className="px-[1.2rem] py-1.5 rounded-full font-normal text-white bg-[#ff3811] border-[.09rem] border-transparent hover:border-[#ff3811] hover:text-[#ff3811] hover:bg-white duration-500 text-center ">
               Proceed Checkout
             </div>
           </Link>

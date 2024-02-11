@@ -54,7 +54,7 @@ const Checkout = () => {
         if (result.isConfirmed) {
           console.log(bookingDetails);
           navigate("/myBookings");
-          fetch("https://car-doctor-server-flax-eta.vercel.app/bookings", {
+          fetch("http://localhost:5001/bookings", {
             method: "POST",
             headers: {
               "content-type": "application/json",

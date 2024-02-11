@@ -23,9 +23,7 @@ const MainRoute = createBrowserRouter([
         path: "serviceDetails/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(
-            `https://car-doctor-server-flax-eta.vercel.app/services/${params.id}`
-          ),
+          fetch(`http://localhost:5001/services/${params.id}`),
       },
       {
         path: "checkout/:id",
@@ -35,9 +33,7 @@ const MainRoute = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://car-doctor-server-flax-eta.vercel.app/services/${params.id}`
-          ),
+          fetch(`http://localhost:5001/services/${params.id}`),
       },
       {
         path: "myBookings",
