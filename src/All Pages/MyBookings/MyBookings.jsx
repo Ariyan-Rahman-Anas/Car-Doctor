@@ -8,16 +8,20 @@ import PrimaryBtn from "./../../Components/PrimaryBtn";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import axios from "axios";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  const url = `http://localhost:5001/bookings?email=${user?.email}`;
+  const axiosSecure = useAxiosSecure() 
+  // const url = `http://localhost:5001/bookings?email=${user?.email}`;
+  const url = `/bookings?email=${user?.email}`;
   useEffect(() => {
-    axios
-      .get(url, { withCredentials: true })
-      .then((res) => setBookings(res.data));
-  }, [url]);
+    // axios
+    //   .get(url, { withCredentials: true })
+    //   .then((res) => setBookings(res.data));
+    axiosSecure.get(url).then((res) => setBookings(res.data));
+  }, [url, axiosSecure]);
 
   const TABLE_HEAD = ["N/A", "Service", "Price", "Date", "Status"];
 
