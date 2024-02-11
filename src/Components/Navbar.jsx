@@ -36,9 +36,11 @@ const Navbar = () => {
         </div>
         <div className="navbar-middle">
           <ul
-            className={`flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-2.5 absolute md:static ${
-              menu ? "top-[5.5rem] right-0 " : "-top-[69rem]"
-            } bg-black text-white bg-opacity-90 w-full h-[50vh] duration-700 z-10 `}
+            className={`flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-4 absolute md:static ${
+              menu
+                ? "top-[5.5rem] right-0 bg-black text-white bg-opacity-90 w-full h-[50vh] "
+                : "-top-[69rem]"
+            }  duration-700 z-10 `}
           >
             <li className="tex-white relative group">
               <NavLink to={"/"} className="group-hover:text-[#ff3811]">
