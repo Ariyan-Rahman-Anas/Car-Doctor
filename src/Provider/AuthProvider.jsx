@@ -48,20 +48,28 @@ const AuthProvider = ({ children }) => {
       // if user exist then issue a token
       if (currentUser) {
         axios
-          .post("http://localhost:5001/jwt", loggedEmail, {
-            withCredentials: true,
-          })
+          .post(
+            "https://car-doctor-server-flax-eta.vercel.app/jwt",
+            loggedEmail,
+            {
+              withCredentials: true,
+            }
+          )
           .then((res) => {
             console.log("token response from auth", res.data);
           });
       } else {
-        axios.post("http://localhost:5001/logout", loggedEmail, {
-          withCredentials: true,
-        })
-          .then(res => {
-          console.log("logged out ",res.data)
-        })
-
+        axios
+          .post(
+            "https://car-doctor-server-flax-eta.vercel.app/logout",
+            loggedEmail,
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            console.log("logged out ", res.data);
+          });
       }
     });
     return () => {

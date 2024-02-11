@@ -4,12 +4,12 @@ import useAuth from "./useAuth";
 import { useNavigate } from "react-router-dom";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5001",
+  baseURL: "https://car-doctor-server-flax-eta.vercel.app",
   withCredentials: true,
 });
 const useAxiosSecure = () => {
   const { logOut } = useAuth();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   useEffect(() => {
     axiosSecure.interceptors.response.use(
       (res) => {
@@ -22,7 +22,7 @@ const useAxiosSecure = () => {
           logOut()
             .then(() => {
               console.log("yaph, log outed");
-              navigate("/logIn")
+              navigate("/logIn");
             })
             .catch((err) => {
               console.log("log out err is: ", err);
