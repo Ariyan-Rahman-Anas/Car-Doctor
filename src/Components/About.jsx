@@ -39,10 +39,12 @@ const About = () => {
             humour, or randomised words which don't look even slightly
             believable.{" "}
           </p>
-          <PrimaryBtn value={"Get More Info"}></PrimaryBtn>
+          <PrimaryBtn
+            value={"Get More Info"}
+            link={"https://www.linkedin.com/in/ariyanrahmananas/"}
+          ></PrimaryBtn>
         </div>
       </div>
     );
 };
-
 export default About;
