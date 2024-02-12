@@ -8,6 +8,7 @@ import ServiceDetails from "../Components/ServiceDetails";
 import ErrorPage from "./../All Pages/Error/ErrorPage";
 import MyBookings from "../All Pages/MyBookings/MyBookings";
 import PrivateRoute from "./PrivateRoute";
+import AboutPage from "../All Pages/About/AboutPage";
 
 const MainRoute = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const MainRoute = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "about",
+        element:<AboutPage></AboutPage>
       },
       {
         path: "serviceDetails/:id",
