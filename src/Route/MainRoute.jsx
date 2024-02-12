@@ -9,6 +9,7 @@ import ErrorPage from "./../All Pages/Error/ErrorPage";
 import MyBookings from "../All Pages/MyBookings/MyBookings";
 import PrivateRoute from "./PrivateRoute";
 import AboutPage from "../All Pages/About/AboutPage";
+import ServicesPage from "../All Pages/AllServices/ServicesPage";
 
 const MainRoute = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const MainRoute = createBrowserRouter([
       {
         path: "about",
         element:<AboutPage></AboutPage>
+      },
+      {
+        path: "allServices",
+        element:<ServicesPage></ServicesPage>
       },
       {
         path: "serviceDetails/:id",

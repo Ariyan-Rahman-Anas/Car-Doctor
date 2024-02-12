@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import PageShortBanner from "../../Components/PageShortBanner";
-import bannerBG from "./../../assets/images/checkout/checkout.png";
+import bannerBG from "./../../assets/images/checkout/myBookings.png";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { RxCrossCircled } from "react-icons/rx";
 import { Card, Typography, CardBody } from "@material-tailwind/react";

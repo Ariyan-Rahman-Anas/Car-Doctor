@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
-import SectionHead from "./SectionHead";
-import ServiceCard from "./ServiceCard";
-import PrimaryBtn from "./PrimaryBtn";
+import SectionHead from "./../../Components/SectionHead";
+import ServiceCard from "./../../Components/ServiceCard";
+import PageShortBanner from "../../Components/PageShortBanner";
+import ImgBg from "./../../assets/images/checkout/myBookings.png"
 
-const Service = () => {
+const ServicesPage = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5001/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
-
-  // const handleAllServicesBtn = () => {
-
-  // }
-
   return (
     <div className="text-center my-[5rem] px-2 ">
+      <PageShortBanner
+        BGImg={ImgBg} pageTitle={"All Services"} location={"Home > All Services"}
+      ></PageShortBanner>
       <div className="heading lg:w-2/3 mx-auto ">
         <SectionHead
           heading={"Service"}
@@ -27,12 +26,11 @@ const Service = () => {
         ></SectionHead>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10 ">
-        {services.slice(0, 6).map((service) => (
+        {services.map((service) => (
           <ServiceCard key={service.id} service={service}></ServiceCard>
         ))}
       </div>
-      <PrimaryBtn value={"See All Services"} link={"/allServices"}></PrimaryBtn>
     </div>
   );
 };
-export default Service;
+export default ServicesPage;
