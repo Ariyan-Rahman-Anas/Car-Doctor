@@ -4,10 +4,20 @@ import imgBG from "./../assets/images/checkout/checkout.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
 import logo from "./../assets/Logo2.svg";
+import { useEffect, useState } from "react";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
   const { _id, name, price, img, description, facility } = service || {};
+
+  const [restServices, setRestServices] = useState([])
+  useEffect(() => {
+    fetch(`http://localhost:5001/services`)
+      .then(res => res.json())
+      .then(data => {
+        setRestServices(data)
+    })
+  },[])
 
   return (
     <div className="px-2">
@@ -93,28 +103,18 @@ const ServiceDetails = () => {
         </div>
         <div className="right w-full md:w-[30%] ">
           <div className="services bg-gray-200 rounded-md p-5">
-            <h1 className="font-semibold text-2xl ">Services</h1>
+            <h1 className="font-semibold text-2xl ">Related Services</h1>
             <div className="mt-3 flex flex-col gap-3">
-              <Link className="flex items-center justify-between bg-white px-4 py-3 rounded-md hover:text-white hover:bg-[#ff3811] duration-500 group ">
-                <p>Diagnostic Services</p>
-                <IoIosArrowRoundForward className="text-2xl text-[#ff3811] group-hover:text-white duration-500 "></IoIosArrowRoundForward>
-              </Link>
-              <Link className="flex items-center justify-between bg-white px-4 py-3 rounded-md hover:text-white hover:bg-[#ff3811] duration-500 group ">
-                <p>Full-Service Tune-Up</p>
-                <IoIosArrowRoundForward className="text-2xl text-[#ff3811] group-hover:text-white duration-500 "></IoIosArrowRoundForward>
-              </Link>
-              <Link className="flex items-center justify-between bg-white px-4 py-3 rounded-md hover:text-white hover:bg-[#ff3811] duration-500 group ">
-                <p>Brake System Check</p>
-                <IoIosArrowRoundForward className="text-2xl text-[#ff3811] group-hover:text-white duration-500 "></IoIosArrowRoundForward>
-              </Link>
-              <Link className="flex items-center justify-between bg-white px-4 py-3 rounded-md hover:text-white hover:bg-[#ff3811] duration-500 group">
-                <p>Air Conditioning Service</p>
-                <IoIosArrowRoundForward className="text-2xl text-[#ff3811] group-hover:text-white duration-500 "></IoIosArrowRoundForward>
-              </Link>
-              <Link className="flex items-center justify-between bg-white px-4 py-3 rounded-md hover:text-white hover:bg-[#ff3811] duration-500 group ">
-                <p>Tire Rotation and Alignment</p>
-                <IoIosArrowRoundForward className="text-2xl text-[#ff3811] group-hover:text-white duration-500 "></IoIosArrowRoundForward>
-              </Link>
+              {restServices?.slice(0,5).map((aService) => (
+                <Link
+                  to={`/serviceDetails/${aService._id}`}
+                  key={aService.id}
+                  className="flex items-center justify-between bg-white px-4 py-3 rounded-md hover:text-white hover:bg-[#ff3811] duration-500 group "
+                >
+                  <p>{aService.name}</p>
+                  <IoIosArrowRoundForward className="text-2xl text-[#ff3811] group-hover:text-white duration-500 "></IoIosArrowRoundForward>
+                </Link>
+              ))}
             </div>
           </div>
           <div className="download text-white bg-black rounded-md p-5 my-5 ">

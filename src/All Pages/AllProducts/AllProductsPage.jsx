@@ -34,10 +34,8 @@ const AllProductsPage = () => {
               <ProductCard key={product.id} product={product}></ProductCard>
             ))}
           </div>
-          {/* <PrimaryBtn value={"More Products"}></PrimaryBtn> */}
         </div>
       </div>
     );
 };
-
 export default AllProductsPage;
