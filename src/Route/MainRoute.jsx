@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import AboutPage from "../All Pages/About/AboutPage";
 import ServicesPage from "../All Pages/AllServices/ServicesPage";
 import ContactPage from "../All Pages/Contact/ContactPage";
+import AllProductsPage from "../All Pages/AllProducts/AllProductsPage";
 
 const MainRoute = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const MainRoute = createBrowserRouter([
       {
         path: "about",
         element:<AboutPage></AboutPage>
+      },
+      {
+        path: "allProducts",
+        element:<AllProductsPage></AllProductsPage>
       },
       {
         path: "allServices",
