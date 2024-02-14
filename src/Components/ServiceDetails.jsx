@@ -10,14 +10,14 @@ const ServiceDetails = () => {
   const service = useLoaderData();
   const { _id, name, price, img, description, facility } = service || {};
 
-  const [restServices, setRestServices] = useState([])
+  const [restServices, setRestServices] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5001/services`)
-      .then(res => res.json())
-      .then(data => {
-        setRestServices(data)
-    })
-  },[])
+    fetch(`https://car-doctor-server-sigma-ruby.vercel.app/services`)
+      .then((res) => res.json())
+      .then((data) => {
+        setRestServices(data);
+      });
+  }, []);
 
   return (
     <div className="px-2">
@@ -105,7 +105,7 @@ const ServiceDetails = () => {
           <div className="services bg-gray-200 rounded-md p-5">
             <h1 className="font-semibold text-2xl ">Related Services</h1>
             <div className="mt-3 flex flex-col gap-3">
-              {restServices?.slice(0,5).map((aService) => (
+              {restServices?.slice(0, 5).map((aService) => (
                 <Link
                   to={`/serviceDetails/${aService._id}`}
                   key={aService.id}

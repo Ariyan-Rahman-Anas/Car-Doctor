@@ -6,7 +6,7 @@ import PrimaryBtn from "./PrimaryBtn";
 const Service = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5001/services")
+    fetch("https://car-doctor-server-sigma-ruby.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

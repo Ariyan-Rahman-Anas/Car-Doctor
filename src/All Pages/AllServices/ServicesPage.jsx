@@ -2,19 +2,21 @@ import { useEffect, useState } from "react";
 import SectionHead from "./../../Components/SectionHead";
 import ServiceCard from "./../../Components/ServiceCard";
 import PageShortBanner from "../../Components/PageShortBanner";
-import ImgBg from "./../../assets/images/checkout/myBookings.png"
+import ImgBg from "./../../assets/images/checkout/myBookings.png";
 
 const ServicesPage = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5001/services")
+    fetch("https://car-doctor-server-sigma-ruby.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
   return (
     <div className="text-center my-[5rem] px-2 ">
       <PageShortBanner
-        BGImg={ImgBg} pageTitle={"All Services"} location={"Home > All Services"}
+        BGImg={ImgBg}
+        pageTitle={"All Services"}
+        location={"Home > All Services"}
       ></PageShortBanner>
       <div className="heading lg:w-2/3 mx-auto ">
         <SectionHead

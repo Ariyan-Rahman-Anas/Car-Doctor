@@ -54,7 +54,7 @@ const Checkout = () => {
         if (result.isConfirmed) {
           console.log(bookingDetails);
           navigate("/myBookings");
-          fetch("http://localhost:5001/bookings", {
+          fetch("https://car-doctor-server-sigma-ruby.vercel.app/bookings", {
             method: "POST",
             headers: {
               "content-type": "application/json",

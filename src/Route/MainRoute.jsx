@@ -25,21 +25,23 @@ const MainRoute = createBrowserRouter([
       },
       {
         path: "about",
-        element:<AboutPage></AboutPage>
+        element: <AboutPage></AboutPage>,
       },
       {
         path: "allProducts",
-        element:<AllProductsPage></AllProductsPage>
+        element: <AllProductsPage></AllProductsPage>,
       },
       {
         path: "allServices",
-        element:<ServicesPage></ServicesPage>
+        element: <ServicesPage></ServicesPage>,
       },
       {
         path: "serviceDetails/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/services/${params.id}`),
+          fetch(
+            `https://car-doctor-server-sigma-ruby.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "checkout/:id",
@@ -49,7 +51,9 @@ const MainRoute = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5001/services/${params.id}`),
+          fetch(
+            `https://car-doctor-server-sigma-ruby.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "myBookings",
@@ -61,7 +65,7 @@ const MainRoute = createBrowserRouter([
       },
       {
         path: "contact",
-        element:<ContactPage></ContactPage>
+        element: <ContactPage></ContactPage>,
       },
       {
         path: "logIn",

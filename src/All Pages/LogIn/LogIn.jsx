@@ -24,7 +24,7 @@ const LogIn = () => {
         const loggedEmail = { email: data.email };
         console.log(loggedEmail);
         //getting access token from jwt
-        // fetch("http://localhost:5001/jwt", {
+        // fetch("https://car-doctor-server-sigma-ruby.vercel.app/jwt", {
         //   method: "POST",
         //   headers: {
         //     "content-type": "application/json",
@@ -39,7 +39,7 @@ const LogIn = () => {
         //     }
         //   });
 
-        // axios.post("http://localhost:5001/jwt", loggedEmail).then((res) => {
+        // axios.post("https://car-doctor-server-sigma-ruby.vercel.app/jwt", loggedEmail).then((res) => {
         //   console.log(res.data);
         //   if (res.data.success) {
         //     navigate(location?.state ? location?.state : "/");

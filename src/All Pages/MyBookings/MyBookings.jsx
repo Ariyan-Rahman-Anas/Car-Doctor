@@ -14,7 +14,7 @@ const MyBookings = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
   const axiosSecure = useAxiosSecure();
-  // const url = `http://localhost:5001/bookings?email=${user?.email}`;
+  // const url = `https://car-doctor-server-sigma-ruby.vercel.app/bookings?email=${user?.email}`;
   const url = `/bookings?email=${user?.email}`;
   useEffect(() => {
     // axios
@@ -35,7 +35,7 @@ const MyBookings = () => {
 
   // updatingCartItem
   const handleUpdateItem = (id) => {
-    fetch(`http://localhost:5001/bookings/${id}`, {
+    fetch(`https://car-doctor-server-sigma-ruby.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -71,9 +71,12 @@ const MyBookings = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5001/bookings/${id}`, {
-            method: "DELETE",
-          })
+          fetch(
+            `https://car-doctor-server-sigma-ruby.vercel.app/bookings/${id}`,
+            {
+              method: "DELETE",
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
