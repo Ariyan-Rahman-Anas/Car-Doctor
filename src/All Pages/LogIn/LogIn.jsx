@@ -7,6 +7,7 @@ import { PiWarningCircle } from "react-icons/pi";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import axios from "axios";
 
 const LogIn = () => {
   const { signIn, googleSignIn } = useAuth();
@@ -39,12 +40,17 @@ const LogIn = () => {
         //     }
         //   });
 
-        // axios.post("https://car-doctor-server-sigma-ruby.vercel.app/jwt", loggedEmail).then((res) => {
-        //   console.log(res.data);
-        //   if (res.data.success) {
-        //     navigate(location?.state ? location?.state : "/");
-        //   }
-        // });
+        axios
+          .post(
+            "https://car-doctor-server-sigma-ruby.vercel.app/jwt",
+            loggedEmail
+          )
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.success) {
+              navigate(location?.state ? location?.state : "/");
+            }
+          });
         navigate(location?.state ? location?.state : "/");
         toast.success("Registration Successful!");
         setLogInError("");
