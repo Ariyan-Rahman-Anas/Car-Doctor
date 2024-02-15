@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-  const {_id, img, name, price } = service || {};
+  const { _id, id, img, name, price } = service || {};
   return (
-    <div className="shadow-md rounded-lg px-8 py-6 group hover:bg-gray-200 duration-500 ">
-      <div className="">
+    <div className="relative shadow-md rounded-lg px-8 py-6 group hover:bg-gray-200 duration-500 ">
+      <div className="service-serial absolute right-0 top-0 p-2 h-[1.5rem] w-[1.5rem] flex items-center justify-center text-white rounded-tr-md bg-red-200 group-hover:bg-[#ff3811] duration-500  ">
+        <p>{id}</p>
+      </div>
+      <div className="media">
         <img src={img} alt="" className="w-full rounded-md" />
       </div>
-      <div className="">
+      <div className="info">
         <h1 className="text-xl mt-4 mb-2 font-normal text-left ">{name}</h1>
         <div className="mt-5 flex items-center justify-between text-[#ff3811] fontsemibold ">
           <Link

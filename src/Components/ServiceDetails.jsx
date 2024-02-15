@@ -105,7 +105,7 @@ const ServiceDetails = () => {
           <div className="services bg-gray-200 rounded-md p-5">
             <h1 className="font-semibold text-2xl ">Related Services</h1>
             <div className="mt-3 flex flex-col gap-3">
-              {restServices?.slice(0, 5).map((aService) => (
+              {restServices?.slice(11, 16).map((aService) => (
                 <Link
                   to={`/serviceDetails/${aService._id}`}
                   key={aService.id}

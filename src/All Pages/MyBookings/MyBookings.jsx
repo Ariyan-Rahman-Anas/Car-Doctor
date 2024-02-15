@@ -20,7 +20,7 @@ const MyBookings = () => {
     // axios
     //   .get(url, { withCredentials: true })
     //   .then((res) => setBookings(res.data));
-    axiosSecure.get(url).then((res) => setBookings(res.data));
+    axiosSecure.get(url).then((res) => setBookings(res?.data));
   }, [url, axiosSecure]);
 
   const TABLE_HEAD = ["N/A", "Service", "Price", "Date", "Status"];

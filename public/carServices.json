@@ -298,5 +298,1447 @@
         "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
       }
     ]
-  }
+  },
+  {
+    "id": 13,
+    "img": "https://i.ibb.co/GWqY2pY/1.png",
+    "name": "Full-Service Tune-Up",
+    "description": "Ensure the longevity of your vehicle with our comprehensive Full-Service Tune-Up. Our expert technicians conduct a thorough inspection, addressing engine performance, fuel efficiency, and overall functionality. From spark plug replacement to air and fuel filter checks, we cover it all to keep your vehicle running smoothly on the road.",
+    "price": 99.99,
+    "facility": [
+      {
+        "name": "Instant Car Services",
+        "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
+      },
+      {
+        "name": "24/7 Quality Service",
+        "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
+      },
+      {
+        "name": "Easy Customer Service",
+        "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
+      },
+      {
+        "name": "Quality Cost Service",
+        "details": "Fuga numquam nulla nam, facere neque dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "img": "https://i.ibb.co/zXPJNV3/2.png",
+    "name": "Wheel Alignment",
+    "description": "Ensure optimal handling and tire wear with our professional Wheel Alignment service. Using state-of-the-art equipment, our technicians adjust your vehicle's suspension to manufacturer specifications, ensuring proper alignment and even tire wear. Trust us to keep your vehicle driving straight and true.",
+    "price": 79.99,
+    "facility": [
+      {
+        "name": "Precision Alignment Equipment",
+        "details": "Utilize high-precision alignment tools and technology for accurate adjustments."
+      },
+      {
+        "name": "Experienced Technicians",
+        "details": "Professionally trained technicians with expertise in wheel alignment procedures."
+      },
+      {
+        "name": "Quick Service Turnaround",
+        "details": "Efficient service to minimize downtime and get you back on the road quickly."
+      },
+      {
+        "name": "Alignment Guarantee",
+        "details": "Backed by our alignment guarantee for your peace of mind."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "img": "https://i.ibb.co/w4qjftV/3.png",
+    "name": "Brake System Inspection",
+    "description": "Ensure your safety on the road with our thorough Brake System Inspection. Our certified technicians inspect all components of your braking system, including pads, rotors, calipers, and brake fluid, to identify any issues and ensure optimal performance. Trust us to keep your brakes functioning reliably.",
+    "price": 69.99,
+    "facility": [
+      {
+        "name": "Comprehensive Inspection",
+        "details": "Thorough examination of all brake system components for signs of wear or damage."
+      },
+      {
+        "name": "Expert Technicians",
+        "details": "Certified technicians with extensive experience in brake system diagnostics and repair."
+      },
+      {
+        "name": "Advanced Diagnostic Tools",
+        "details": "Utilize state-of-the-art diagnostic equipment to identify brake system issues accurately."
+      },
+      {
+        "name": "Safety Priority",
+        "details": "Ensure your safety on the road by maintaining optimal brake system performance."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "img": "https://i.ibb.co/Zdw1xvc/4.png",
+    "name": "Oil Change Service",
+    "description": "Keep your engine running smoothly with our professional Oil Change Service. Our expert technicians use high-quality oil and filters to replace old, contaminated oil, ensuring proper lubrication and engine protection. Trust us to keep your vehicle performing at its best.",
+    "price": 49.99,
+    "facility": [
+      {
+        "name": "Premium Oil Products",
+        "details": "Use premium-quality oil products recommended for your vehicle's engine."
+      },
+      {
+        "name": "Efficient Service",
+        "details": "Quick and efficient oil change service to minimize wait times."
+      },
+      {
+        "name": "Certified Technicians",
+        "details": "Professionally trained technicians perform oil changes with precision and care."
+      },
+      {
+        "name": "Service Reminder",
+        "details": "Receive a service reminder for your next oil change to maintain engine health."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "img": "https://i.ibb.co/1dBDCDk/5.png",
+    "name": "Tire Rotation",
+    "description": "Maximize tire lifespan and performance with our Tire Rotation service. Our experienced technicians move your tires from front to back and side to side, ensuring even tire wear and balanced handling. Trust us to keep your tires in top condition for a safer and smoother ride.",
+    "price": 39.99,
+    "facility": [
+      {
+        "name": "Even Tire Wear",
+        "details": "Ensure even wear on all tires by rotating them regularly as recommended."
+      },
+      {
+        "name": "Improved Handling",
+        "details": "Maintain balanced handling and traction by rotating tires for uniform wear."
+      },
+      {
+        "name": "Quick Service",
+        "details": "Efficient tire rotation service to minimize wait times and inconvenience."
+      },
+      {
+        "name": "Tire Inspection",
+        "details": "Inspect tires for signs of damage, bulges, or uneven wear during rotation."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "img": "https://i.ibb.co/RyNgtvB/6.png",
+    "name": "Diagnostic Services",
+    "description": "Identify and address vehicle issues with our comprehensive Diagnostic Services. Using advanced diagnostic equipment, our technicians perform thorough inspections to pinpoint mechanical and electrical problems. Trust us to provide accurate diagnostics and recommend the necessary repairs to keep your vehicle running smoothly.",
+    "price": 89.99,
+    "facility": [
+      {
+        "name": "Advanced Diagnostic Tools",
+        "details": "Utilize state-of-the-art diagnostic equipment for accurate problem identification."
+      },
+      {
+        "name": "Expert Technicians",
+        "details": "Highly trained technicians with expertise in diagnosing complex vehicle issues."
+      },
+      {
+        "name": "Comprehensive Inspection",
+        "details": "Thorough examination of all vehicle systems and components for potential issues."
+      },
+      {
+        "name": "Diagnostic Report",
+        "details": "Receive a detailed diagnostic report outlining identified issues and recommended repairs."
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "img": "https://i.ibb.co/rsDStJK/7.png",
+    "name": "Battery Replacement",
+    "description": "Ensure reliable starting power with our professional Battery Replacement service. Our certified technicians will inspect your vehicle's battery health and replace it with a quality battery if necessary. Trust us to keep your vehicle starting smoothly, even in the coldest weather conditions.",
+    "price": 109.99,
+    "facility": [
+      {
+        "name": "Battery Health Inspection",
+        "details": "Thorough inspection of battery health to determine if replacement is necessary."
+      },
+      {
+        "name": "Quality Battery Products",
+        "details": "Use high-quality replacement batteries to ensure reliable starting power."
+      },
+      {
+        "name": "Expert Installation",
+        "details": "Professional installation by certified technicians for optimal performance."
+      },
+      {
+        "name": "Cold Weather Reliability",
+        "details": "Ensure reliable starting power even in cold weather conditions."
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "img": "https://i.ibb.co/jwy79ML/8.png",
+    "name": "Electrical System Services",
+    "description": "Ensure the proper functioning of your vehicle's electrical system with our comprehensive Electrical System Services. Our certified technicians diagnose and repair issues related to the battery, alternator, starter, and wiring to keep your vehicle running smoothly. Trust us to provide reliable solutions for all your electrical system needs.",
+    "price": 129.99,
+    "facility": [
+      {
+        "name": "Diagnostic Testing",
+        "details": "Use advanced diagnostic tools to identify electrical system issues accurately."
+      },
+      {
+        "name": "Expert Repairs",
+        "details": "Certified technicians perform expert repairs on all electrical system components."
+      },
+      {
+        "name": "Quality Parts",
+        "details": "Use high-quality replacement parts to ensure long-lasting performance."
+      },
+      {
+        "name": "Electrical System Optimization",
+        "details": "Optimize the performance of your vehicle's electrical system for reliability and efficiency."
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "img": "https://i.ibb.co/gr8Bv70/9.png",
+    "name": "Cooling System Service",
+    "description": "Prevent overheating and engine damage with our professional Cooling System Service. Our certified technicians inspect and flush your vehicle's cooling system, ensuring proper coolant circulation and temperature regulation. Trust us to keep your engine running cool, even in the hottest conditions.",
+    "price": 89.99,
+    "facility": [
+      {
+        "name": "Coolant Flush",
+        "details": "Thorough flushing of old coolant and contaminants from the cooling system."
+      },
+      {
+        "name": "System Inspection",
+        "details": "Comprehensive inspection of cooling system components for signs of wear or damage."
+      },
+      {
+        "name": "Expert Technicians",
+        "details": "Certified technicians with expertise in cooling system maintenance and repair."
+      },
+      {
+        "name": "Preventive Maintenance",
+        "details": "Prevent overheating and engine damage with regular cooling system maintenance."
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "img": "https://i.ibb.co/WV85bwH/10.png",
+    "name": "Transmission Services",
+    "description": "Ensure smooth gear shifts and reliable performance with our professional Transmission Services. Our certified technicians inspect your vehicle's transmission system and perform fluid flushes or replacements as needed. Trust us to keep your transmission running smoothly for miles to come.",
+    "price": 129.99,
+    "facility": [
+      {
+        "name": "Transmission Inspection",
+        "details": "Thorough inspection of transmission system components for signs of wear or damage."
+      },
+      {
+        "name": "Fluid Flush/Replacement",
+        "details": "Flush old transmission fluid and replace it with fresh fluid for optimal performance."
+      },
+      {
+        "name": "Expert Technicians",
+        "details": "Certified technicians with expertise in transmission system maintenance and repair."
+      },
+      {
+        "name": "Smooth Gear Shifts",
+        "details": "Ensure smooth gear shifts and reliable performance with regular transmission maintenance."
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "img": "https://i.ibb.co/Fb8f55S/11.png",
+    "name": "Fuel System Cleaning",
+    "description": "Maximize fuel efficiency and engine performance with our professional Fuel System Cleaning service. Our certified technicians use specialized equipment to remove carbon deposits and contaminants from your vehicle's fuel system, ensuring optimal fuel flow and combustion. Trust us to keep your engine running efficiently and smoothly.",
+    "price": 79.99,
+    "facility": [
+      {
+        "name": "Fuel System Inspection",
+        "details": "Thorough inspection of fuel system components for signs of contamination or blockages."
+      },
+      {
+        "name": "Carbon Deposit Removal",
+        "details": "Use specialized equipment to remove carbon deposits and contaminants from the fuel system."
+      },
+      {
+        "name": "Improved Fuel Efficiency",
+        "details": "Maximize fuel efficiency and engine performance with a clean fuel system."
+      },
+      {
+        "name": "Optimal Combustion",
+        "details": "Ensure optimal fuel flow and combustion for reliable engine performance."
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "img": "https://i.ibb.co/80rr2tb/12.png",
+    "name": "Suspension Services",
+    "description": "Ensure a smooth and comfortable ride with our professional Suspension Services. Our certified technicians inspect your vehicle's suspension system and perform necessary repairs or replacements to maintain optimal ride quality and handling. Trust us to keep your vehicle riding smoothly on any road.",
+    "price": 149.99,
+    "facility": [
+      {
+        "name": "Suspension Inspection",
+        "details": "Thorough inspection of suspension system components for signs of wear or damage."
+      },
+      {
+        "name": "Expert Repairs",
+        "details": "Certified technicians perform expert repairs or replacements to restore suspension performance."
+      },
+      {
+        "name": "Smooth Ride Quality",
+        "details": "Ensure a smooth and comfortable ride with properly maintained suspension components."
+      },
+      {
+        "name": "Improved Handling",
+        "details": "Maintain optimal handling and control with a properly functioning suspension system."
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "img": "https://i.ibb.co/pRgLGf7/13.png",
+    "name": "Exhaust System Services",
+    "description": "Ensure proper exhaust system function and reduce harmful emissions with our professional Exhaust System Services. Our certified technicians inspect your vehicle's exhaust system and perform necessary repairs or replacements to maintain optimal performance and compliance with emissions standards. Trust us to keep your vehicle running cleanly and efficiently.",
+    "price": 99.99,
+    "facility": [
+      {
+        "name": "Exhaust System Inspection",
+        "details": "Thorough inspection of exhaust system components for signs of leaks or damage."
+      },
+      {
+        "name": "Emissions Compliance",
+        "details": "Ensure compliance with emissions standards by maintaining a properly functioning exhaust system."
+      },
+      {
+        "name": "Expert Repairs",
+        "details": "Certified technicians perform expert repairs or replacements to restore exhaust system function."
+      },
+      {
+        "name": "Reduced Harmful Emissions",
+        "details": "Reduce harmful emissions and environmental impact with a properly maintained exhaust system."
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "img": "https://i.ibb.co/FVzTYSJ/14.png",
+    "name": "Steering System Services",
+    "description": "Ensure responsive steering and vehicle control with our professional Steering System Services. Our certified technicians inspect your vehicle's steering system and perform necessary repairs or replacements to maintain optimal performance and safety. Trust us to keep your vehicle steering smoothly and reliably.",
+    "price": 109.99,
+    "facility": [
+      {
+        "name": "Steering System Inspection",
+        "details": "Thorough inspection of steering system components for signs of wear or damage."
+      },
+      {
+        "name": "Responsive Steering",
+        "details": "Ensure responsive steering and vehicle control with properly maintained steering components."
+      },
+      {
+        "name": "Expert Repairs",
+        "details": "Certified technicians perform expert repairs or replacements to restore steering system function."
+      },
+      {
+        "name": "Safety Priority",
+        "details": "Maintain safe vehicle operation with a properly functioning steering system."
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "img": "https://i.ibb.co/4RvvY3B/15.png",
+    "name": "Air Conditioning Service",
+    "description": "Stay cool and comfortable on the road with our professional Air Conditioning Service. Our certified technicians inspect your vehicle's A/C system and perform necessary repairs or recharges to ensure optimal cooling performance. Trust us to keep you cool during the hottest summer days.",
+    "price": 89.99,
+    "facility": [
+      {
+        "name": "A/C System Inspection",
+        "details": "Thorough inspection of A/C system components for signs of leaks or malfunctions."
+      },
+      {
+        "name": "Cooling Performance",
+        "details": "Ensure optimal cooling performance for a comfortable driving experience."
+      },
+      {
+        "name": "Expert Repairs",
+        "details": "Certified technicians perform expert repairs or recharges to restore A/C system function."
+      },
+      {
+        "name": "Summer Comfort",
+        "details": "Stay cool and comfortable during the hottest summer days with a properly functioning A/C system."
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "img": "https://i.ibb.co/zX2CGYh/16.png",
+    "name": "Fuel Injection Services",
+    "description": "Maximize engine performance and fuel efficiency with our professional Fuel Injection Services. Our certified technicians inspect and clean your vehicle's fuel injectors to ensure optimal fuel delivery and combustion. Trust us to keep your engine running smoothly and efficiently.",
+    "price": 79.99,
+    "facility": [
+      {
+        "name": "Fuel Injector Inspection",
+        "details": "Thorough inspection of fuel injectors for signs of clogging or malfunction."
+      },
+      {
+        "name": "Injector Cleaning",
+        "details": "Use specialized equipment to clean fuel injectors and remove deposits for optimal performance."
+      },
+      {
+        "name": "Improved Fuel Efficiency",
+        "details": "Maximize fuel efficiency and engine performance with clean fuel injectors."
+      },
+      {
+        "name": "Optimal Combustion",
+        "details": "Ensure optimal fuel delivery and combustion for reliable engine performance."
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "img": "https://i.ibb.co/njTjnsc/17.png",
+    "name": "Radiator Services",
+    "description": "Prevent overheating and engine damage with our professional Radiator Services. Our certified technicians inspect and flush your vehicle's radiator, ensuring proper coolant circulation and temperature regulation. Trust us to keep your engine running cool, even in the hottest conditions.",
+    "price": 99.99,
+    "facility": [
+      {
+        "name": "Radiator Inspection",
+        "details": "Thorough inspection of radiator and cooling system components for signs of wear or damage."
+      },
+      {
+        "name": "Coolant Flush",
+        "details": "Flush old coolant and contaminants from the radiator and cooling system for optimal performance."
+      },
+      {
+        "name": "Expert Technicians",
+        "details": "Certified technicians with expertise in radiator and cooling system maintenance and repair."
+      },
+      {
+        "name": "Preventive Maintenance",
+        "details": "Prevent overheating and engine damage with regular radiator maintenance."
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "img": "https://i.ibb.co/86ndGbH/18.png",
+    "name": "Power Steering Services",
+    "description": "Ensure smooth and responsive steering with our professional Power Steering Services. Our certified technicians inspect your vehicle's power steering system and perform necessary repairs or replacements to maintain optimal performance and safety. Trust us to keep your steering system functioning smoothly for miles to come.",
+    "price": 89.99,
+    "facility": [
+      {
+        "name": "Power Steering Inspection",
+        "details": "Thorough inspection of power steering system components for signs of wear or damage."
+      },
+      {
+        "name": "Responsive Steering",
+        "details": "Ensure smooth and responsive steering with properly maintained power steering components."
+      },
+      {
+        "name": "Expert Repairs",
+        "details": "Certified technicians perform expert repairs or replacements to restore power steering system function."
+      },
+      {
+        "name": "Safety Priority",
+        "details": "Maintain safe vehicle operation with a properly functioning power steering system."
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "img": "https://i.ibb.co/KjfncLT/19.png",
+    "name": "Wheel Balancing",
+    "description": "Ensure smooth and balanced tire performance with our Wheel Balancing service. Our certified technicians use precision equipment to distribute weight evenly across your tires, reducing vibrations and improving tire wear. Trust us to keep your vehicle riding smoothly and safely on the road.",
+    "price": 49.99,
+    "facility": [
+      {
+        "name": "Precision Balancing Equipment",
+        "details": "Utilize high-precision balancing equipment for accurate weight distribution."
+      },
+      {
+        "name": "Even Tire Wear",
+        "details": "Ensure even tire wear and extended tire lifespan with proper wheel balancing."
+      },
+      {
+        "name": "Smooth Ride",
+        "details": "Minimize vibrations and improve ride comfort with expert wheel balancing."
+      },
+      {
+        "name": "Tire Performance",
+        "details": "Maximize tire performance and handling with balanced wheel assemblies."
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "img": "https://i.ibb.co/5nqV7kr/20.png",
+    "name": "Power Steering System Flush",
+    "description": "Maintain responsive steering and smooth operation with our Power Steering System Flush service. Our certified technicians flush old power steering fluid and replace it with fresh fluid to remove contaminants and prevent steering system problems. Trust us to keep your steering system in top condition.",
+    "price": 79.99,
+    "facility": [
+      {
+        "name": "Fluid Flush",
+        "details": "Flush old power steering fluid to remove contaminants and ensure proper function."
+      },
+      {
+        "name": "Fluid Replacement",
+        "details": "Replace old fluid with fresh power steering fluid for smooth and responsive steering."
+      },
+      {
+        "name": "Component Inspection",
+        "details": "Inspect power steering components for leaks, damage, or signs of wear."
+      },
+      {
+        "name": "Steering Performance",
+        "details": "Ensure optimal steering performance and responsiveness with a power steering flush."
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "img": "https://i.ibb.co/RDSSwZr/21.png",
+    "name": "Cabin Air Filter Replacement",
+    "description": "Ensure clean and fresh air inside your vehicle with our Cabin Air Filter Replacement service. Our certified technicians replace old cabin air filters with new ones to remove dust, pollen, and pollutants from the air. Trust us to keep your cabin air clean and comfortable for you and your passengers.",
+    "price": 39.99,
+    "facility": [
+      {
+        "name": "Air Filtration",
+        "details": "Filter out dust, pollen, and pollutants from incoming air for cleaner cabin air."
+      },
+      {
+        "name": "Improved Air Quality",
+        "details": "Breathe easier with improved air quality and reduced allergens inside your vehicle."
+      },
+      {
+        "name": "Quick Replacement",
+        "details": "Efficient service to replace cabin air filters and restore clean air to your vehicle."
+      },
+      {
+        "name": "Passenger Comfort",
+        "details": "Ensure a comfortable and pleasant driving experience for you and your passengers."
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "img": "https://i.ibb.co/cNWbVHk/22.png",
+    "name": "Timing Belt Replacement",
+    "description": "Ensure proper engine timing and prevent costly repairs with our Timing Belt Replacement service. Our certified technicians replace old timing belts with new ones to prevent belt failure and engine damage. Trust us to keep your engine running smoothly and reliably.",
+    "price": 199.99,
+    "facility": [
+      {
+        "name": "Timing Belt Inspection",
+        "details": "Inspect timing belt for signs of wear, cracking, or damage that indicate replacement is needed."
+      },
+      {
+        "name": "Belt Replacement",
+        "details": "Replace old timing belt with a new one to prevent belt failure and engine damage."
+      },
+      {
+        "name": "Component Alignment",
+        "details": "Ensure proper alignment of timing belt and engine components for optimal performance."
+      },
+      {
+        "name": "Engine Protection",
+        "details": "Protect your engine from costly repairs by replacing timing belt as recommended by manufacturer."
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "img": "https://i.ibb.co/LNqkS04/23.png",
+    "name": "Fuel Injector Replacement",
+    "description": "Ensure efficient fuel delivery and engine performance with our Fuel Injector Replacement service. Our certified technicians replace old or malfunctioning fuel injectors with new ones to improve fuel atomization and combustion. Trust us to keep your engine running smoothly and efficiently.",
+    "price": 149.99,
+    "facility": [
+      {
+        "name": "Fuel Delivery",
+        "details": "Deliver precise amounts of fuel to each cylinder for optimal combustion and engine performance."
+      },
+      {
+        "name": "Injector Replacement",
+        "details": "Replace old or faulty fuel injectors with new ones to restore proper fuel delivery."
+      },
+      {
+        "name": "Engine Efficiency",
+        "details": "Maximize engine power and fuel efficiency with properly functioning fuel injectors."
+      },
+      {
+        "name": "Emissions Compliance",
+        "details": "Reduce harmful emissions and ensure compliance with emissions regulations with new fuel injectors."
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "img": "https://i.ibb.co/K7kVm8Q/24.png",
+    "name": "Engine Oil Leak Repair",
+    "description": "Prevent oil leaks and ensure proper engine lubrication with our Engine Oil Leak Repair service. Our certified technicians diagnose the source of oil leaks and perform necessary repairs to stop leaks and prevent further damage. Trust us to keep your engine running smoothly and free of leaks.",
+    "price": 129.99,
+    "facility": [
+      {
+        "name": "Oil Leak Diagnosis",
+        "details": "Identify the source of oil leaks using advanced diagnostic equipment and techniques."
+      },
+      {
+        "name": "Seal Replacement",
+        "details": "Replace worn or damaged seals and gaskets to prevent oil leaks and ensure proper engine lubrication."
+      },
+      {
+        "name": "Professional Repair",
+        "details": "Perform precise and effective repairs to stop oil leaks and prevent further damage to engine components."
+      },
+      {
+        "name": "Oil System Integrity",
+        "details": "Maintain the integrity of your engine's oil system with expert oil leak repair services."
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "img": "https://i.ibb.co/N3g33X3/25.png",
+    "name": "Radiator Hose Replacement",
+    "description": "Ensure proper engine cooling and prevent overheating with our Radiator Hose Replacement service. Our certified technicians replace old, cracked, or leaking radiator hoses with new ones to maintain coolant flow and prevent coolant leaks. Trust us to keep your engine running cool and reliable.",
+    "price": 79.99,
+    "facility": [
+      {
+        "name": "Coolant Flow",
+        "details": "Maintain proper coolant flow to and from the radiator for optimal engine cooling performance."
+      },
+      {
+        "name": "Hose Replacement",
+        "details": "Replace old, cracked, or leaking radiator hoses with new ones to prevent coolant leaks."
+      },
+      {
+        "name": "Coolant System Integrity",
+        "details": "Ensure the integrity of your vehicle's coolant system with expert radiator hose replacement."
+      },
+      {
+        "name": "Engine Protection",
+        "details": "Protect your engine from overheating and damage with properly functioning radiator hoses."
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "img": "https://i.ibb.co/TRnrjRV/26.png",
+    "name": "Headlight Restoration",
+    "description": "Restore clarity and brightness to your headlights with our Headlight Restoration service. Our certified technicians remove oxidation and scratches from headlight lenses, restoring their appearance and improving visibility at night. Trust us to keep you safe on the road with clear and bright headlights.",
+    "price": 59.99,
+    "facility": [
+      {
+        "name": "Oxidation Removal",
+        "details": "Remove oxidized layers from headlight lenses to restore clarity and brightness."
+      },
+      {
+        "name": "Scratch Repair",
+        "details": "Buff out scratches and imperfections from headlight lenses for improved appearance."
+      },
+      {
+        "name": "UV Protection",
+        "details": "Apply UV protective coating to headlight lenses to prevent future oxidation and yellowing."
+      },
+      {
+        "name": "Improved Visibility",
+        "details": "Enhance visibility at night and ensure safer driving with restored headlights."
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "img": "https://i.ibb.co/H4MNDZZ/27.png",
+    "name": "Engine Mount Replacement",
+    "description": "Ensure smooth engine operation and reduced vibrations with our Engine Mount Replacement service. Our certified technicians replace worn or damaged engine mounts with new ones to provide stability and reduce engine noise and vibration. Trust us to keep your engine running smoothly and quietly.",
+    "price": 99.99,
+    "facility": [
+      {
+        "name": "Engine Stability",
+        "details": "Provide stability and support to your engine for smoother operation and reduced vibrations."
+      },
+      {
+        "name": "Mount Replacement",
+        "details": "Replace worn or damaged engine mounts with new ones for improved performance and comfort."
+      },
+      {
+        "name": "Vibration Reduction",
+        "details": "Reduce engine noise and vibration for a quieter and more enjoyable driving experience."
+      },
+      {
+        "name": "Long-Term Reliability",
+        "details": "Ensure long-term reliability and performance with expert engine mount replacement services."
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "img": "https://i.ibb.co/FzkW9sf/28.png",
+    "name": "Starter Motor Replacement",
+    "description": "Ensure reliable engine starting with our Starter Motor Replacement service. Our certified technicians replace old or malfunctioning starter motors with new ones to ensure consistent and efficient engine starting. Trust us to keep your vehicle ready to go whenever you need it.",
+    "price": 149.99,
+    "facility": [
+      {
+        "name": "Starter Inspection",
+        "details": "Inspect starter motor for signs of wear, damage, or electrical issues that require replacement."
+      },
+      {
+        "name": "Motor Replacement",
+        "details": "Replace old or faulty starter motors with new ones for reliable engine starting."
+      },
+      {
+        "name": "Electrical System Testing",
+        "details": "Test battery and electrical system to ensure proper function and compatibility with new starter motor."
+      },
+      {
+        "name": "Starting Performance",
+        "details": "Ensure consistent and efficient engine starting with expert starter motor replacement services."
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "img": "https://i.ibb.co/5BrGDR9/29.png",
+    "name": "Alternator Replacement",
+    "description": "Ensure proper battery charging and electrical system function with our Alternator Replacement service. Our certified technicians replace old or malfunctioning alternators with new ones to provide reliable charging and power supply to your vehicle's electrical system. Trust us to keep your vehicle running smoothly and reliably.",
+    "price": 199.99,
+    "facility": [
+      {
+        "name": "Alternator Testing",
+        "details": "Test alternator output and performance to determine if replacement is necessary."
+      },
+      {
+        "name": "Component Replacement",
+        "details": "Replace old or faulty alternators with new ones for reliable battery charging and electrical power."
+      },
+      {
+        "name": "Electrical System Inspection",
+        "details": "Inspect battery, wiring, and electrical components for proper function and compatibility with new alternator."
+      },
+      {
+        "name": "Charging Performance",
+        "details": "Ensure consistent and reliable battery charging with expert alternator replacement services."
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "img": "https://i.ibb.co/whqZydX/30.png",
+    "name": "Spark Plug Replacement",
+    "description": "Ensure reliable ignition and optimal engine performance with our Spark Plug Replacement service. Our certified technicians replace old or worn spark plugs with new ones to provide consistent ignition and efficient combustion. Trust us to keep your engine running smoothly and efficiently.",
+    "price": 59.99,
+    "facility": [
+      {
+        "name": "Spark Plug Inspection",
+        "details": "Inspect spark plugs for signs of wear, fouling, or damage that require replacement."
+      },
+      {
+        "name": "Plug Replacement",
+        "details": "Replace old or worn spark plugs with new ones for reliable ignition and optimal engine performance."
+      },
+      {
+        "name": "Ignition System Testing",
+        "details": "Test ignition system components to ensure proper function and compatibility with new spark plugs."
+      },
+      {
+        "name": "Engine Efficiency",
+        "details": "Maximize engine power and fuel efficiency with expert spark plug replacement services."
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "img": "https://i.ibb.co/yf8TqTN/31.png",
+    "name": "Catalytic Converter Replacement",
+    "description": "Ensure compliance with emissions regulations and optimal engine performance with our Catalytic Converter Replacement service. Our certified technicians replace old or malfunctioning catalytic converters with new ones to reduce harmful emissions and restore engine efficiency. Trust us to keep your vehicle running cleanly and efficiently.",
+    "price": 399.99,
+    "facility": [
+      {
+        "name": "Emissions Compliance",
+        "details": "Ensure compliance with emissions regulations by replacing faulty catalytic converters."
+      },
+      {
+        "name": "Converter Replacement",
+        "details": "Replace old or malfunctioning catalytic converters with new ones for improved emissions control."
+      },
+      {
+        "name": "Engine Efficiency",
+        "details": "Restore engine efficiency and performance by eliminating restrictions in the exhaust system."
+      },
+      {
+        "name": "Environmental Responsibility",
+        "details": "Reduce harmful emissions and minimize environmental impact with expert catalytic converter replacement services."
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "img": "https://i.ibb.co/QKQgHfS/32.png",
+    "name": "Power Window Repair",
+    "description": "Restore convenience and functionality to your power windows with our Power Window Repair service. Our certified technicians diagnose and repair power window issues, including faulty motors, switches, and regulators, to ensure smooth operation. Trust us to keep your windows working properly for added comfort and convenience.",
+    "price": 99.99,
+    "facility": [
+      {
+        "name": "Diagnostic Services",
+        "details": "Diagnose power window issues accurately to determine necessary repairs."
+      },
+      {
+        "name": "Motor and Regulator Repair",
+        "details": "Repair or replace faulty window motors, regulators, or switches for proper window operation."
+      },
+      {
+        "name": "Electrical System Inspection",
+        "details": "Inspect electrical system for faults or wiring issues that may affect power window operation."
+      },
+      {
+        "name": "Window Functionality",
+        "details": "Ensure smooth and reliable operation of power windows for added convenience and comfort."
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "img": "https://i.ibb.co/jGMt48G/33.png",
+    "name": "Brake Caliper Replacement",
+    "description": "Ensure reliable braking performance with our Brake Caliper Replacement service. Our certified technicians replace old or malfunctioning brake calipers with new ones to restore proper brake function and safety. Trust us to keep your vehicle stopping smoothly and securely on the road.",
+    "price": 149.99,
+    "facility": [
+      {
+        "name": "Caliper Inspection",
+        "details": "Inspect brake calipers for signs of wear, leaks, or damage that require replacement."
+      },
+      {
+        "name": "Caliper Replacement",
+        "details": "Replace old or faulty brake calipers with new ones for reliable braking performance."
+      },
+      {
+        "name": "Brake System Bleeding",
+        "details": "Bleed brake system to remove air and ensure proper brake caliper operation."
+      },
+      {
+        "name": "Braking Performance",
+        "details": "Restore reliable braking performance and safety with expert brake caliper replacement services."
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "img": "https://i.ibb.co/DQ8nRpD/34.png",
+    "name": "Fuel Pump Replacement",
+    "description": "Ensure proper fuel delivery and engine performance with our Fuel Pump Replacement service. Our certified technicians replace old or malfunctioning fuel pumps with new ones to maintain fuel pressure and flow. Trust us to keep your engine running smoothly and reliably.",
+    "price": 199.99,
+    "facility": [
+      {
+        "name": "Brake System Bleeding",
+        "details": "Bleed brake system to remove air and ensure proper brake drum operation."
+      },
+      {
+        "name": "Braking Performance",
+        "details": "Restore reliable braking performance and safety with expert brake drum replacement services."
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "img": "https://i.ibb.co/MCfj0GX/35.png",
+    "name": "Clutch Replacement",
+    "description": "Ensure smooth and reliable transmission operation with our Clutch Replacement service. Our certified technicians replace old or worn clutches with new ones to restore proper clutch engagement and shifting. Trust us to keep your manual transmission vehicle operating smoothly and reliably.",
+    "price": 399.99,
+    "facility": [
+      {
+        "name": "Clutch Inspection",
+        "details": "Inspect clutch components for signs of wear, damage, or slippage that indicate replacement is needed."
+      },
+      {
+        "name": "Clutch Replacement",
+        "details": "Replace old or worn clutches with new ones for proper transmission operation and shifting."
+      },
+      {
+        "name": "Transmission Fluid Flush",
+        "details": "Flush old transmission fluid and replace it with fresh fluid for optimal transmission performance."
+      },
+      {
+        "name": "Transmission Performance",
+        "details": "Restore smooth and reliable transmission operation with expert clutch replacement services."
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "img": "https://i.ibb.co/PtQj7wg/36.png",
+    "name": "Wheel Bearing Replacement",
+    "description": "Ensure smooth and quiet wheel operation with our Wheel Bearing Replacement service. Our certified technicians replace old or worn wheel bearings with new ones to reduce noise and vibration and restore proper wheel alignment. Trust us to keep your vehicle riding smoothly and safely on the road.",
+    "price": 129.99,
+    "facility": [
+      {
+        "name": "Bearing Inspection",
+        "details": "Inspect wheel bearings for signs of wear, noise, or play that indicate replacement is needed."
+      },
+      {
+        "name": "Bearing Replacement",
+        "details": "Replace old or worn wheel bearings with new ones for smooth and quiet wheel operation."
+      },
+      {
+        "name": "Wheel Alignment",
+        "details": "Restore proper wheel alignment and reduce tire wear with new wheel bearings."
+      },
+      {
+        "name": "Vehicle Safety",
+        "details": "Ensure safe and reliable operation with expert wheel bearing replacement services."
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "img": "https://i.ibb.co/zZwBbKk/37.png",
+    "name": "Engine Control Module (ECM) Replacement",
+    "description": "Ensure proper engine function and performance with our Engine Control Module (ECM) Replacement service. Our certified technicians replace old or malfunctioning ECMs with new ones to ensure accurate engine management and optimal performance. Trust us to keep your engine running smoothly and efficiently.",
+    "price": 299.99,
+    "facility": [
+      {
+        "name": "ECM Diagnosis",
+        "details": "Diagnose ECM issues to determine if replacement is necessary for proper engine function."
+      },
+      {
+        "name": "Module Replacement",
+        "details": "Replace old or faulty engine control modules with new ones for accurate engine management."
+      },
+      {
+        "name": "System Programming",
+        "details": "Program new ECM with vehicle-specific software and settings for proper operation."
+      },
+      {
+        "name": "Engine Performance",
+        "details": "Maximize engine power and efficiency with expert ECM replacement services."
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "img": "https://i.ibb.co/xJ20w4L/38.png",
+    "name": "Throttle Body Replacement",
+    "description": "Ensure proper throttle response and engine performance with our Throttle Body Replacement service. Our certified technicians replace old or malfunctioning throttle bodies with new ones to maintain precise throttle control and airflow. Trust us to keep your engine running smoothly and efficiently.",
+    "price": 199.99,
+    "facility": [
+      {
+        "name": "Throttle Body Inspection",
+        "details": "Inspect throttle body for signs of wear, damage, or electronic issues that require replacement."
+      },
+      {
+        "name": "Body Replacement",
+        "details": "Replace old or faulty throttle bodies with new ones for precise throttle control and airflow."
+      },
+      {
+        "name": "Electronic System Testing",
+        "details": "Test electronic throttle control system for proper function and compatibility with new throttle body."
+      },
+      {
+        "name": "Engine Performance",
+        "details": "Maximize engine power and efficiency with expert throttle body replacement services."
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "img": "https://i.ibb.co/4TkRfHv/39.png",
+    "name": "Suspension System Inspection",
+    "description": "Ensure optimal ride comfort and vehicle stability with our Suspension System Inspection service. Our certified technicians inspect suspension components for wear, damage, or alignment issues and recommend necessary repairs or adjustments. Trust us to keep your vehicle riding smoothly and safely on the road.",
+    "price": 69.99,
+    "facility": [
+      {
+        "name": "Comprehensive Inspection",
+        "details": "Thorough examination of suspension system components for signs of wear, damage, or misalignment."
+      },
+      {
+        "name": "Alignment Check",
+        "details": "Check suspension alignment and adjust as needed for optimal vehicle handling and tire wear."
+      },
+      {
+        "name": "Shock and Strut Inspection",
+        "details": "Inspect shock absorbers and struts for leaks, damage, or worn components that affect ride quality."
+      },
+      {
+        "name": "Steering Stability",
+        "details": "Ensure stable and responsive steering with properly maintained suspension components."
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "img": "https://i.ibb.co/271YH4R/40.png",
+    "name": "Exhaust System Repair",
+    "description": "Ensure proper exhaust system function and reduce harmful emissions with our Exhaust System Repair service. Our certified technicians diagnose exhaust system issues and perform necessary repairs or replacements to restore proper operation and emissions compliance. Trust us to keep your vehicle running cleanly and efficiently.",
+    "price": 149.99,
+    "facility": [
+      {
+        "name": "Exhaust System Diagnosis",
+        "details": "Diagnose exhaust system issues to identify necessary repairs or replacements."
+      },
+      {
+        "name": "Component Repair or Replacement",
+        "details": "Repair or replace damaged or malfunctioning exhaust system components for proper function."
+      },
+      {
+        "name": "Emissions Testing",
+        "details": "Test exhaust emissions to ensure compliance with emissions regulations and standards."
+      },
+      {
+        "name": "Environmental Responsibility",
+        "details": "Reduce harmful emissions and minimize environmental impact with expert exhaust system repair services."
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "img": "https://i.ibb.co/1fW9b8p/41.png",
+    "name": "Transmission Fluid Flush",
+    "description": "Ensure smooth and reliable transmission operation with our Transmission Fluid Flush service. Our certified technicians flush old transmission fluid and replace it with fresh fluid to remove contaminants and ensure proper lubrication and cooling of transmission components. Trust us to keep your transmission running smoothly and reliably.",
+    "price": 129.99,
+    "facility": [
+      {
+        "name": "Fluid Flush",
+        "details": "Flush old transmission fluid to remove contaminants and ensure proper lubrication."
+      },
+      {
+        "name": "Fluid Replacement",
+        "details": "Replace old fluid with fresh transmission fluid for optimal transmission performance."
+      },
+      {
+        "name": "Cooling System Inspection",
+        "details": "Inspect transmission cooling system for leaks, damage, or blockages that affect fluid flow."
+      },
+      {
+        "name": "Transmission Performance",
+        "details": "Ensure smooth shifting and reliable transmission operation with expert fluid flush services."
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "img": "https://i.ibb.co/VtGXCjv/42.png",
+    "name": "Battery Replacement",
+    "description": "Ensure reliable starting power and electrical system function with our Battery Replacement service. Our certified technicians replace old or failing batteries with new ones to provide consistent starting power and electrical supply to your vehicle. Trust us to keep your vehicle powered up and ready to go.",
+    "price": 129.99,
+    "facility": [
+      {
+        "name": "Battery Testing",
+        "details": "Test battery health and performance to determine if replacement is necessary."
+      },
+      {
+        "name": "Battery Replacement",
+        "details": "Replace old or failing batteries with new ones for reliable starting power and electrical supply."
+      },
+      {
+        "name": "Charging System Inspection",
+        "details": "Inspect charging system components for proper function and compatibility with new battery."
+      },
+      {
+        "name": "Electrical System Performance",
+        "details": "Ensure reliable electrical system function and starting power with expert battery replacement services."
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "img": "https://i.ibb.co/jw0S8g9/43.png",
+    "name": "Fuel System Cleaning",
+    "description": "Ensure optimal engine performance and fuel efficiency with our Fuel System Cleaning service. Our certified technicians use specialized equipment and solutions to remove carbon deposits and fuel system contaminants, restoring proper fuel flow and combustion. Trust us to keep your engine running smoothly and efficiently.",
+    "price": 99.99,
+    "facility": [
+      {
+        "name": "Fuel Injector Cleaning",
+        "details": "Clean fuel injectors to remove deposits and improve fuel atomization and combustion."
+      },
+      {
+        "name": "Throttle Body Cleaning",
+        "details": "Clean throttle body to remove carbon deposits and ensure proper airflow and fuel mixture."
+      },
+      {
+        "name": "Intake Valve Cleaning",
+        "details": "Clean intake valves to remove carbon buildup and restore proper airflow and combustion."
+      },
+      {
+        "name": "Engine Performance",
+        "details": "Maximize engine power and fuel efficiency with expert fuel system cleaning services."
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "img": "https://i.ibb.co/8x3t6Zx/44.png",
+    "name": "Wheel Alignment",
+    "description": "Ensure optimal tire wear and vehicle handling with our Wheel Alignment service. Our certified technicians adjust wheel angles to manufacturer specifications, correcting misalignments and ensuring straight and true wheel alignment. Trust us to keep your vehicle driving smoothly and safely on the road.",
+    "price": 79.99,
+    "facility": [
+      {
+        "name": "Alignment Inspection",
+        "details": "Inspect wheel alignment angles to identify misalignments and tire wear patterns."
+      },
+      {
+        "name": "Alignment Adjustment",
+        "details": "Adjust wheel angles to manufacturer specifications for optimal tire wear and vehicle handling."
+      },
+      {
+        "name": "Steering Centering",
+        "details": "Center steering wheel position to ensure straight and true alignment of front wheels."
+      },
+      {
+        "name": "Tire Performance",
+        "details": "Maximize tire lifespan and performance with expert wheel alignment services."
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "img": "https://i.ibb.co/jyHLK1X/45.png",
+    "name": "Coolant Flush",
+    "description": "Ensure proper engine cooling and corrosion protection with our Coolant Flush service. Our certified technicians flush old coolant from the system and replace it with fresh coolant to maintain proper cooling performance and prevent corrosion and overheating. Trust us to keep your engine running cool and reliable.",
+    "price": 89.99,
+    "facility": [
+      {
+        "name": "Coolant Drain",
+        "details": "Drain old coolant from the system to remove contaminants and impurities."
+      },
+      {
+        "name": "Coolant Refill",
+        "details": "Refill cooling system with fresh coolant to maintain proper coolant level and performance."
+      },
+      {
+        "name": "Cooling System Inspection",
+        "details": "Inspect cooling system components for leaks, damage, or signs of wear that require attention."
+      },
+      {
+        "name": "Engine Cooling",
+        "details": "Ensure proper engine cooling and corrosion protection with expert coolant flush services."
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "img": "https://i.ibb.co/w0NBn67/46.png",
+    "name": "Oxygen Sensor Replacement",
+    "description": "Ensure optimal fuel efficiency and emissions control with our Oxygen Sensor Replacement service. Our certified technicians replace old or malfunctioning oxygen sensors with new ones to provide accurate fuel mixture control and emissions monitoring. Trust us to keep your vehicle running efficiently and cleanly.",
+    "price": 79.99,
+    "facility": [
+      {
+        "name": "Sensor Diagnosis",
+        "details": "Diagnose oxygen sensor issues to determine if replacement is necessary for proper engine function."
+      },
+      {
+        "name": "Sensor Replacement",
+        "details": "Replace old or faulty oxygen sensors with new ones for accurate fuel mixture control."
+      },
+      {
+        "name": "Emissions Testing",
+        "details": "Test exhaust emissions to ensure compliance with emissions regulations and standards."
+      },
+      {
+        "name": "Fuel Efficiency",
+        "details": "Maximize fuel efficiency and emissions control with expert oxygen sensor replacement services."
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "img": "https://i.ibb.co/MptZnqS/47.png",
+    "name": "Radiator Replacement",
+    "description": "Ensure proper engine cooling and temperature regulation with our Radiator Replacement service. Our certified technicians replace old or damaged radiators with new ones to maintain proper coolant flow and heat dissipation. Trust us to keep your engine running cool and reliable.",
+    "price": 199.99,
+    "facility": [
+      {
+        "name": "Radiator Inspection",
+        "details": "Inspect radiator for leaks, corrosion, or damage that require replacement."
+      },
+      {
+        "name": "Radiator Replacement",
+        "details": "Replace old or damaged radiators with new ones for proper engine cooling and temperature regulation."
+      },
+      {
+        "name": "Coolant Refill",
+        "details": "Refill cooling system with fresh coolant to maintain proper coolant level and performance."
+      },
+      {
+        "name": "Engine Cooling",
+        "details": "Ensure proper engine cooling and temperature regulation with expert radiator replacement services."
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "img": "https://i.ibb.co/Xpgd1kz/48.png",
+    "name": "Timing Belt Replacement",
+    "description": "Ensure proper engine operation and prevent costly damage with our Timing Belt Replacement service. Our certified technicians replace old or worn timing belts with new ones to maintain proper engine timing and prevent belt failure. Trust us to keep your engine running smoothly and reliably.",
+    "price": 299.99,
+    "facility": [
+      {
+        "name": "Belt Inspection",
+        "details": "Inspect timing belt for signs of wear, cracking, or damage that indicate replacement is needed."
+      },
+      {
+        "name": "Belt Replacement",
+        "details": "Replace old or worn timing belts with new ones for proper engine timing and performance."
+      },
+      {
+        "name": "Tensioner and Pulley Inspection",
+        "details": "Inspect tensioner and pulleys for proper function and alignment to prevent belt slippage or failure."
+      },
+      {
+        "name": "Engine Performance",
+        "details": "Ensure optimal engine performance and reliability with expert timing belt replacement services."
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "img": "https://i.ibb.co/jRp0kQ8/49.png",
+    "name": "Steering Rack Replacement",
+    "description": "Ensure responsive steering and vehicle control with our Steering Rack Replacement service. Our certified technicians replace old or worn steering racks with new ones to restore proper steering function and alignment. Trust us to keep your vehicle handling smoothly and safely on the road.",
+    "price": 499.99,
+    "facility": [
+      {
+        "name": "Rack Inspection",
+        "details": "Inspect steering rack for leaks, play, or damage that require replacement."
+      },
+      {
+        "name": "Rack Replacement",
+        "details": "Replace old or worn steering racks with new ones for responsive steering and vehicle control."
+      },
+      {
+        "name": "Alignment Adjustment",
+        "details": "Adjust wheel alignment to ensure proper steering rack function and alignment."
+      },
+      {
+        "name": "Steering Performance",
+        "details": "Ensure smooth and responsive steering with expert steering rack replacement services."
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "img": "https://i.ibb.co/fMKpnKQ/50.png",
+    "name": "Cabin Air Filter Replacement",
+    "description": "Ensure clean and fresh air inside your vehicle with our Cabin Air Filter Replacement service. Our certified technicians replace old or clogged cabin air filters with new ones to remove dust, pollen, and other airborne contaminants from the air entering your vehicle's cabin. Trust us to keep your interior air quality high and your driving experience enjoyable.",
+    "price": 49.99,
+    "facility": [
+      {
+        "name": "Filter Inspection",
+        "details": "Inspect cabin air filter for signs of dirt, dust, or clogging that indicate replacement is needed."
+      },
+      {
+        "name": "Filter Replacement",
+        "details": "Replace old or clogged cabin air filters with new ones for clean and fresh interior air."
+      },
+      {
+        "name": "Air Quality",
+        "details": "Ensure high-quality air inside your vehicle for a comfortable and enjoyable driving experience."
+      },
+      {
+        "name": "Health Benefits",
+        "details": "Improve air quality and reduce allergens for a healthier driving environment with expert cabin air filter replacement services."
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "img": "https://i.ibb.co/TY559gT/51.png",
+    "name": "Fuel Injector Replacement",
+    "description": "Ensure optimal fuel delivery and engine performance with our Fuel Injector Replacement service. Our certified technicians replace old or malfunctioning fuel injectors with new ones to maintain proper fuel atomization and combustion. Trust us to keep your engine running smoothly and efficiently.",
+    "price": 199.99,
+    "facility": [
+      {
+        "name": "Injector Diagnosis",
+        "details": "Diagnose fuel injector issues to determine if replacement is necessary for proper engine function."
+      },
+      {
+        "name": "Injector Replacement",
+        "details": "Replace old or faulty fuel injectors with new ones for optimal fuel delivery and performance."
+      },
+      {
+        "name": "Fuel System Cleaning",
+        "details": "Clean fuel system components to remove deposits and improve fuel atomization and combustion."
+      },
+      {
+        "name": "Engine Efficiency",
+        "details": "Maximize engine power and fuel efficiency with expert fuel injector replacement services."
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "img": "https://i.ibb.co/jkYVBdm/52.png",
+    "name": "Exterior Detailing",
+    "description": "Restore shine and protect your vehicle's exterior with our Exterior Detailing service. Our certified technicians thoroughly clean and polish the exterior surfaces, remove surface contaminants, and apply protective wax or sealant for long-lasting shine and protection. Trust us to keep your vehicle looking its best.",
+    "price": 149.99,
+    "facility": [
+      {
+        "name": "Wash and Dry",
+        "details": "Thoroughly wash and dry the exterior surfaces to remove dirt, grime, and other contaminants."
+      },
+      {
+        "name": "Polish and Buff",
+        "details": "Polish and buff exterior surfaces to restore shine and remove minor scratches and swirl marks."
+      },
+      {
+        "name": "Wax or Sealant Application",
+        "details": "Apply protective wax or sealant to exterior surfaces for long-lasting shine and protection against the elements."
+      },
+      {
+        "name": "Exterior Protection",
+        "details": "Protect your vehicle's paint and exterior surfaces from environmental damage with expert exterior detailing services."
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "img": "https://i.ibb.co/5GYKx7V/53.png",
+    "name": "Interior Detailing",
+    "description": "Restore cleanliness and freshness to your vehicle's interior with our Interior Detailing service. Our certified technicians thoroughly clean and sanitize all interior surfaces, including upholstery, carpets, and hard surfaces, leaving your vehicle's interior looking and smelling like new. Trust us to keep your driving environment clean and comfortable.",
+    "price": 129.99,
+    "facility": [
+      {
+        "name": "Vacuuming and Dusting",
+        "details": "Thoroughly vacuum and dust all interior surfaces to remove dirt, dust, and debris."
+      },
+      {
+        "name": "Stain Removal",
+        "details": "Spot treat and remove stains from upholstery, carpets, and other interior surfaces."
+      },
+      {
+        "name": "Interior Surface Cleaning",
+        "details": "Clean and sanitize all interior surfaces, including upholstery, carpets, and hard surfaces."
+      },
+      {
+        "name": "Air Freshening",
+        "details": "Deodorize and freshen the interior air for a clean and pleasant driving environment."
+      }
+    ]
+  },
+    {
+      "id": 66,
+      "img": "https://i.ibb.co/Rvq02mw/54.png",
+      "name": "Headlight Restoration",
+      "description": "Restore clarity and brightness to your vehicle's headlights with our Headlight Restoration service. Our certified technicians polish and seal the headlight lenses to remove oxidation, haze, and yellowing, improving visibility and safety while driving at night. Trust us to keep your headlights shining bright.",
+      "price": 79.99,
+      "facility": [
+        {
+          "name": "Lens Inspection",
+          "details": "Inspect headlight lenses for signs of oxidation, haze, or yellowing that affect clarity and brightness."
+        },
+        {
+          "name": "Polishing",
+          "details": "Polish headlight lenses to remove oxidation, haze, and yellowing and restore clarity and brightness."
+        },
+        {
+          "name": "Sealing",
+          "details": "Apply protective sealant to headlight lenses to maintain clarity and prevent future damage."
+        },
+        {
+          "name": "Visibility and Safety",
+          "details": "Improve nighttime visibility and safety with expert headlight restoration services."
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "img": "https://i.ibb.co/j9t8wQB/55.png",
+      "name": "Tire Rotation",
+      "description": "Maximize tire lifespan and performance with our Tire Rotation service. Our certified technicians rotate tires according to manufacturer recommendations to ensure even tread wear and extend tire life. Trust us to keep your tires wearing evenly and your vehicle driving smoothly.",
+      "price": 29.99,
+      "facility": [
+        {
+          "name": "Tire Positioning",
+          "details": "Rotate tires to different positions on the vehicle to ensure even tread wear."
+        },
+        {
+          "name": "Tire Pressure Check",
+          "details": "Check and adjust tire pressure to manufacturer-recommended levels for optimal performance."
+        },
+        {
+          "name": "Tread Wear Inspection",
+          "details": "Inspect tire tread wear patterns to identify any alignment or suspension issues."
+        },
+        {
+          "name": "Vehicle Stability",
+          "details": "Ensure stable and smooth vehicle operation with expert tire rotation services."
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "img": "https://i.ibb.co/fMKpnKQ/56.png",
+      "name": "Spark Plug Replacement",
+      "description": "Ensure reliable ignition and engine performance with our Spark Plug Replacement service. Our certified technicians replace old or worn spark plugs with new ones to maintain proper fuel combustion and engine operation. Trust us to keep your engine running smoothly and efficiently.",
+      "price": 79.99,
+      "facility": [
+        {
+          "name": "Spark Plug Inspection",
+          "details": "Inspect spark plugs for signs of wear, fouling, or damage that indicate replacement is needed."
+        },
+        {
+          "name": "Plug Replacement",
+          "details": "Replace old or worn spark plugs with new ones for reliable ignition and engine performance."
+        },
+        {
+          "name": "Ignition System Check",
+          "details": "Check ignition system components for proper function and compatibility with new spark plugs."
+        },
+        {
+          "name": "Engine Efficiency",
+          "details": "Maximize fuel combustion and engine power with expert spark plug replacement services."
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "img": "https://i.ibb.co/TY559gT/57.png",
+      "name": "Power Steering Fluid Flush",
+      "description": "Ensure smooth and responsive steering with our Power Steering Fluid Flush service. Our certified technicians flush old power steering fluid from the system and replace it with fresh fluid to maintain proper lubrication and hydraulic pressure. Trust us to keep your power steering system operating smoothly and reliably.",
+      "price": 79.99,
+      "facility": [
+        {
+          "name": "Fluid Flush",
+          "details": "Flush old power steering fluid to remove contaminants and ensure proper lubrication."
+        },
+        {
+          "name": "Fluid Replacement",
+          "details": "Replace old fluid with fresh power steering fluid for optimal system performance."
+        },
+        {
+          "name": "System Inspection",
+          "details": "Inspect power steering system components for leaks, damage, or signs of wear that require attention."
+        },
+        {
+          "name": "Steering Performance",
+          "details": "Ensure smooth and responsive steering with expert power steering fluid flush services."
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "img": "https://i.ibb.co/jkYVBdm/58.png",
+      "name": "Engine Oil Change",
+      "description": "Ensure proper engine lubrication and performance with our Engine Oil Change service. Our certified technicians drain old engine oil and replace it with fresh, high-quality oil to protect engine components and maintain optimal performance. Trust us to keep your engine running smoothly and reliably.",
+      "price": 49.99,
+      "facility": [
+        {
+          "name": "Oil Drain",
+          "details": "Drain old engine oil and remove oil filter to prepare for fresh oil replacement."
+        },
+        {
+          "name": "Oil Filter Replacement",
+          "details": "Replace old oil filter with a new one to ensure proper filtration of engine oil."
+        },
+        {
+          "name": "Oil Refill",
+          "details": "Refill engine with fresh, high-quality oil to manufacturer-recommended levels."
+        },
+        {
+          "name": "Engine Performance",
+          "details": "Ensure proper engine lubrication and performance with expert engine oil change services."
+        }
+      ]
+    }
 ]
