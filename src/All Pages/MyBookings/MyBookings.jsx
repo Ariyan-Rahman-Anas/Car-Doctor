@@ -17,9 +17,6 @@ const MyBookings = () => {
   // const url = `https://car-doctor-server-sigma-ruby.vercel.app/bookings?email=${user?.email}`;
   const url = `/bookings?email=${user?.email}`;
   useEffect(() => {
-    // axios
-    //   .get(url, { withCredentials: true })
-    //   .then((res) => setBookings(res.data));
     axiosSecure.get(url).then((res) => setBookings(res?.data));
   }, [url, axiosSecure]);
 
@@ -115,11 +112,11 @@ const MyBookings = () => {
         BGImg={bannerBG}
       ></PageShortBanner>
 
-      <div className="lg:w-[85vw] mx-auto my-10">
+      <div className="lg:w-[85vw] mx-auto my-10 px-">
         {bookings.length >= 1 ? (
           <>
             <Card className="h-full w-full shadow-none">
-              <h1 className="font-extralight text-4xl border-b-2 border-[#ff3811] w-fit mx-auto rounded-md mt-6 ">{`You have confirmed total ${bookings.length} services`}</h1>
+              <h1 className="font-extralight text-4xl border-b-2 border-[#ff3811] w-fit mx-auto text-center rounded-md mt-6 ">{`You have confirmed total ${bookings.length} services`}</h1>
               <CardBody className="overflow-scroll px-0">
                 <table className="mt-4 w-full min-w-max table-auto text-left">
                   <thead>

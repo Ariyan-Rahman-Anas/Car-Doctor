@@ -25,32 +25,32 @@ const LogIn = () => {
         const loggedEmail = { email: data.email };
         console.log(loggedEmail);
         //getting access token from jwt
-        // fetch("https://car-doctor-server-sigma-ruby.vercel.app/jwt", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify({ email: data?.email }),
-        //   credentials: "include",
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     if (data.success) {
-        //       navigate(location?.state ? location?.state : "/");
-        //     }
-        //   });
-
-        axios
-          .post(
-            "https://car-doctor-server-sigma-ruby.vercel.app/jwt",
-            loggedEmail
-          )
-          .then((res) => {
-            console.log(res.data);
-            if (res.data.success) {
+        fetch("https://car-doctor-server-sigma-ruby.vercel.app/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ email: data?.email }),
+          credentials: "include",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.success) {
               navigate(location?.state ? location?.state : "/");
             }
           });
+
+        // axios
+        //   .post(
+        //     "https://car-doctor-server-sigma-ruby.vercel.app/jwt",
+        //     loggedEmail
+        //   )
+        //   .then((res) => {
+        //     console.log(res.data);
+        //     if (res.data.success) {
+        //       navigate(location?.state ? location?.state : "/");
+        //     }
+        //   });
         navigate(location?.state ? location?.state : "/");
         toast.success("Registration Successful!");
         setLogInError("");
