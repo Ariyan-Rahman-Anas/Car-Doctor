@@ -39,8 +39,8 @@ const Navbar = () => {
           <ul
             className={`flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-4 absolute md:static ${
               menu
-                ? "top-[5.5rem] right-0 bg-black text-white bg-opacity-90 w-full h-[50vh] "
-                : "-top-[69rem]"
+                ? "left-0 top-[5.5rem] right-0 bg-black text-white bg-opacity-90 w-full h-[90vh] "
+                : "-left-[69rem]"
             }  duration-700 z-10 `}
           >
             <li className="tex-white relative group">
@@ -88,7 +88,10 @@ const Navbar = () => {
                     <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
                   </NavLink>
                 </li>
-                <li onClick={handleLogOut} className="tex-white relative group">
+                <li
+                  onClick={handleLogOut}
+                  className="md:hidden tex-white relative group"
+                >
                   <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">
                     Log out
                     <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
@@ -96,7 +99,7 @@ const Navbar = () => {
                 </li>
               </>
             ) : (
-              <li className="tex-white relative group">
+              <li className="md:hidden tex-white relative group">
                 <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">
                   Log in
                   <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
@@ -115,14 +118,13 @@ const Navbar = () => {
         <div className="navbar-end flex ">
           <div>
             {user ? (
-              <div className="hidden md:block border-4 group relative w-fit rounded-full ">
-                {/* <PrimaryBtn link={"/login"} value={"Appointment"}></PrimaryBtn> */}
+              <div className="hidden md:block group relative w-fit rounded-full ">
                 <div className="border-[.09rem] w-fit rounded-full border-[#ff3811]  ">
                   <div className="h-10 w-10 flex items-center justify-center cursor-pointer ">
                     {user.photoURL ? (
                       <img
                         src={user?.photoURL}
-                        alt="user picture"
+                        alt=""
                         className="w-full rounded-full "
                       />
                     ) : (
@@ -132,7 +134,20 @@ const Navbar = () => {
                     )}
                   </div>
                 </div>
-                <div className="hidden group-hover:block absolute right-0 z-40 rounded-lg  w-[20rem] h-[10rem] bg-[#ff3811]  duration-500 "></div>
+                <div className="hidden group-hover:flex items-center justify-center text-sm text-center absolute right-0 z-40 rounded-lg  w-[20rem] h-[10rem] text-white bg-black backdrop-filter backdrop-blur-md border-2 border-transparent group-hover:border-[#ff3811] duration-500 ">
+                  <div>
+                    <h1>
+                      {user?.displayName ? user.displayName : "Mr. Not Given"}{" "}
+                    </h1>
+                    <p>{user?.email ? user.email : "not given"} </p>
+                    <button onClick={handleLogOut} className="mt-5">
+                      <PrimaryBtn
+                        link={"/login"}
+                        value={"Log out"}
+                      ></PrimaryBtn>
+                    </button>
+                  </div>
+                </div>
               </div>
             ) : (
               <div className="hidden md:block">
