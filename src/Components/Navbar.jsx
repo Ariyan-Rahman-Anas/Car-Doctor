@@ -6,6 +6,7 @@ import useAuth from "../Hooks/useAuth";
 import { IoMenuOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { useState } from "react";
+import { FaRegUser } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -112,17 +113,41 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end flex ">
-          <div className="hidden md:block">
-            <PrimaryBtn link={"/login"} value={"Appointment"}></PrimaryBtn>
+          <div>
+            {user ? (
+              <div className="hidden md:block border-4 group relative w-fit rounded-full ">
+                {/* <PrimaryBtn link={"/login"} value={"Appointment"}></PrimaryBtn> */}
+                <div className="border-[.09rem] w-fit rounded-full border-[#ff3811]  ">
+                  <div className="h-10 w-10 flex items-center justify-center cursor-pointer ">
+                    {user.photoURL ? (
+                      <img
+                        src={user?.photoURL}
+                        alt="user picture"
+                        className="w-full rounded-full "
+                      />
+                    ) : (
+                      <div className="border2 w-fit text-white bg-[#ff3811] rounded-full ">
+                        <FaRegUser className="p-1.5 w-fit text-4xl"></FaRegUser>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="hidden group-hover:block absolute right-0 z-40 rounded-lg  w-[20rem] h-[10rem] bg-[#ff3811]  duration-500 "></div>
+              </div>
+            ) : (
+              <div className="hidden md:block">
+                <PrimaryBtn link={"/login"} value={"Appointment"}></PrimaryBtn>
+              </div>
+            )}
           </div>
           <div className="md:hidden">
             {menu ? (
               <button onClick={handleMenu}>
-                <RxCross2 className="text-3xl text-[#ff3811]"></RxCross2>{" "}
+                <RxCross2 className="text-4xl text-[#ff3811]"></RxCross2>{" "}
               </button>
             ) : (
               <button onClick={handleMenu}>
-                <IoMenuOutline className="text-3xl "></IoMenuOutline>
+                <IoMenuOutline className="text-4xl "></IoMenuOutline>
               </button>
             )}
           </div>

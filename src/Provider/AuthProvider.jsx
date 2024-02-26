@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import axios from "axios";
@@ -77,13 +78,21 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+//updating user profile
+  const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
+
   //logOut the user
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
   };
 
-  const AuthInfo = { user, loading, createUser, signIn, googleSignIn, logOut };
+  const AuthInfo = { user, loading, createUser, signIn, googleSignIn, updateUserProfile, logOut };
 
   return (
     <AuthContext.Provider value={AuthInfo}>{children}</AuthContext.Provider>
