@@ -2,8 +2,12 @@ import { useContext } from "react";
 import About from "../../Components/About";
 import SectionHead from "../../Components/SectionHead";
 import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const AboutPage = () => {
+  const axiosSecure = useAxiosSecure();
+  const url = `/reviews`;
   const { user } = useContext(AuthContext);
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -27,7 +31,21 @@ const AboutPage = () => {
     };
     console.log(aReview);
     form.reset();
+
+    //posting the review to the database
+    axiosSecure
+      .post(url, aReview, {
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+      .then((res) => {
+        if (res?.data?.insertedId) {
+          toast.success("Thanks for your valuable review!");
+        }
+      });
   };
+
   return (
     <div>
       <About></About>

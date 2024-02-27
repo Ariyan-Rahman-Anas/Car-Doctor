@@ -6,14 +6,22 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Keyboard, Pagination, Navigation } from "swiper/modules";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const Testimonial = () => {
+  const axiosSecure = useAxiosSecure();
   const [feedbacks, setFeedbacks] = useState([]);
+  const url ="/reviews"
   useEffect(() => {
-    fetch("/testimonial.json")
-      .then((res) => res.json())
-      .then((data) => setFeedbacks(data));
-  }, []);
+    // fetch(`https://car-doctor-server-eytqt8rc5-anas4.vercel.app/reviews`)
+    axiosSecure.get(url).then((res) => setFeedbacks(res?.data));
+
+    // axiosSecure
+    // .get(url)
+    // .then((res) => res.json())
+    // .then((data) => setFeedbacks(data));
+  }, [axiosSecure]);
+
   const [rated, setRated] = React.useState(feedbacks?.rating);
 
   return (
@@ -47,7 +55,7 @@ const Testimonial = () => {
                 <div className="flex flex-cl items-center justify-center gap-3 group-hover:gap-5 duration-500 ">
                   <div className="w-[4rem] group-hover:scale-125 duration-500 ">
                     <img
-                      src={feedback?.img}
+                      src={feedback?.imgURL}
                       alt=""
                       className="w-full rounded-full"
                     />
