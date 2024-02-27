@@ -88,28 +88,42 @@ const Navbar = () => {
                     <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
                   </NavLink>
                 </li>
-                <li
-                  onClick={handleLogOut}
-                  className="md:hidden tex-white relative group"
-                >
-                  <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">
-                    Log out
-                    <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
-                  </NavLink>
+                <li>
+                  <div className="md:hidden tex-white relative group text-center">
+                    <div className="flex items-center justify-center">
+                      <div className="flex flex-col items-center justify-center text-center">
+                        <div className="h-10 w-10 border-2 border-[#ff3811] rounded-full mt-4 mb-2 ">
+                          {user?.photoURL ? (
+                            <img
+                              src={user.photoURL}
+                              alt=""
+                              className="rounded-full w-full "
+                            ></img>
+                          ) : (
+                            <div className="border2 w-fit text-white bg-[#ff3811] rounded-full ">
+                              <FaRegUser className="p-1.5 w-fit text-4xl"></FaRegUser>
+                            </div>
+                          )}
+                        </div>
+                        <h1>
+                          {user?.displayName
+                            ? user.displayName
+                            : "Mr. Not Given"}
+                        </h1>
+                        <p>{user?.email ? user.email : "not given"} </p>
+                      </div>
+                    </div>
+                    <button onClick={handleLogOut} className="mt-4">
+                      <PrimaryBtn
+                        value={"Log out"}
+                        link={"/login"}
+                      ></PrimaryBtn>
+                    </button>
+                  </div>
                 </li>
               </>
             ) : (
               <li className="md:hidden tex-white relative group">
-                <NavLink to={"/logIn"} className="group-hover:text-[#ff3811]">
-                  Log in
-                  <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
-                </NavLink>
-              </li>
-            )}
-            {user ? (
-              ""
-            ) : (
-              <li className="md:hidden">
                 <PrimaryBtn value={"Appointment"} link={"/login"}></PrimaryBtn>
               </li>
             )}
