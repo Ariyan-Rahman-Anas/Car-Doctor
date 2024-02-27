@@ -1,11 +1,15 @@
-import person from "./../assets/images/about_us/person.jpg"
-import parts from "./../assets/images/about_us/parts.jpg"
+import person from "./../assets/images/about_us/person.jpg";
+import parts from "./../assets/images/about_us/parts.jpg";
 import PrimaryBtn from "./PrimaryBtn";
 import SectionHead from "./SectionHead";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const About = () => {
-    return (
-      <div className="lg:w-[85vw] mx-auto my-[5rem] flex flex-col-reverse md:flex-row items-start justify-between gap-8 px-2">
+  const { user } = useContext(AuthContext);
+  return (
+    <div className="lg:w-[85vw] mx-auto my-[5rem] px-2 ">
+      <div className="about-section flex flex-col-reverse md:flex-row items-start justify-between gap-8">
         <div className="media flex-1 h-[20rem] xl:h-[25rem] 2xl:h-[30rem] relative group overflow-hidden ">
           <div className=" w-[90%]  h-[90%] ">
             <img
@@ -45,6 +49,63 @@ const About = () => {
           ></PrimaryBtn>
         </div>
       </div>
-    );
+
+      <div className="review-section mt-16 text-center ">
+        <SectionHead
+          heading={"Review"}
+          subHeading={"We would love to hear from you"}
+        ></SectionHead>
+        <div className=" border-2 bg-gray-300 rounded-lg p-5 md:px-10 md:py-8  ">
+          <div className="form">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 ">
+              <input
+                type="text"
+                placeholder="Your name"
+                defaultValue={user?.displayName && user.displayName}
+                required
+                className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
+              />
+              <input
+                type="text"
+                placeholder="Your email"
+                defaultValue={user?.email && user.email}
+                required
+                className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
+              />
+              <input
+                type="url"
+                placeholder="Your picture URL"
+                className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
+                defaultValue={user?.photoURL && user.photoURL}
+              />
+              <input
+                type="text"
+                placeholder="Your profession"
+                className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
+              />
+              <input
+                type="date"
+                placeholder="Current date"
+                className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
+              />
+              <input
+                type="number"
+                placeholder="Rate us from 1 to 5"
+                className="p-2 rounded-md  focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
+              />
+            </div>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="5"
+              placeholder="Write your words about us..."
+              className="w-full p-2 rounded-md focus:placeholder:text-white  focus:bg-[#ff3811] focus:text-white focus:outline-none  "
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 export default About;
