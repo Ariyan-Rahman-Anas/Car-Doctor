@@ -30,7 +30,7 @@ const BlogPage = () => {
         ></SectionHead>
       </div>
 
-      <div className="w-full lg:w-[85vw] mx-auto my-10 ">
+      <div className="w-full lg:w-[85vw] mx-auto my-10 px-2 ">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10 ">
           <div className="left col-span-2 ">
             <div>
