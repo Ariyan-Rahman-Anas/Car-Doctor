@@ -35,7 +35,7 @@ const WriteABlogPage = () => {
       };
       console.log("new blog is:", aBlog);
 
-      //posting the review to the database
+      //   posting the blog to the database
       axiosSecure
         .post(url, aBlog, {
           headers: {
@@ -44,7 +44,7 @@ const WriteABlogPage = () => {
         })
         .then((res) => {
           if (res?.data?.insertedId) {
-            toast.success("Thanks for your valuable review!");
+            toast.success("Thanks for your valuable blog!");
           }
         });
     }

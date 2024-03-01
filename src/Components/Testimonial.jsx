@@ -11,15 +11,10 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 const Testimonial = () => {
   const axiosSecure = useAxiosSecure();
   const [feedbacks, setFeedbacks] = useState([]);
-  const url ="/reviews"
+  const url = "/reviews"
+  
   useEffect(() => {
-    // fetch(`https://car-doctor-server-eytqt8rc5-anas4.vercel.app/reviews`)
     axiosSecure.get(url).then((res) => setFeedbacks(res?.data));
-
-    // axiosSecure
-    // .get(url)
-    // .then((res) => res.json())
-    // .then((data) => setFeedbacks(data));
   }, [axiosSecure]);
 
   const [rated, setRated] = React.useState(feedbacks?.rating);
