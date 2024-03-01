@@ -1,14 +1,13 @@
-import { useContext } from "react";
 import About from "../../Components/About";
 import SectionHead from "../../Components/SectionHead";
-import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useAuth from "../../Hooks/useAuth";
 
 const AboutPage = () => {
   const axiosSecure = useAxiosSecure();
   const url = `/reviews`;
-  const { user } = useContext(AuthContext);
+  const {user} = useAuth()
   const handleSubmitForm = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -54,7 +53,7 @@ const AboutPage = () => {
           heading={"Review"}
           subHeading={"We would love to hear from you"}
         ></SectionHead>
-        <div className="m-1 bg-gray-300 rounded-lg p-5 md:px-10 md:py-8  ">
+        <div className="m-1 mb-16 bg-gray-300 rounded-lg p-5 md:px-10 md:py-8  ">
           <form onSubmit={handleSubmitForm} className="form">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 ">
               <input

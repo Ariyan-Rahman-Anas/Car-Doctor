@@ -12,6 +12,8 @@ import AboutPage from "../All Pages/About/AboutPage";
 import ServicesPage from "../All Pages/AllServices/ServicesPage";
 import ContactPage from "../All Pages/Contact/ContactPage";
 import AllProductsPage from "../All Pages/AllProducts/AllProductsPage";
+import BlogPage from "../All Pages/Blog/BlogPage";
+import WriteABlogPage from "../All Pages/WriteABlog/WriteABlogPage";
 
 const MainRoute = createBrowserRouter([
   {
@@ -62,6 +64,14 @@ const MainRoute = createBrowserRouter([
             <MyBookings></MyBookings>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "blog",
+        element:<BlogPage></BlogPage>
+      },
+      {
+        path: "blog/writeABlog",
+        element:<WriteABlogPage></WriteABlogPage>
       },
       {
         path: "contact",

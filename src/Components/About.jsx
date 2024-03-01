@@ -42,7 +42,7 @@ const About = () => {
           </p>
           <PrimaryBtn
             value={"Get More Info"}
-            link={"https://www.linkedin.com/in/ariyanrahmananas/"}
+            link={"/about"}
           ></PrimaryBtn>
         </div>
       </div>
