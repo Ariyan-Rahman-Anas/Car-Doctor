@@ -5,6 +5,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 import BlogBigCard from "./BlogBigCard";
 import SectionHead from "../../Components/SectionHead";
+import BlogSmallCard from "./BlogSmallCard";
 
 const BlogPage = () => {
   const axiosSecure = useAxiosSecure();
@@ -46,7 +47,7 @@ const BlogPage = () => {
 
         <div className=" grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-8">
           {blogs?.slice(1, 100)?.map((blog, index) => (
-            <BlogBigCard key={index} blog={blog}></BlogBigCard>
+            <BlogSmallCard key={index} blog={blog}></BlogSmallCard>
           ))}
         </div>
       </div>
