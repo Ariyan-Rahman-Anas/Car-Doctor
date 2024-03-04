@@ -1,15 +1,18 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import bannerBG from "./../../assets/images/checkout/blog.png";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
+import { FaRegUser } from "react-icons/fa";
 
 const BlogDetailsPage = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const blogDetails = useLoaderData();
   const {
+    _id,
     name,
     email,
     title,
@@ -22,19 +25,33 @@ const BlogDetailsPage = () => {
   } = blogDetails || {};
 
   const axiosSecure = useAxiosSecure();
-  const url = `/blogComments`;
+  const url = `/blogComments/${_id}`;
 
   const [comments, setComments] = useState([]);
   useEffect(() => {
-    axiosSecure.get(url).then((res) => setComments(res?.data));
+    axiosSecure.get(url).then((res) => {
+      console.log(res.data);
+      setComments(res?.data);
+    });
   }, [url, axiosSecure]);
 
   const handleSubmitComment = (e) => {
     e.preventDefault();
+    if (user === null) {
+      navigate("/login");
+    }
     const form = e.target;
     const comment = form.comment.value;
+    const blogId = _id;
+    const commenterName = user ? user.displayName : "Mr. Not Given";
+    const commenterEmail = user ? user.email : "Mr Not Given@xyz.com";
+    const commenterImage = user ? user.photoURL : "A";
     const aComment = {
+      blogId,
+      commenterName,
       comment,
+      commenterEmail,
+      commenterImage,
     };
     console.log(aComment);
 
@@ -99,26 +116,37 @@ const BlogDetailsPage = () => {
             <div className="showing-comments">
               <div>
                 <h1 className="mt-5 mb-1 text-gray-500 ">
-                  Top comments are...
+                  {/* Top comments are... */}
+                  {comments.length > 0
+                    ? "Recent comments..."
+                    : "Be the 1st commenter of the blog!"}
                 </h1>
               </div>
               <div className="flex flex-col gap-5">
                 {/* // */}
                 {comments?.map((comment) => (
                   <div key={comment._id}>
-                    <div className="flex items-start gap-2 ">
-                      <div className="w-10 h-10">
-                        <img
-                          src={user?.photoURL}
-                          alt=""
-                          className="w-full rounded-full"
-                        />
+                    <div className="flex items-start justify-start gap-1 text-sm ">
+                      <div>
+                        <div className="w-10 h-10">
+                          {comment.commenterImage ? (
+                            <img
+                              src={comment?.commenterImage}
+                              alt=""
+                              className="w-full rounded-full"
+                            />
+                          ) : (
+                            <div className="border2 w-fit text-white bg-[#ff3811] rounded-full ">
+                              <FaRegUser className="p-1.5 w-fit text-4xl"></FaRegUser>
+                            </div>
+                          )}
+                        </div>
                       </div>
-                      <div className="bg-gray-300 p-2 rounded-md rounded-l-none rounded-b-md ">
-                        <h1 className="font-semibold text-sm text-gray-600 ">
-                          {user?.displayName}
+                      <div className="w-full overflow-auto bg-gray-300 p-2 rounded-md rounded-l-none rounded-b-md ">
+                        <h1 className="font-semibold text-sm text-gray-600 mb-1 ">
+                          {comment?.commenterName}
                         </h1>
-                        <p>{comment.comment}</p>
+                        <span>{comment.comment}</span>
                       </div>
                     </div>
                   </div>

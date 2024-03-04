@@ -72,7 +72,11 @@ const MainRoute = createBrowserRouter([
       },
       {
         path: "blog/blogDetails/:id",
-        element: <BlogDetailsPage></BlogDetailsPage>,
+        element: (
+          <PrivateRoute>
+            <BlogDetailsPage></BlogDetailsPage>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://car-doctor-server-sigma-ruby.vercel.app/blogs/${params.id}`

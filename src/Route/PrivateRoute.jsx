@@ -19,7 +19,7 @@ const PrivateRoute = ({ children }) => {
   if (user?.email) {
     return children;
   } else {
-    toast.error("Please login first for order a service");
+    toast.error("Please login first for better experience");
   }
   return <Navigate state={location.pathname} to={"/login"} replace></Navigate>;
 };

@@ -6,7 +6,7 @@ import SectionHead from "./SectionHead";
 const About = () => {
   return (
     <div className="lg:w-[85vw] mx-auto my-[5rem] px-2 ">
-      <div className="about-section flex flex-col-reverse md:flex-row items-start justify-between gap-8">
+      <div className="about-section flex flex-col md:flex-row items-start justify-between gap-8">
         <div className="media flex-1 h-[20rem] xl:h-[25rem] 2xl:h-[30rem] relative group overflow-hidden ">
           <div className=" w-[90%]  h-[90%] ">
             <img
@@ -40,10 +40,7 @@ const About = () => {
             humour, or randomised words which don't look even slightly
             believable.{" "}
           </p>
-          <PrimaryBtn
-            value={"Get More Info"}
-            link={"/about"}
-          ></PrimaryBtn>
+          <PrimaryBtn value={"Get More Info"} link={"/about"}></PrimaryBtn>
         </div>
       </div>
     </div>
