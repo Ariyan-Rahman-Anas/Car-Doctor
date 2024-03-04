@@ -5,13 +5,15 @@ import { Toaster } from "react-hot-toast";
 
 const MainLayout = () => {
   const location = useLocation();
-  const noHeaderFooter = location.pathname.includes("logIn") || location.pathname.includes("register") ;
+  const noHeaderFooter =
+    location.pathname.includes("logIn") ||
+    location.pathname.includes("register");
   return (
     <div>
       {noHeaderFooter || <Navbar></Navbar>}
       <Outlet></Outlet>
       {noHeaderFooter || <Footer></Footer>}
-      <Toaster position="top-center" reverseOrder={false}></Toaster>
+      <Toaster position="top-right" reverseOrder={false}></Toaster>
     </div>
   );
 };

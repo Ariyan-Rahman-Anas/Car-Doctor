@@ -8,11 +8,10 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 
-
 const Registration = () => {
   const [registerError, setRegisterError] = useState("");
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   //creatingUser
   const { createUser, googleSignIn } = useAuth();
   const {
@@ -23,16 +22,16 @@ const Registration = () => {
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password)
-      .then(result => {
-        navigate("/")
+      .then((result) => {
+        navigate("/");
         toast.success("Registration Successful!");
-setRegisterError("")
-      console.log(result.user)
+        setRegisterError("");
+        console.log(result.user);
       })
-      .catch(error => {
-        console.log(error.massage)
-        setRegisterError(error.message)
-    })
+      .catch((error) => {
+        console.log(error.massage);
+        setRegisterError(error.message);
+      });
   };
 
   const handleGoogleSignUp = () => {

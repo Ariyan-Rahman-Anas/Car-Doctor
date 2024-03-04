@@ -52,7 +52,7 @@ const LogIn = () => {
         //     }
         //   });
         navigate(location?.state ? location?.state : "/");
-        toast.success("Registration Successful!");
+        toast.success("Log in Successful!");
         setLogInError("");
         console.log(result.user);
       })
@@ -66,7 +66,7 @@ const LogIn = () => {
     googleSignIn()
       .then((result) => {
         navigate(location?.state ? location?.state : "/");
-        toast.success("Registration Successful!");
+        toast.success("Log in Successful!");
         console.log(result.user);
       })
       .catch((error) => {

@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import { FaRegUser } from "react-icons/fa";
+import { FaRegThumbsDown, FaRegThumbsUp } from "react-icons/fa";
 
 const BlogDetailsPage = () => {
   const { user } = useAuth();
@@ -25,13 +26,25 @@ const BlogDetailsPage = () => {
 
   const axiosSecure = useAxiosSecure();
   const url = `/blogComments/${_id}`;
-
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
 
+  const dateForTimeStampInComment = new Date();
+  const minute = dateForTimeStampInComment.getMinutes();
+  const hour = dateForTimeStampInComment.getHours();
+  const currentDate = dateForTimeStampInComment.getDate();
+  const currentMonth = dateForTimeStampInComment.getMonth() + 1;
+  const currentYear = dateForTimeStampInComment.getFullYear();
+  const commentingTime = {
+    minute,
+    hour,
+    currentDate,
+    currentMonth,
+    currentYear,
+  };
+
   useEffect(() => {
     axiosSecure.get(url).then((res) => {
-      console.log(res.data);
       setComments(res?.data);
     });
   }, [url, axiosSecure]);
@@ -50,6 +63,7 @@ const BlogDetailsPage = () => {
       comment,
       commenterEmail,
       commenterImage,
+      commentingTime,
     };
     console.log(aComment);
     form.reset();
@@ -71,6 +85,16 @@ const BlogDetailsPage = () => {
         }
       });
   };
+
+  const [like, setLike] = useState(0);
+    const [dislike, setDislike] = useState(0);
+    
+    const handleLike = () => {
+        setLike(like + 1)
+    }
+    const handleDislike = () => {
+        setDislike(dislike+1)
+    }
 
   return (
     <div className="mb-10 px-2 ">
@@ -151,6 +175,33 @@ const BlogDetailsPage = () => {
                           {comment?.commenterName}
                         </h1>
                         <span>{comment.comment}</span>
+                        <div className="like-and-date mt-5 flex items-center justify-between">
+                          <div className="flex items-center gap-8 text-lg ">
+                            <div className="flex items-center gap-1">
+                              <button onClick={handleLike}>
+                                <FaRegThumbsUp></FaRegThumbsUp>{" "}
+                              </button>
+                              <h1>{like}</h1>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <button onClick={handleDislike}>
+                                <FaRegThumbsDown></FaRegThumbsDown>{" "}
+                              </button>
+                              <h1>{dislike}</h1>
+                            </div>
+                          </div>
+                          <div className="flex items-center justify-end gap-2 text-xs text-gray-600">
+                            <div className="flex">
+                              <h1>{comment?.commentingTime.hour}: </h1>
+                              <h1>{comment?.commentingTime.minute}</h1>
+                            </div>
+                            <div className="flex">
+                              <h1>{comment?.commentingTime.currentDate}/</h1>
+                              <h1>{comment?.commentingTime.currentMonth}/</h1>
+                              <h1>{comment?.commentingTime.currentYear}</h1>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

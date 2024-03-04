@@ -12,8 +12,8 @@ const Footer = () => {
             <img src={Logo} alt="" className="w-full" />
           </div>
           <p className="text-sm my-4">
-            Edwin Diaz is a software and web technologies engineer, a life coach
-            trainer who is also a serial.
+            Ariyan Rahman Anas is a software and web technologies engineer, a
+            life coach trainer who is also a serial.
           </p>
           <div className="socials text-gray-200 flex items-center justify-start gap-4">
             <Link>
@@ -34,13 +34,13 @@ const Footer = () => {
           <strong className=" text-white">About</strong>
           <ul className="mt-2">
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>Home</Link>
+              <Link to={"/"}>Home</Link>
             </li>
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>Service</Link>
+              <Link to={"/allServices"}>Service</Link>
             </li>
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>Contact</Link>
+              <Link to={"/contact"}>Contact</Link>
             </li>
           </ul>
         </div>
@@ -48,13 +48,13 @@ const Footer = () => {
           <strong className=" text-white">Company</strong>
           <ul className="mt-2">
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>About</Link>
+              <Link to={"/about"}>About</Link>
             </li>
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>Location</Link>
+              <Link to={"/about"}>Location</Link>
             </li>
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>Why Car Doctor</Link>
+              <Link to={"/blogs"}>Why Car Doctor</Link>
             </li>
           </ul>
         </div>
@@ -62,13 +62,13 @@ const Footer = () => {
           <strong className=" text-white">Support</strong>
           <ul className="mt-2">
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>Feedback</Link>
+              <Link to={"about"}>Feedback</Link>
             </li>
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>Accessibility</Link>
+              <Link to={"/about"}>Accessibility</Link>
             </li>
             <li className="hover:underline hover:text-gray-200  ">
-              <Link>Support Center</Link>
+              <Link to={"/about"}>Support Center</Link>
             </li>
           </ul>
         </div>
