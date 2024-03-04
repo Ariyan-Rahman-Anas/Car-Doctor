@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import bannerBG from "./../../assets/images/checkout/blog.png";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
@@ -9,7 +9,6 @@ import { FaRegUser } from "react-icons/fa";
 
 const BlogDetailsPage = () => {
   const { user } = useAuth();
-  const navigate = useNavigate();
   const blogDetails = useLoaderData();
   const {
     _id,
@@ -28,6 +27,8 @@ const BlogDetailsPage = () => {
   const url = `/blogComments/${_id}`;
 
   const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+
   useEffect(() => {
     axiosSecure.get(url).then((res) => {
       console.log(res.data);
@@ -37,9 +38,6 @@ const BlogDetailsPage = () => {
 
   const handleSubmitComment = (e) => {
     e.preventDefault();
-    if (user === null) {
-      navigate("/login");
-    }
     const form = e.target;
     const comment = form.comment.value;
     const blogId = _id;
@@ -54,6 +52,7 @@ const BlogDetailsPage = () => {
       commenterImage,
     };
     console.log(aComment);
+    form.reset();
 
     //posting a comment
     axiosSecure
@@ -64,7 +63,11 @@ const BlogDetailsPage = () => {
       })
       .then((res) => {
         if (res?.data?.insertedId) {
-          toast.success("Thanks for your valuable blog!");
+          toast.success("Thanks for your comment!");
+          // Update local state with the new comment
+          setComments((prevComments) => [...prevComments, aComment]);
+          // Reset the comment form
+          setNewComment("");
         }
       });
   };
@@ -102,6 +105,8 @@ const BlogDetailsPage = () => {
             <form onSubmit={handleSubmitComment} className="flex gap- w-full ">
               <textarea
                 name="comment"
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
                 cols="30"
                 rows="1"
                 placeholder="Write your comment..."
@@ -116,7 +121,6 @@ const BlogDetailsPage = () => {
             <div className="showing-comments">
               <div>
                 <h1 className="mt-5 mb-1 text-gray-500 ">
-                  {/* Top comments are... */}
                   {comments.length > 0
                     ? "Recent comments..."
                     : "Be the 1st commenter of the blog!"}

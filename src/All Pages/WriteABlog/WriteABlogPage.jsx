@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
@@ -7,7 +8,8 @@ import toast from "react-hot-toast";
 const WriteABlogPage = () => {
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth();
-    const url = `/blogs`;
+  const url = `/blogs`;
+  const navigate = useNavigate();
 
     const handleSubmitBlog = (e) => {
       e.preventDefault();
@@ -45,6 +47,7 @@ const WriteABlogPage = () => {
         .then((res) => {
           if (res?.data?.insertedId) {
             toast.success("Thanks for your valuable blog!");
+            navigate("/blogs")
           }
         });
     }

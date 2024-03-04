@@ -67,11 +67,11 @@ const MainRoute = createBrowserRouter([
         ),
       },
       {
-        path: "blog",
+        path: "blogs",
         element: <BlogPage></BlogPage>,
       },
       {
-        path: "blog/blogDetails/:id",
+        path: "blogs/blogDetails/:id",
         element: (
           <PrivateRoute>
             <BlogDetailsPage></BlogDetailsPage>
@@ -83,7 +83,7 @@ const MainRoute = createBrowserRouter([
           ),
       },
       {
-        path: "blog/writeABlog",
+        path: "blogs/writeABlog",
         element: <WriteABlogPage></WriteABlogPage>,
       },
       {

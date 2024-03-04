@@ -13,7 +13,7 @@ const BlogBigCard = ({ blog }) => {
       </div>
       <div className="p-4">
         <h1 className="text-sm text-gray-500 ">{name}</h1>
-        <Link to={`/blog/blogDetails/${_id}`} className="text-xl font-semibold group-hover:text-[#ff3811] duration-500 ">
+        <Link to={`/blogs/blogDetails/${_id}`} className="text-xl font-semibold group-hover:text-[#ff3811] duration-500 ">
           {title}
         </Link>
       </div>
