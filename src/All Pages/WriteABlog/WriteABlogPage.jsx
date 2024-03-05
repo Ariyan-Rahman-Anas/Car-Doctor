@@ -6,51 +6,51 @@ import bannerBg from "./../../assets/images/checkout/writeABlog.png";
 import toast from "react-hot-toast";
 
 const WriteABlogPage = () => {
-    const axiosSecure = useAxiosSecure();
-    const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
+  const { user } = useAuth();
   const url = `/blogs`;
   const navigate = useNavigate();
 
-    const handleSubmitBlog = (e) => {
-      e.preventDefault();
-      const form = e.target;
-      const name = form.name.value;
-      const email = form.email.value;
-      const blogImgURL = form.blogImgURL.value;
-      const date = form.date.value;
-      const category = form.category.value;
-      const title = form.title.value;
-      const introduction = form.introduction.value;
-      const mainContent = form.mainContent.value;
-      const CTA = form.CTA.value;
+  const handleSubmitBlog = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const blogImgURL = form.blogImgURL.value;
+    const date = form.date.value;
+    const category = form.category.value;
+    const title = form.title.value;
+    const introduction = form.introduction.value;
+    const mainContent = form.mainContent.value;
+    const CTA = form.CTA.value;
 
-      const aBlog = {
-        name,
-        email,
-        blogImgURL,
-        date,
-        category,
-        title,
-        introduction,
-        mainContent,
-        CTA,
-      };
-      console.log("new blog is:", aBlog);
+    const aBlog = {
+      name,
+      email,
+      blogImgURL,
+      date,
+      category,
+      title,
+      introduction,
+      mainContent,
+      CTA,
+    };
+    console.log("new blog is:", aBlog);
 
-      //   posting the blog to the database
-      axiosSecure
-        .post(url, aBlog, {
-          headers: {
-            "content-type": "application/json",
-          },
-        })
-        .then((res) => {
-          if (res?.data?.insertedId) {
-            toast.success("Thanks for your valuable blog!");
-            navigate("/blogs")
-          }
-        });
-    }
+    //   posting the blog to the database
+    axiosSecure
+      .post(url, aBlog, {
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+      .then((res) => {
+        if (res?.data?.insertedId) {
+          toast.success("Thanks for your valuable blog!");
+          navigate("/blogs");
+        }
+      });
+  };
   return (
     <div>
       <PageShortBanner

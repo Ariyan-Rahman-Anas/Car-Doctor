@@ -28,20 +28,7 @@ const BlogDetailsPage = () => {
   const url = `/blogComments/${_id}`;
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-
-  const dateForTimeStampInComment = new Date();
-  const minute = dateForTimeStampInComment.getMinutes();
-  const hour = dateForTimeStampInComment.getHours();
-  const currentDate = dateForTimeStampInComment.getDate();
-  const currentMonth = dateForTimeStampInComment.getMonth() + 1;
-  const currentYear = dateForTimeStampInComment.getFullYear();
-  const commentingTime = {
-    minute,
-    hour,
-    currentDate,
-    currentMonth,
-    currentYear,
-  };
+  const randomValueForLiking = Math.ceil(Math.random()*250);
 
   useEffect(() => {
     axiosSecure.get(url).then((res) => {
@@ -57,16 +44,35 @@ const BlogDetailsPage = () => {
     const commenterName = user ? user.displayName : "Mr. Not Given";
     const commenterEmail = user ? user.email : "Mr Not Given@xyz.com";
     const commenterImage = user ? user.photoURL : "A";
+
+    // Generate commenting time
+    const dateForTimeStampInComment = new Date();
+    const minute = dateForTimeStampInComment.getMinutes();
+    const hour = dateForTimeStampInComment.getHours();
+    const currentDate = dateForTimeStampInComment.getDate();
+    const currentMonth = dateForTimeStampInComment.getMonth() + 1;
+    const currentYear = dateForTimeStampInComment.getFullYear();
+    const commentingTime = {
+      minute,
+      hour,
+      currentDate,
+      currentMonth,
+      currentYear,
+    };
+
     const aComment = {
+      _id: Math.random().toString(36).substr(2, 9), // Generate a random ID for the comment
       blogId,
       commenterName,
       comment,
       commenterEmail,
       commenterImage,
+      liking: randomValueForLiking,
+      disliking: 0,
       commentingTime,
     };
-    console.log(aComment);
-    form.reset();
+
+    setNewComment(""); // Reset the new comment state
 
     //posting a comment
     axiosSecure
@@ -80,21 +86,29 @@ const BlogDetailsPage = () => {
           toast.success("Thanks for your comment!");
           // Update local state with the new comment
           setComments((prevComments) => [...prevComments, aComment]);
-          // Reset the comment form
-          setNewComment("");
         }
       });
   };
 
-  const [like, setLike] = useState(0);
-    const [dislike, setDislike] = useState(0);
-    
-    const handleLike = () => {
-        setLike(like + 1)
-    }
-    const handleDislike = () => {
-        setDislike(dislike+1)
-    }
+  const handleLike = (commentId) => {
+    setComments((prevComments) =>
+      prevComments.map((comment) =>
+        comment._id === commentId
+          ? { ...comment, liking: comment.liking + 1 }
+          : comment
+      )
+    );
+  };
+
+  const handleDislike = (commentId) => {
+    setComments((prevComments) =>
+      prevComments.map((comment) =>
+        comment._id === commentId
+          ? { ...comment, disliking: comment.disliking + 1 }
+          : comment
+      )
+    );
+  };
 
   return (
     <div className="mb-10 px-2 ">
@@ -151,7 +165,6 @@ const BlogDetailsPage = () => {
                 </h1>
               </div>
               <div className="flex flex-col gap-5">
-                {/* // */}
                 {comments?.map((comment) => (
                   <div key={comment._id}>
                     <div className="flex items-start justify-start gap-1 text-sm ">
@@ -176,18 +189,28 @@ const BlogDetailsPage = () => {
                         </h1>
                         <span>{comment.comment}</span>
                         <div className="like-and-date mt-5 flex items-center justify-between">
-                          <div className="flex items-center gap-8 text-lg ">
+                          <div className="flex items-center gap-8 text-sm ">
                             <div className="flex items-center gap-1">
-                              <button onClick={handleLike}>
-                                <FaRegThumbsUp></FaRegThumbsUp>{" "}
+                              <button onClick={() => handleLike(comment._id)}>
+                                <FaRegThumbsUp className="hover:text-[#ff3811] duration-500 "></FaRegThumbsUp>{" "}
                               </button>
-                              <h1>{like}</h1>
+                              <div>
+                                {comment?.liking > 0 && (
+                                  <h1>{comment.liking}</h1>
+                                )}
+                              </div>
                             </div>
                             <div className="flex items-center gap-1">
-                              <button onClick={handleDislike}>
-                                <FaRegThumbsDown></FaRegThumbsDown>{" "}
+                              <button
+                                onClick={() => handleDislike(comment._id)}
+                              >
+                                <FaRegThumbsDown className="hover:text-[#ff3811] duration-500 "></FaRegThumbsDown>{" "}
                               </button>
-                              <h1>{dislike}</h1>
+                              <div>
+                                {comment?.disliking > 0 && (
+                                  <h1>{comment.disliking}</h1>
+                                )}
+                              </div>
                             </div>
                           </div>
                           <div className="flex items-center justify-end gap-2 text-xs text-gray-600">
@@ -206,7 +229,6 @@ const BlogDetailsPage = () => {
                     </div>
                   </div>
                 ))}
-                {/* // */}
               </div>
             </div>
           </div>

@@ -57,7 +57,11 @@ const Team = () => {
             <SwiperSlide key={member.id}>
               <div className=" mt-4 group border-[.09rem] border-gray-200 hover:bg-gray-200 duration-500 rounded-lg p-5  ">
                 <div className="p-5">
-                  <img src={member.img} alt="" className="w-full rounded-md group-hover:scale-110 duration-500  " />
+                  <img
+                    src={member.img}
+                    alt=""
+                    className="w-full rounded-md group-hover:scale-110 duration-500  "
+                  />
                 </div>
                 <div>
                   <p className="text-center text-xl font-semibold ">

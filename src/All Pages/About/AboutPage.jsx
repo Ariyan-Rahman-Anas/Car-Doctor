@@ -7,7 +7,7 @@ import useAuth from "../../Hooks/useAuth";
 const AboutPage = () => {
   const axiosSecure = useAxiosSecure();
   const url = `/reviews`;
-  const {user} = useAuth()
+  const { user } = useAuth();
   const handleSubmitForm = (e) => {
     e.preventDefault();
     const form = e.target;
