@@ -28,7 +28,7 @@ const BlogDetailsPage = () => {
   const url = `/blogComments/${_id}`;
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
-  const randomValueForLiking = Math.ceil(Math.random()*250);
+  const randomValueForLiking = Math.ceil(Math.random() * 250);
 
   useEffect(() => {
     axiosSecure.get(url).then((res) => {
@@ -148,6 +148,7 @@ const BlogDetailsPage = () => {
                 cols="30"
                 rows="1"
                 placeholder="Write your comment..."
+                required
                 className="p-2 w-full bg-gray-200 rounded-l-md text-black focus:text-white focus:bg-gray-600 focus:placeholder:text-white focus:outline-none duration-500 "
               ></textarea>
               <input
@@ -183,15 +184,15 @@ const BlogDetailsPage = () => {
                           )}
                         </div>
                       </div>
-                      <div className="w-full overflow-auto bg-gray-300 p-2 rounded-md rounded-l-none rounded-b-md ">
-                        <h1 className="font-semibold text-sm text-gray-600 mb-1 ">
+                      <div className="w-full overflow-auto bg-gray-200 p-2 rounded-md rounded-l-none rounded-b-md ">
+                        <h1 className="font-semibold text-sm text-gray-700 mb-1 ">
                           {comment?.commenterName}
                         </h1>
-                        <span>{comment.comment}</span>
+                        <span>{comment?.comment}</span>
                         <div className="like-and-date mt-5 flex items-center justify-between">
                           <div className="flex items-center gap-8 text-sm ">
                             <div className="flex items-center gap-1">
-                              <button onClick={() => handleLike(comment._id)}>
+                              <button onClick={() => handleLike(comment?._id)}>
                                 <FaRegThumbsUp className="hover:text-[#ff3811] duration-500 "></FaRegThumbsUp>{" "}
                               </button>
                               <div>
@@ -202,7 +203,7 @@ const BlogDetailsPage = () => {
                             </div>
                             <div className="flex items-center gap-1">
                               <button
-                                onClick={() => handleDislike(comment._id)}
+                                onClick={() => handleDislike(comment?._id)}
                               >
                                 <FaRegThumbsDown className="hover:text-[#ff3811] duration-500 "></FaRegThumbsDown>{" "}
                               </button>
@@ -215,13 +216,13 @@ const BlogDetailsPage = () => {
                           </div>
                           <div className="flex items-center justify-end gap-2 text-xs text-gray-600">
                             <div className="flex">
-                              <h1>{comment?.commentingTime.hour}: </h1>
-                              <h1>{comment?.commentingTime.minute}</h1>
+                              <h1>{comment?.commentingTime?.hour}: </h1>
+                              <h1>{comment?.commentingTime?.minute}</h1>
                             </div>
                             <div className="flex">
-                              <h1>{comment?.commentingTime.currentDate}/</h1>
-                              <h1>{comment?.commentingTime.currentMonth}/</h1>
-                              <h1>{comment?.commentingTime.currentYear}</h1>
+                              <h1>{comment?.commentingTime?.currentDate}/</h1>
+                              <h1>{comment?.commentingTime?.currentMonth}/</h1>
+                              <h1>{comment?.commentingTime?.currentYear}</h1>
                             </div>
                           </div>
                         </div>

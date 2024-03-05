@@ -37,6 +37,8 @@ const MainRoute = createBrowserRouter([
       {
         path: "allServices",
         element: <ServicesPage></ServicesPage>,
+        loader: () =>
+          fetch(`https://car-doctor-server-sigma-ruby.vercel.app/servicesCount`),
       },
       {
         path: "serviceDetails/:id",
