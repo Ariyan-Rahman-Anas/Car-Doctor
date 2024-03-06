@@ -3,8 +3,11 @@ import { useEffect } from "react";
 import useAuth from "./useAuth";
 import { useNavigate } from "react-router-dom";
 
+// const localURL = "http://localhost:5173"
+const deployURL = "https://car-doctor-server-sigma-ruby.vercel.app"
+
 const axiosSecure = axios.create({
-  baseURL: "https://car-doctor-server-sigma-ruby.vercel.app",
+  baseURL: deployURL  ,
   withCredentials: true,
 });
 const useAxiosSecure = () => {

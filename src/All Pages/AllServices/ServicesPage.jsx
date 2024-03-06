@@ -3,28 +3,34 @@ import SectionHead from "./../../Components/SectionHead";
 import ServiceCard from "./../../Components/ServiceCard";
 import PageShortBanner from "../../Components/PageShortBanner";
 import ImgBg from "./../../assets/images/checkout/myBookings.png";
-import { useLoaderData } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const ServicesPage = () => {
   const [services, setServices] = useState([]);
-  const [itemPerPage, setItemPerPage] = useState(10);
+  const [itemPerPage, setItemPerPage] = useState(9);
   const [currentPage, setCurrentPage] = useState(0);
-  const { result } = useLoaderData();
-  const numberOfPages = Math.ceil(result / itemPerPage);
-  console.log("number", numberOfPages);
+  const [count, setCount] = useState(0);
+  const numberOfPages = Math.ceil(count / itemPerPage);
   const pages = [...Array(numberOfPages).keys()];
 
   const axiosSecure = useAxiosSecure();
-  const url = `/services`;
+  const url = `/services?page=${currentPage}&size=${itemPerPage}`;
+  const servicesCountURL = `/servicesCount`;
+
+  useEffect(() => {
+    axiosSecure.get(servicesCountURL).then((res) => {
+      setCount(res?.data.count);
+      console.log(res.data.count);
+    });
+  }, [axiosSecure, servicesCountURL]);
+
   useEffect(() => {
     axiosSecure.get(url).then((res) => {
       setServices(res?.data);
     });
-  }, [axiosSecure, url]);
+  }, [axiosSecure, url, currentPage, itemPerPage]);
 
   const handleItemPerPage = (e) => {
-    console.log(e.target.value);
     const value = parseInt(e.target.value);
     setItemPerPage(value);
     setCurrentPage(0);
@@ -37,7 +43,7 @@ const ServicesPage = () => {
   };
 
   const handleNextPage = () => {
-    if (currentPage < pages.length) {
+    if (currentPage < pages.length - 1) {
       setCurrentPage(currentPage + 1);
     }
   };
@@ -59,12 +65,11 @@ const ServicesPage = () => {
         ></SectionHead>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10 ">
-        {services.slice(0, 3).map((service) => (
+        {services?.map((service) => (
           <ServiceCard key={service.id} service={service}></ServiceCard>
         ))}
       </div>
       <div className="pagination">
-        <h1>Pagination</h1>
         <div>
           <h1>Current page : {currentPage} </h1>
           <button
