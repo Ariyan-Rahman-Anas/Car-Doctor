@@ -73,7 +73,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <p className="pt-10 pb-2 text-center">
+      <p className="pt-10 pb-2 text-center text-sm">
         Copy Right-{currentYear} || All rights reserved by Car Doctor ||
         Developed by
         <a

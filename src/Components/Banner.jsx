@@ -39,17 +39,16 @@ const Banner = () => {
           className="text-white absolute left-0 top-0 w-full h-full md:flex items-center justify-start "
         >
           <div className="  w-full p-5 md:p-20 md:text-start ">
-            <h1 className="text-4xl md:text-7xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] fon-normal  ">
+            <h1 className="text-4xl md:text-6xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] ">
               Affordable Price For Car Servicing
             </h1>
-            <p className="text-sm my-4 sm:w-2/3 md:w-1/2">
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+            <p className="mt-2 mb-4 sm:w-2/3 md:w-1/2">
+              Explore budget-friendly options for maintaining your vehicle
+              without compromising on quality or reliability.
             </p>
-            <div className="btns flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
-              <PrimaryBtn value={"Discover More"} link={"/"}></PrimaryBtn>
-              <PrimaryBtn value={"Latest Project"} link={"/"}></PrimaryBtn>
-            </div>
+            <div className=" flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
+              <PrimaryBtn value={"Discover More"} link={"/blogs"}></PrimaryBtn>
+              <PrimaryBtn value={"Latest Project"} link={"/allServices"}></PrimaryBtn>            </div>
           </div>
         </div>
       </div>
@@ -68,17 +67,16 @@ const Banner = () => {
           className="text-white absolute left-0 top-0 w-full h-full md:flex items-center justify-start "
         >
           <div className="  w-full p-5 md:p-20 md:text-start ">
-            <h1 className="text-4xl md:text-7xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] fon-normal  ">
-              Affordable Price For Car Servicing
+            <h1 className="text-4xl md:text-6xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem]">
+              DIY Car Care: Easy Fixes{" "}
             </h1>
-            <p className="text-sm my-4 sm:w-2/3 md:w-1/2">
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+            <p className="mt-2 mb-4 sm:w-2/3 md:w-1/2">
+              Learn cost-effective methods for maintaining your vehicle,
+              empowering you to handle minor issues on your own.
             </p>
-            <div className="btns flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
-              <PrimaryBtn value={"Discover More"} link={"/"}></PrimaryBtn>
-              <PrimaryBtn value={"Latest Project"} link={"/"}></PrimaryBtn>
-            </div>
+            <div className=" flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
+              <PrimaryBtn value={"Discover More"} link={"/blogs"}></PrimaryBtn>
+              <PrimaryBtn value={"Latest Project"} link={"/allServices"}></PrimaryBtn>            </div>
           </div>
         </div>
       </div>
@@ -97,17 +95,16 @@ const Banner = () => {
           className="text-white absolute  right-0 top-0 w-full h-full md:flex items-center justify-center "
         >
           <div className="w-full p-5 md:p-20 flex flex-col items-end text-right">
-            <h1 className="text-4xl md:text-7xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] fon-normal  ">
-              Affordable Price For Car Servicing
+            <h1 className="text-4xl md:text-6xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] ">
+              Road Trip Safety: Essential Tips
             </h1>
-            <p className="text-sm my-4 sm:w-2/3 md:w-1/2">
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+            <p className="mt-2 mb-4 sm:w-2/3 md:w-1/2">
+              Equip yourself with crucial safety measures to ensure a worry-free
+              journey, whether you're driving cross-country or across town.
             </p>
-            <div className="btns flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
-              <PrimaryBtn value={"Discover More"} link={"/"}></PrimaryBtn>
-              <PrimaryBtn value={"Latest Project"} link={"/"}></PrimaryBtn>
-            </div>
+            <div className=" flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
+              <PrimaryBtn value={"Discover More"} link={"/blogs"}></PrimaryBtn>
+              <PrimaryBtn value={"Latest Project"} link={"/allServices"}></PrimaryBtn>            </div>
           </div>
         </div>
       </div>
@@ -126,17 +123,16 @@ const Banner = () => {
           className="text-white absolute  right-0 top-0 w-full h-full flex items-end justify-center "
         >
           <div className="w-full p-5 md:p-20 flex flex-col items-start justify-end">
-            <h1 className="text-4xl md:text-7xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] fon-normal  ">
-              Affordable Price For Car Servicing
+            <h1 className="text-4xl md:text-6xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] ">
+              Electric Cars: Future of Driving{" "}
             </h1>
-            <p className="text-sm my-4 sm:w-2/3 md:w-1/2">
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+            <p className="mt-2 mb-4 sm:w-2/3 md:w-1/2">
+              Dive into the innovative world of electric vehicles and discover
+              how they're reshaping the future of transportation.
             </p>
-            <div className="btns flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
-              <PrimaryBtn value={"Discover More"} link={"/"}></PrimaryBtn>
-              <PrimaryBtn value={"Latest Project"} link={"/"}></PrimaryBtn>
-            </div>
+            <div className=" flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
+              <PrimaryBtn value={"Discover More"} link={"/blogs"}></PrimaryBtn>
+              <PrimaryBtn value={"Latest Project"} link={"/allServices"}></PrimaryBtn>            </div>
           </div>
         </div>
       </div>
@@ -155,17 +151,16 @@ const Banner = () => {
           className="text-white absolute left-0 top-0 w-full h-full md:flex items-center justify-start "
         >
           <div className="  w-full p-5 md:p-20 md:text-start ">
-            <h1 className="text-4xl md:text-7xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] fon-normal  ">
-              Affordable Price For Car Servicing
+            <h1 className="text-4xl md:text-6xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] ">
+              Troubleshooting: Quick Car Fixes{" "}
             </h1>
-            <p className="text-sm my-4 sm:w-2/3 md:w-1/2">
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+            <p className="mt-2 mb-4 sm:w-2/3 md:w-1/2">
+              Arm yourself with practical solutions to common automotive issues,
+              enabling you to address problems swiftly and efficiently.
             </p>
-            <div className="btns flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
-              <PrimaryBtn value={"Discover More"} link={"/"}></PrimaryBtn>
-              <PrimaryBtn value={"Latest Project"} link={"/"}></PrimaryBtn>
-            </div>
+            <div className=" flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
+              <PrimaryBtn value={"Discover More"} link={"/blogs"}></PrimaryBtn>
+              <PrimaryBtn value={"Latest Project"} link={"/allServices"}></PrimaryBtn>            </div>
           </div>
         </div>
       </div>
@@ -184,17 +179,16 @@ const Banner = () => {
           className="text-white absolute left-0 right-0 top-0 w-full h-full md:flex items-center justify-center "
         >
           <div className="w-full p-5 md:p-20 flex flex-col items-end text-right">
-            <h1 className="text-4xl md:text-7xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] fon-normal  ">
-              Affordable Price For Car Servicing
+            <h1 className="text-4xl md:text-6xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] ">
+              Engine Health: Oil Change Benefits{" "}
             </h1>
-            <p className="text-sm my-4 sm:w-2/3 md:w-1/2">
-              There are many variations of passages of available, but the
-              majority have suffered alteration in some form
+            <p className="mt-2 mb-4 sm:w-2/3 md:w-1/2">
+              Gain insights into the vital role of regular oil changes in
+              maintaining optimal engine performance and longevity.
             </p>
-            <div className="btns flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
-              <PrimaryBtn value={"Discover More"} link={"/"}></PrimaryBtn>
-              <PrimaryBtn value={"Latest Project"} link={"/"}></PrimaryBtn>
-            </div>
+            <div className=" flex flex-col xsm:flex-row sm:flex-row xxs:items-center justify-normal gap-4">
+              <PrimaryBtn value={"Discover More"} link={"/blogs"}></PrimaryBtn>
+              <PrimaryBtn value={"Latest Project"} link={"/allServices"}></PrimaryBtn>            </div>
           </div>
         </div>
       </div>

@@ -20,7 +20,6 @@ const ServicesPage = () => {
   useEffect(() => {
     axiosSecure.get(servicesCountURL).then((res) => {
       setCount(res?.data.count);
-      console.log(res.data.count);
     });
   }, [axiosSecure, servicesCountURL]);
 
@@ -95,8 +94,8 @@ const ServicesPage = () => {
             Next
           </button>{" "}
           <br />
-          <div className="set-item-per-page flex items-center justify-center gap-2 ">
-            <h1 className="text-gray-500 ">Items in this page: </h1>
+          <div className="set-item-per-page text-gray-600 text-sm flex items-center justify-center gap-2 ">
+            <p>Minimum of: </p>
             <select
               name=""
               id=""
@@ -105,10 +104,12 @@ const ServicesPage = () => {
               className="p-2 bg-gray-500 text-white rounded-md "
             >
               <option value={itemPerPage}>{itemPerPage}</option>
+              <option value="5">5</option>
               <option value="10">10</option>
               <option value="20">20</option>
               <option value="50">50</option>
             </select>
+            <p>items</p>
           </div>
         </div>
       </div>

@@ -3,14 +3,16 @@ import ImgBG from "./../../assets/images/checkout/myBookings.png"
 import { useEffect, useState } from "react";
 import SectionHead from "./../../Components/SectionHead";
 import ProductCard from "./../../Components/ProductCard";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const AllProductsPage = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-      fetch("/carProducts.json")
-        .then((res) => res.json())
-        .then((data) => setProducts(data));
-    }, []);
+  const [products, setProducts] = useState([]);
+  const axiosSecure = useAxiosSecure();
+  const url = `/products`;
+  useEffect(() => {
+    axiosSecure.get(url).then((res) => setProducts(res?.data));
+  }, [axiosSecure, url]);
+
     return (
       <div>
         <PageShortBanner
@@ -30,7 +32,7 @@ const AllProductsPage = () => {
             ></SectionHead>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10 ">
-            {products.map((product) => (
+            {products?.map((product) => (
               <ProductCard key={product.id} product={product}></ProductCard>
             ))}
           </div>

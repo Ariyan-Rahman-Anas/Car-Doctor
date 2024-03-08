@@ -70,13 +70,6 @@ const Navbar = () => {
                 <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
               </NavLink>
             </li>
-            <li className="tex-white relative group">
-              <NavLink to={"/contact"} className="group-hover:text-[#ff3811]">
-                Contact
-                <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
-              </NavLink>
-            </li>
-
             {user ? (
               <>
                 <li className="tex-white relative group">
@@ -84,12 +77,21 @@ const Navbar = () => {
                     to={"/myBookings"}
                     className="group-hover:text-[#ff3811]"
                   >
-                    My Bookings
+                    Bookings
                     <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
                   </NavLink>
                 </li>
-                <li>
-                  <div className="md:hidden tex-white relative group text-center">
+                <li className="tex-white relative group">
+                  <NavLink
+                    to={"/myCart"}
+                    className="group-hover:text-[#ff3811]"
+                  >
+                    Cart
+                    <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
+                  </NavLink>
+                </li>
+                <li className="md:hidden">
+                  <div className="tex-white relative group text-center">
                     <div className="flex items-center justify-center">
                       <div className="flex flex-col items-center justify-center text-center">
                         <div className="h-10 w-10 border-2 border-[#ff3811] rounded-full mt-4 mb-2 ">
@@ -127,6 +129,12 @@ const Navbar = () => {
                 <PrimaryBtn value={"Appointment"} link={"/login"}></PrimaryBtn>
               </li>
             )}
+            <li className="tex-white relative group">
+              <NavLink to={"/contact"} className="group-hover:text-[#ff3811]">
+                Contact
+                <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div className="navbar-end flex ">

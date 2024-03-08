@@ -15,6 +15,8 @@ import AllProductsPage from "../All Pages/AllProducts/AllProductsPage";
 import BlogPage from "../All Pages/Blog/BlogPage";
 import WriteABlogPage from "../All Pages/WriteABlog/WriteABlogPage";
 import BlogDetailsPage from "../All Pages/Blog/BlogDetailsPage";
+import ProductDetails from "../All Pages/AllProducts/ProductDetails";
+import OrderedProducts from "../All Pages/AllProducts/OrderedProducts";
 
 const MainRoute = createBrowserRouter([
   {
@@ -35,10 +37,20 @@ const MainRoute = createBrowserRouter([
         element: <AllProductsPage></AllProductsPage>,
       },
       {
+        path: "productDetails/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https://car-doctor-server-sigma-ruby.vercel.app/products/${params.id}`
+          ),
+      },
+      {
+        path: "myCart",
+        element:<OrderedProducts></OrderedProducts>
+      },
+      {
         path: "allServices",
         element: <ServicesPage></ServicesPage>,
-        // loader: () =>
-          // fetch(`https://car-doctor-server-sigma-ruby.vercel.app/servicesCount`),
       },
       {
         path: "serviceDetails/:id",

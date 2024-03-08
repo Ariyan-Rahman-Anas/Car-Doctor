@@ -1,8 +1,9 @@
 import { Rating } from "@material-tailwind/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  const { name, img, rating, price } = product || {};
+  const {_id, name, img, rating, price } = product || {};
   const [rated, setRated] = React.useState(rating);
 
   return (
@@ -19,7 +20,15 @@ const ProductCard = ({ product }) => {
         <Rating value={4} onChange={(value) => setRated(value)} />
       </div>
       <h1 className="mt4 text-l font-semibold ">{name}</h1>
-      <p className="font-semibold text-[#ff3811] ">${price} </p>
+      <div className="flex items-center justify-between">
+        <Link
+          to={`/productDetails/${_id}`}
+          className="text-gray-100 bg-gray-500 px-4 py-1.5 rounded-md hover:bg-[#ff3811] hover:text-gray-200 duration-500 "
+        >
+          Buy now
+        </Link>
+        <p className="font-semibold text-[#ff3811] ">Price: ${price} </p>
+      </div>
     </div>
   );
 };

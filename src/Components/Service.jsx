@@ -2,18 +2,16 @@ import { useEffect, useState } from "react";
 import SectionHead from "./SectionHead";
 import ServiceCard from "./ServiceCard";
 import PrimaryBtn from "./PrimaryBtn";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const Service = () => {
+  const axiosSecure = useAxiosSecure();
+  const url = `/services`;
   const [services, setServices] = useState([]);
+
   useEffect(() => {
-    fetch("https://car-doctor-server-sigma-ruby.vercel.app/services")
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  }, []);
-
-  // const handleAllServicesBtn = () => {
-
-  // }
+    axiosSecure.get(url).then((res) => setServices(res?.data));
+  }, [axiosSecure, url]);
 
   return (
     <div className="text-center my-[5rem] px-2 ">
@@ -27,7 +25,7 @@ const Service = () => {
         ></SectionHead>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 mb-10 ">
-        {services.slice(0, 6).map((service) => (
+        {services?.slice(0, 6).map((service) => (
           <ServiceCard key={service.id} service={service}></ServiceCard>
         ))}
       </div>

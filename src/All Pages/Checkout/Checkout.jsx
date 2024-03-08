@@ -88,7 +88,7 @@ const Checkout = () => {
   return (
     <div className="px-2">
       <PageShortBanner
-        BGImg={imgBG}
+        BGImg={img}
         pageTitle={"Checkout"}
         location={"Home >> Service Details > Checkout"}
         serviceTitle={name}
