@@ -1,20 +1,18 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PageShortBanner from "../../Components/PageShortBanner";
 import bannerBG from "./../../assets/images/checkout/myBookings.png";
-import { AuthContext } from "../../Provider/AuthProvider";
 import { RxCrossCircled } from "react-icons/rx";
 import { Card, Typography, CardBody } from "@material-tailwind/react";
 import PrimaryBtn from "./../../Components/PrimaryBtn";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-import axios from "axios";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import useAuth from "../../Hooks/useAuth";
 
 const MyBookings = () => {
-  const { user } = useContext(AuthContext);
+  const {user} = useAuth
   const [bookings, setBookings] = useState([]);
   const axiosSecure = useAxiosSecure();
-  // const url = `https://car-doctor-server-sigma-ruby.vercel.app/bookings?email=${user?.email}`;
   const url = `/bookings?email=${user?.email}`;
   useEffect(() => {
     axiosSecure.get(url).then((res) => setBookings(res?.data));

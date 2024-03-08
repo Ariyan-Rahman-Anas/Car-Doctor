@@ -41,6 +41,29 @@ const BlogPage = () => {
             </div>
           </div>
           <div className="right col-span-2 md:col-span-1 ">
+            <div>
+              <SectionHead
+                heading={"Blogs"}
+                subHeading={"Here you can..."}
+              ></SectionHead>
+              <ul className="mb-3 list-disc text-gray-600 flex flex-col items-start gap-y-2 text-sm ">
+                <li>
+                  Read insightful blog posts on vehicle maintenance and repair.
+                </li>
+                <li>
+                  Write and publish their own blog posts, sharing their
+                  knowledge and experiences.
+                </li>
+                <li>
+                  Engage with the community by leaving comments on blog posts
+                  and participating in discussions.
+                </li>
+                <li>
+                  Like or dislike blog posts and comments to provide feedback
+                  and show appreciation.
+                </li>
+              </ul>
+            </div>
             <PrimaryBtn value={"Write a blog"} link={"writeABlog"}></PrimaryBtn>
           </div>
         </div>

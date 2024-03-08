@@ -28,7 +28,6 @@ const AboutPage = () => {
       rating,
       comment,
     };
-    console.log(aReview);
     form.reset();
 
     //posting the review to the database
@@ -75,26 +74,26 @@ const AboutPage = () => {
               <input
                 type="url"
                 placeholder="Your picture URL"
-                name="imgURL"
+                name="imgURL" required
                 className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
                 defaultValue={user?.photoURL && user.photoURL}
               />
               <input
                 type="text"
                 placeholder="Your profession"
-                name="profession"
+                name="profession" required
                 className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
               />
               <input
                 type="date"
-                placeholder="Current date"
+                placeholder="Current date" required
                 name="date"
                 className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
               />
               <input
                 type="number"
                 placeholder="Rate us from 1 to 5"
-                name="rating"
+                name="rating" required
                 className="p-2 rounded-md  focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
               />
             </div>
@@ -102,7 +101,7 @@ const AboutPage = () => {
               name="comment"
               id=""
               cols="30"
-              rows="5"
+              rows="5" required
               placeholder="Write your words about us..."
               className="w-full p-2 rounded-md focus:placeholder:text-white  focus:bg-[#ff3811] focus:text-white focus:outline-none  "
             ></textarea>

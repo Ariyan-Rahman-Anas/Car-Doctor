@@ -71,7 +71,6 @@ const ServicesPage = () => {
       </div>
       <div className="pagination">
         <div>
-          <h1>Current page : {currentPage} </h1>
           <button
             onClick={handlePrevPage}
             className="text-sm md:mx-4 p-1 px-2 rounded-md bg-transparent hover:text-white hover:bg-[#ff3811]  duration-500 "
@@ -96,18 +95,21 @@ const ServicesPage = () => {
             Next
           </button>{" "}
           <br />
-          <select
-            name=""
-            id=""
-            value={itemPerPage}
-            onChange={handleItemPerPage}
-            className="p-2 bg-gray-500 text-white rounded-md "
-          >
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="50">50</option>
-          </select>
+          <div className="set-item-per-page flex items-center justify-center gap-2 ">
+            <h1 className="text-gray-500 ">Items in this page: </h1>
+            <select
+              name=""
+              id=""
+              value={itemPerPage}
+              onChange={handleItemPerPage}
+              className="p-2 bg-gray-500 text-white rounded-md "
+            >
+              <option value={itemPerPage}>{itemPerPage}</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>

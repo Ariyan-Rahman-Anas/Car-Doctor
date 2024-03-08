@@ -2,8 +2,11 @@ import person from "./../assets/images/about_us/person.jpg";
 import parts from "./../assets/images/about_us/parts.jpg";
 import PrimaryBtn from "./PrimaryBtn";
 import SectionHead from "./SectionHead";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
+  const location = useLocation();
+  const noGetMoreInfoBtn = location.pathname.includes("about")
   return (
     <div className="lg:w-[85vw] mx-auto my-[5rem] px-2 ">
       <div className="about-section flex flex-col md:flex-row items-start justify-between gap-8">
@@ -40,7 +43,11 @@ const About = () => {
             humour, or randomised words which don't look even slightly
             believable.{" "}
           </p>
-          <PrimaryBtn value={"Get More Info"} link={"/about"}></PrimaryBtn>
+          {noGetMoreInfoBtn ? (
+            <PrimaryBtn value={"Here's all about us"} link={"/about"}></PrimaryBtn>
+          ) : (
+            <PrimaryBtn value={"Get More Info"} link={"/about"}></PrimaryBtn>
+          )}
         </div>
       </div>
     </div>
