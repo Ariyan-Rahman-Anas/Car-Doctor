@@ -10,13 +10,15 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 
 const MyBookings = () => {
-  const {user} = useAuth
+  const {user} = useAuth()
   const [bookings, setBookings] = useState([]);
   const axiosSecure = useAxiosSecure();
   const url = `/bookings?email=${user?.email}`;
   useEffect(() => {
+    if (user.email) {
     axiosSecure.get(url).then((res) => setBookings(res?.data));
-  }, [url, axiosSecure]);
+    }
+  }, [url, axiosSecure, user.email]);
 
   const TABLE_HEAD = ["N/A", "Service", "Price", "Date", "Status"];
 

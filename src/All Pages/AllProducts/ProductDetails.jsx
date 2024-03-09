@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
@@ -7,22 +7,48 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "./../../Hooks/useAxiosSecure";
 import React from "react";
 import { Rating } from "@material-tailwind/react";
+import toast from "react-hot-toast";
 
 const ProductDetails = () => {
-  const product = useLoaderData();
+  const axiosSecure = useAxiosSecure();
+    const product = useLoaderData();
+    const navigate = useNavigate()
   const { _id, name, img, rating, price, description } = product || {};
   const [rated, setRated] = React.useState(rating);
-
   const [restProducts, setRestProducts] = useState([]);
-  const axiosSecure = useAxiosSecure();
   const url = `/products`;
+  const productOrderingURL = `/orderedProducts`;
   useEffect(() => {
     axiosSecure.get(url).then((res) => setRestProducts(res.data));
   }, [axiosSecure, url]);
 
   // creating a random number and a ending number for showing related services
   const randomNumber = Math.ceil(Math.random() * 12);
-  const endPoint = randomNumber + 5;
+    const endPoint = randomNumber + 5;
+    
+    const handleOrderProduct = () => {
+      const aProduct = {
+        name,
+        img,
+        rating,
+        price,
+      };
+      console.log("issssssss", aProduct);
+
+      //   posting a product to the database
+      axiosSecure
+        .post(productOrderingURL , aProduct, {
+          headers: {
+            "content-type": "application/json",
+          },
+        })
+        .then((res) => {
+          if (res?.data?.insertedId) {
+            toast.success("Thanks for your purchase!");
+            navigate("/myCart");
+          }
+        });
+    }
 
   return (
     <div className="px-2">
@@ -175,7 +201,7 @@ const ProductDetails = () => {
             </Link>
           </div>
           <p className="font-semibold text-3xl mt-8 mb-5">Price: ${price}</p>
-          <Link to={"/myCart"}>
+          <Link onClick={handleOrderProduct} to={"/myCart"}>
             <div className="px-[1.2rem] py-1.5 rounded-full font-normal text-white bg-[#ff3811] border-[.09rem] border-transparent hover:border-[#ff3811] hover:text-[#ff3811] hover:bg-white duration-500 text-center ">
               Order Now
             </div>
