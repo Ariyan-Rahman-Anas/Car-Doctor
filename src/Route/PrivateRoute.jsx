@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-[100vh] ">
-        <img src={spinner} alt="" />
+        <img src={spinner} alt="snipper" />
       </div>
     );
   }

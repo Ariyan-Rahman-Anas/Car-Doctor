@@ -16,7 +16,7 @@ import BlogPage from "../All Pages/Blog/BlogPage";
 import WriteABlogPage from "../All Pages/WriteABlog/WriteABlogPage";
 import BlogDetailsPage from "../All Pages/Blog/BlogDetailsPage";
 import ProductDetails from "../All Pages/AllProducts/ProductDetails";
-import OrderedProducts from "../All Pages/AllProducts/OrderedProducts";
+import MyCart from "../All Pages/AllProducts/MyCart";
 
 const MainRoute = createBrowserRouter([
   {
@@ -46,7 +46,7 @@ const MainRoute = createBrowserRouter([
       },
       {
         path: "myCart",
-        element:<OrderedProducts></OrderedProducts>
+        element: <MyCart></MyCart>,
       },
       {
         path: "allServices",

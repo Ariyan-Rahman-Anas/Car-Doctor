@@ -8,6 +8,7 @@ import useAxiosSecure from "./../../Hooks/useAxiosSecure";
 import React from "react";
 import { Rating } from "@material-tailwind/react";
 import toast from "react-hot-toast";
+import useAuth from "../../Hooks/useAuth";
 
 const ProductDetails = () => {
   const axiosSecure = useAxiosSecure();
@@ -17,7 +18,9 @@ const ProductDetails = () => {
   const [rated, setRated] = React.useState(rating);
   const [restProducts, setRestProducts] = useState([]);
   const url = `/products`;
-  const productOrderingURL = `/orderedProducts`;
+    const productOrderingURL = `/orderedProducts`;
+    const { user } = useAuth();
+
   useEffect(() => {
     axiosSecure.get(url).then((res) => setRestProducts(res.data));
   }, [axiosSecure, url]);
@@ -26,12 +29,20 @@ const ProductDetails = () => {
   const randomNumber = Math.ceil(Math.random() * 12);
     const endPoint = randomNumber + 5;
     
+    const currentDate = new Date()
+    const currentYear = currentDate.getFullYear()
+    const currentMonth = currentDate.getMonth() + 1
+    const todayDate = currentDate.getDate()
+    const aFullDate = `${currentYear}-${currentMonth}-${todayDate}`
+
     const handleOrderProduct = () => {
       const aProduct = {
         name,
         img,
         rating,
         price,
+        email: user.email,
+        date: aFullDate,
       };
       console.log("issssssss", aProduct);
 

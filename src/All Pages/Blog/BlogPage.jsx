@@ -19,6 +19,7 @@ const BlogPage = () => {
     <div>
       <PageShortBanner
         BGImg={blogBG}
+        pageTitle={"Read information and write experience!"}
         location={"Home > Blog "}
       ></PageShortBanner>
       <div className="mt-14 lg:w-2/3 mx-auto text-center ">
