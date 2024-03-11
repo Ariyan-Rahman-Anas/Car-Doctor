@@ -102,7 +102,11 @@ const MainRoute = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <ContactPage></ContactPage>,
+        element: (
+          <PrivateRoute>
+            <ContactPage></ContactPage>
+          </PrivateRoute>
+        ),
       },
       {
         path: "logIn",

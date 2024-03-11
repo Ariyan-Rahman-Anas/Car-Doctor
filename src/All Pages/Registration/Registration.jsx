@@ -22,14 +22,12 @@ const Registration = () => {
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password)
-      .then((result) => {
+      .then(() => {
         navigate("/");
         toast.success("Registration Successful!");
         setRegisterError("");
-        console.log(result.user);
       })
       .catch((error) => {
-        console.log(error.massage);
         setRegisterError(error.message);
       });
   };
@@ -124,7 +122,7 @@ const Registration = () => {
               <input
                 type="submit"
                 value={"Sign up"}
-                className="text-white bg-[#ff3811] p-2 rounded-md border-[.09rem] border-[#ff3811] hover:text-[#ff3811] hover:bg-white font-semibold duration-500 "
+                className="text-white bg-[#ff3811] p-2 rounded-md border-[.09rem] border-[#ff3811] hover:text-[#ff3811] hover:bg-white font-semibold duration-500 cursor-pointer "
               />
             </form>
             <div className="flex items-center justify-between text-white mt-6 ">

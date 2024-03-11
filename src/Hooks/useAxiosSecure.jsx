@@ -44,12 +44,12 @@ import { useEffect } from "react";
 import useAuth from "./useAuth";
 import { useNavigate } from "react-router-dom";
 
-const deployURL = "https://car-doctor-server-sigma-ruby.vercel.app";
-const localURL = "http://localhost:5001"
+// const deployURL = "https://car-doctor-server-sigma-ruby.vercel.app";
+// const localURL = "http://localhost:5001"
 
 const axiosSecure = axios.create({
-  baseURL: localURL || deployURL ,
-  // baseURL: "https://car-doctor-server-sigma-ruby.vercel.app",
+  // baseURL: localURL || deployURL ,
+  baseURL: "https://car-doctor-server-sigma-ruby.vercel.app",
   // baseURL: "http://localhost:5001",
   withCredentials: true,
 });

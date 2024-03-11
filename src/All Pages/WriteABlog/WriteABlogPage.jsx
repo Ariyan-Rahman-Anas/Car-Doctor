@@ -37,7 +37,7 @@ const WriteABlogPage = () => {
     };
     console.log("new blog is:", aBlog);
 
-    //   posting the blog to the database
+    //   posting the blog to the database using axiosSecure
     axiosSecure
       .post(url, aBlog, {
         headers: {
@@ -58,7 +58,7 @@ const WriteABlogPage = () => {
         location={"Home > Blog > Writing Blog"}
       ></PageShortBanner>
 
-      {/* form start */}
+      {/* form start for writing a review */}
       <div className="m-1 mb-16 bg-gray-300 rounded-lg p-5 md:px-10 md:py-8  ">
         <form onSubmit={handleSubmitBlog} className="form">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3 ">
@@ -82,39 +82,39 @@ const WriteABlogPage = () => {
             <input
               type="date"
               placeholder="Current date"
-              name="date"
+              name="date" required
               className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
             />
             <input
               type="url"
               placeholder="Blog's picture URL"
-              name="blogImgURL"
+              name="blogImgURL" required
               className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
             />
             <input
               type="text"
               name="category"
-              placeholder="Blog category"
+              placeholder="Blog category" required
               className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
             />
             <input
               type="text"
               placeholder="Blog's title"
-              name="title"
+              name="title" required
               className="p-2 rounded-md focus:placeholder:text-white focus:bg-[#ff3811] focus:text-white focus:outline-none  "
             />
             <textarea
               name="introduction"
               cols="30"
               rows="5"
-              placeholder="Introduction..."
+              placeholder="Introduction..." required
               className="w-full p-2 rounded-md focus:placeholder:text-white  focus:bg-[#ff3811] focus:text-white focus:outline-none  "
             ></textarea>
             <textarea
               name="mainContent"
               cols="30"
               rows="5"
-              placeholder="Main content..."
+              placeholder="Main content..." required
               className="w-full p-2 rounded-md focus:placeholder:text-white  focus:bg-[#ff3811] focus:text-white focus:outline-none  "
             ></textarea>
           </div>
@@ -122,7 +122,7 @@ const WriteABlogPage = () => {
             name="CTA"
             cols="30"
             rows="3"
-            placeholder="Call to action..."
+            placeholder="Call to action..." required
             className="w-full p-2 rounded-md focus:placeholder:text-white  focus:bg-[#ff3811] focus:text-white focus:outline-none  "
           ></textarea>
           <input
@@ -132,7 +132,7 @@ const WriteABlogPage = () => {
           />
         </form>
       </div>
-      {/* form end */}
+      {/*review writing form end */}
     </div>
   );
 };

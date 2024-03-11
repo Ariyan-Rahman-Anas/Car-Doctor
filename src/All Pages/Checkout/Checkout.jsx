@@ -1,11 +1,11 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
-import imgBG from "./../../assets/images/checkout/checkout.png";
 import { useContext } from "react";
 import { AuthContext } from "./../../Provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import { PiWarningCircle } from "react-icons/pi";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const Checkout = () => {
   const { user } = useContext(AuthContext);
@@ -52,8 +52,7 @@ const Checkout = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          console.log(bookingDetails);
-          navigate("/myBookings");
+            toast.success("Service added to the Bookings");
           fetch("https://car-doctor-server-sigma-ruby.vercel.app/bookings", {
             method: "POST",
             headers: {
@@ -63,7 +62,6 @@ const Checkout = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
             });
 
           swalWithBootstrapButtons.fire({

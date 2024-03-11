@@ -20,7 +20,7 @@ const BlogPage = () => {
       <PageShortBanner
         BGImg={blogBG}
         pageTitle={"Read information and write experience!"}
-        location={"Home > Blog "}
+        location={"Blog "}
       ></PageShortBanner>
       <div className="mt-14 lg:w-2/3 mx-auto text-center ">
         <SectionHead

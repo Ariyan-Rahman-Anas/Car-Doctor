@@ -265,9 +265,10 @@ const MyBookings = () => {
           <div className="flex items-center justify-center text-center">
             <div>
               <strong className="font-medium text-5xl">Oops!</strong>
-              <p className="font-extralight text-2xl mt-2 text-center ">
+              <p className="mb-5 font-extralight text-2xl mt-2 text-center ">
                 You did not confirm any service yet!
-              </p>
+                </p>
+                <PrimaryBtn value={"Book a Service"} link={"/allServices"}></PrimaryBtn>
             </div>
           </div>
         )}

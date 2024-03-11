@@ -64,10 +64,9 @@ const LogIn = () => {
 
   const handleGoogleLogIn = () => {
     googleSignIn()
-      .then((result) => {
+      .then(() => {
         navigate(location?.state ? location?.state : "/");
-        toast.success("Log in Successful!");
-        console.log(result.user);
+        toast.success("Login Successfully!");
       })
       .catch((error) => {
         console.log(error.message);
@@ -126,7 +125,7 @@ const LogIn = () => {
               <input
                 type="submit"
                 value={"Sign in"}
-                className="text-white bg-[#ff3811] p-2 rounded-md border-[.09rem] border-[#ff3811] hover:text-[#ff3811] hover:bg-white font-semibold duration-500 "
+                className="text-white bg-[#ff3811] p-2 rounded-md border-[.09rem] border-[#ff3811] hover:text-[#ff3811] hover:bg-white font-semibold duration-500 cursor-pointer "
               />
             </form>
             <div className="flex items-center justify-between text-white mt-6 ">

@@ -209,20 +209,16 @@ const MyCart = () => {
               </CardBody>
             </Card>
           </>
-        ) : orderedProducts.length === 0 ? (
-          <div className="flex items-center justify-center text-center">
-            <div>
-              <div>
-                <img src={spinner} alt="" />
-              </div>
-            </div>
-          </div>
         ) : (
-          <div>
+          <div className="text-center">
             <strong className="font-medium text-5xl">Oops!</strong>
-            <p className="font-extralight text-2xl mt-2 text-center ">
-              You did not confirm any service yet!
+            <p className="font-extralight text-2xl mt-2 text-center mb-5 ">
+              You did not order any product yet!
             </p>
+            <PrimaryBtn
+              value={"Buy a Product"}
+              link={"/allProducts"}
+            ></PrimaryBtn>
           </div>
         )}
       </div>

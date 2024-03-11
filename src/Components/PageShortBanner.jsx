@@ -10,7 +10,7 @@ const PageShortBanner = ({ BGImg, serviceTitle, pageTitle, location }) => {
       className="relative h-[50vh] lg:w-[85vw] mx-auto rounded-md my-6 "
     >
       <div className="absolute left-10 top-[10%] bottom-[25%]">
-        <h1 className="text-gray-200 font-normal text-xl ">{pageTitle}</h1>
+        <h1 className="text-gray-200 text-3xl">{pageTitle}</h1>
       </div>
       <div className="absolute left-10 top-[22%] bottom-[25%]">
         <h1 className="text-white font-normal text-5xl ">{serviceTitle}</h1>
