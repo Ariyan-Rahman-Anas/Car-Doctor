@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import { useContext } from "react";
 import { AuthContext } from "./../../Provider/AuthProvider";
@@ -6,12 +6,14 @@ import { useForm } from "react-hook-form";
 import { PiWarningCircle } from "react-icons/pi";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const Checkout = () => {
   const { user } = useContext(AuthContext);
   const service = useLoaderData();
   const { _id, name, price, img } = service;
-  const navigate = useNavigate();
+  const axiosSecure = useAxiosSecure();
+  const url = `/bookings`
 
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -24,10 +26,11 @@ const Checkout = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const bookingDetails = {
+    const aBooking = {
       name: data?.name,
       email: data?.email,
       phone: data?.phone,
@@ -52,20 +55,23 @@ const Checkout = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-            toast.success("Service added to the Bookings");
-          fetch("https://car-doctor-server-sigma-ruby.vercel.app/bookings", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(bookingDetails),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-            });
+          //   posting a bookings to the database
+          axiosSecure
+            .post(url, aBooking, {
+              headers: {
+                "content-type": "application/json",
+              },
+            })
+            .then((res) => {
+              if (res?.data?.insertedId) {
+          toast.success("Service added to the Bookings");
 
+              }
+            });
+          reset();
+          
           swalWithBootstrapButtons.fire({
-            title: "Order Confirmed!",
+            title: "Service Booked!",
             text: "We will contact you soon.",
             icon: "success",
           });
@@ -75,7 +81,7 @@ const Checkout = () => {
         ) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
-            text: "You are Canceling the order :)",
+            text: "Booking Cancel :)",
             icon: "error",
           });
         }
@@ -193,7 +199,7 @@ const Checkout = () => {
           <input
             type="submit"
             value="Confirm Your Order"
-            className="text-gray-100 bg-[#ff3811] w-full mt-3 rounded-md py-2 border-[.09rem] border-transparent hover:border-[#ff3811] hover:text-[#ff3811] hover:bg-white duration-500 "
+            className="text-gray-100 bg-[#ff3811] w-full mt-3 rounded-md py-2 border-[.09rem] border-transparent hover:border-[#ff3811] hover:text-[#ff3811] hover:bg-white duration-500 cursor-pointer "
           />
         </form>
       </div>

@@ -9,6 +9,7 @@ import React from "react";
 import { Rating } from "@material-tailwind/react";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const axiosSecure = useAxiosSecure();
@@ -32,32 +33,70 @@ const ProductDetails = () => {
     const currentYear = currentDate.getFullYear()
     const currentMonth = currentDate.getMonth() + 1
     const todayDate = currentDate.getDate()
-    const aFullDate = `${currentYear}-${currentMonth}-${todayDate}`
+  const aFullDate = `${currentYear}-${currentMonth}-${todayDate}`
+  
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: true,
+  });
 
-    const handleOrderProduct = () => {
-      const aProduct = {
-        name,
-        img,
-        rating,
-        price,
-        email: user.email,
-        date: aFullDate,
-      };
-
-      //   posting a product to the database
-      axiosSecure
-        .post(productOrderingURL , aProduct, {
-          headers: {
-            "content-type": "application/json",
-          },
-        })
-        .then((res) => {
-          if (res?.data?.insertedId) {
-            toast.success("Product added to the Cart");
-          }
-        });
-    }
-
+  const handleOrderProduct = () => {
+     const aProduct = {
+       name,
+       img,
+       rating,
+       price,
+       email: user.email,
+       date: aFullDate,
+     };
+    // swl2 starts from here
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to recheck this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, Confirm it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          //   posting a product to the database
+          axiosSecure
+            .post(productOrderingURL, aProduct, {
+              headers: {
+                "content-type": "application/json",
+              },
+            })
+            .then((res) => {
+              if (res?.data?.insertedId) {
+                toast.success("Product added to the Cart");
+              }
+            });
+          swalWithBootstrapButtons.fire({
+            title: "Order Confirmed!",
+            text: "We will contact you soon.",
+            icon: "success",
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Order Cancel :)",
+            icon: "error",
+          });
+        }
+      });
+    // swl2 ends here
+  }
+  
+  
   return (
     <div className="px-2">
       <PageShortBanner

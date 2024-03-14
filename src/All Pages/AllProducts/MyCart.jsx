@@ -7,6 +7,9 @@ import useAuth from "../../Hooks/useAuth";
 import PageShortBanner from "../../Components/PageShortBanner";
 import bannerBg from "./../../assets/images/checkout/blog.png";
 import spinner from "./../../assets/Spinner.gif";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
+
 
 const MyCart = () => {
   const { user } = useAuth();
@@ -33,7 +36,6 @@ const MyCart = () => {
   useEffect(() => {
     axiosSecure.get(url).then((res) => setOrderedProducts(res.data));
   }, [axiosSecure, url]);
-  console.log(orderedProducts);
 
   const [quantity, setQuantity] = useState(1);
   const handleQuantityPlus = () => {
@@ -41,6 +43,64 @@ const MyCart = () => {
   };
   const handleQuantityMinus = () => {
     setQuantity(quantity - 1);
+  };
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: true,
+  });
+
+  //deleting cart item
+  const handleDeleteCartItem = (id) => {
+    // swl2 starts from here
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, Confirm it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          fetch(
+            `https://car-doctor-server-sigma-ruby.vercel.app/orderedProducts/${id}`,
+            {
+              method: "DELETE",
+            }
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deletedCount > 0) {
+                toast.success("Item Deleted!");
+                const remainingCartItems = orderedProducts.filter(
+                  (orderedProduct) => orderedProduct._id !== id
+                );
+                setOrderedProducts(remainingCartItems);
+              }
+            });
+          swalWithBootstrapButtons.fire({
+            title: "Deleted!",
+            text: "Service has been deleted with canceling the order.",
+            icon: "success",
+          });
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your ordered service is in the safe zone :)",
+            icon: "error",
+          });
+        }
+      });
+    // swl2 ends here
   };
 
   return (
@@ -81,12 +141,8 @@ const MyCart = () => {
                         {
                           _id,
                           img,
-                          serviceName,
-                          address,
-                          phone,
                           price,
                           name,
-                          email,
                           date,
                           status,
                         },
@@ -104,7 +160,7 @@ const MyCart = () => {
                                 <RxCrossCircled className="text-2xl text-white bg-gray-200 rounded-full w-fit cursor-pointer "></RxCrossCircled>
                               ) : (
                                 <RxCrossCircled
-                                  // onClick={() => handleDeleteCartItem(_id)}
+                                  onClick={() => handleDeleteCartItem(_id)}
                                   className="text-2xl text-white bg-[#ff3811] rounded-full w-fit hover:text-[#ff3811] hover:bg-white duration-500 cursor-pointer "
                                 ></RxCrossCircled>
                               )}
