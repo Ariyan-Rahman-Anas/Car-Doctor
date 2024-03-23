@@ -33,7 +33,22 @@ Car Doctor is an all-in-one web platform designed to provide a comprehensive exp
 1. Clone the repository:
 ```bash
 git clone https://github.com/Ariyan-Rahman-Anas/Car-Doctor.git
+```
 
 2. Navigate to the project directory:
 ```bash
 cd CarDoctor
+```
+
+3. Install dependencies:
+```bash
+npm install
+```
+
+4. Start the development server:
+```bash
+npm start
+```
+
+## Contributing:
+**Contributions are welcome! Feel free to submit pull requests or open issues for any enhancements, bug fixes, or new features you'd like to see.**
