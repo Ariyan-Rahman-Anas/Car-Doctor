@@ -11,12 +11,14 @@ const BlogPage = () => {
   const axiosSecure = useAxiosSecure();
   const url = "/blogs";
   const [blogs, setBlogs] = useState([]);
+
+  //fetching all of blogs from the database
   useEffect(() => {
     axiosSecure.get(url).then((res) => setBlogs(res?.data));
   }, [axiosSecure]);
 
   return (
-    <div>
+    <div className="px-2">
       <PageShortBanner
         BGImg={blogBG}
         pageTitle={"Read information and write experience!"}
@@ -32,21 +34,18 @@ const BlogPage = () => {
         ></SectionHead>
       </div>
 
-      <div className="w-full lg:w-[85vw] mx-auto my-10 px-2 ">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-10 ">
-          <div className="left col-span-2 ">
+      <div className="w-full lg:w-[85vw] mx-auto my-10">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-8 my-10 ">
+          <div className="left flex-1 ">
             <div>
               {blogs?.slice(0, 1)?.map((blog, index) => (
                 <BlogBigCard key={index} blog={blog}></BlogBigCard>
               ))}
             </div>
           </div>
-          <div className="right col-span-2 md:col-span-1 ">
+          <div className="right flex-1">
             <div>
-              <SectionHead
-                heading={"Blogs"}
-                subHeading={"Here you can..."}
-              ></SectionHead>
+              <SectionHead subHeading={"Here you can..."}></SectionHead>
               <ul className="mb-3 list-disc text-gray-600 flex flex-col items-start gap-y-2 text-sm ">
                 <li>
                   Read insightful blog posts on vehicle maintenance and repair.
@@ -65,7 +64,7 @@ const BlogPage = () => {
                 </li>
               </ul>
             </div>
-            <PrimaryBtn value={"Write a blog"} link={"writeABlog"}></PrimaryBtn>
+            <PrimaryBtn value={"Write a Blog"} link={"writeABlog"}></PrimaryBtn>
           </div>
         </div>
 

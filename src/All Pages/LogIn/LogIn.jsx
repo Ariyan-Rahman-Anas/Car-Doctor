@@ -21,9 +21,7 @@ const LogIn = () => {
   } = useForm();
   const onSubmit = (data) => {
     signIn(data.email, data.password)
-      .then((result) => {
-        const loggedEmail = { email: data.email };
-        console.log(loggedEmail);
+      .then(() => {
         //getting access token from jwt
         fetch("https://car-doctor-server-sigma-ruby.vercel.app/jwt", {
           method: "POST",
@@ -39,25 +37,11 @@ const LogIn = () => {
               navigate(location?.state ? location?.state : "/");
             }
           });
-
-        // axios
-        //   .post(
-        //     "https://car-doctor-server-sigma-ruby.vercel.app/jwt",
-        //     loggedEmail
-        //   )
-        //   .then((res) => {
-        //     console.log(res.data);
-        //     if (res.data.success) {
-        //       navigate(location?.state ? location?.state : "/");
-        //     }
-        //   });
         navigate(location?.state ? location?.state : "/");
         toast.success("Log in Successful!");
         setLogInError("");
-        console.log(result.user);
       })
-      .catch((error) => {
-        console.log(error.message);
+      .catch(() => {
         setLogInError("Invalid email or password!");
       });
   };
@@ -69,7 +53,7 @@ const LogIn = () => {
         toast.success("Login Successfully!");
       })
       .catch((error) => {
-        console.log(error.message);
+        setLogInError(error.message)
       });
   };
 

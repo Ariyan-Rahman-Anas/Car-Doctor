@@ -13,20 +13,26 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [menu, setMenu] = useState(false);
 
+  //function for toggling the nav icon
   const handleMenu = () => {
     setMenu(!menu);
   };
 
+  //function for log out the user
   const handleLogOut = () => {
     logOut()
       .then(() => {
         navigate("/logIn");
         toast.success("Log out Successful!");
       })
-      .catch((error) => {
-        console.log(error.message);
-      });
+      .catch(() => {});
   };
+
+  //function for hiding the navbar menu when user click a nav item in small devices
+  const handleHidingMenu = () => {
+    setMenu(!menu);
+  };
+
   return (
     <div>
       <nav className="flex items-center justify-between p-2">
@@ -39,23 +45,23 @@ const Navbar = () => {
           <ul
             className={`flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-4 absolute md:static ${
               menu
-                ? "left-0 top-[5.5rem] right-0 bg-black text-white bg-opacity-90 w-full h-[90vh] "
+                ? "left-0 top-[5.5rem] right-0 bg-black rounded-md text-white bg-opacity0 w-full h-full "
                 : "-left-[69rem]"
             }  duration-700 z-10 `}
           >
-            <li className="tex-white relative group">
+            <li onClick={handleHidingMenu} className="tex-white relative group">
               <NavLink to={"/"} className="group-hover:text-[#ff3811]">
                 Home
                 <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300 "></span>
               </NavLink>
             </li>
-            <li className="tex-white relative group">
+            <li onClick={handleHidingMenu} className="tex-white relative group">
               <NavLink to={"/about"} className="group-hover:text-[#ff3811]">
                 About
                 <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
               </NavLink>
             </li>
-            <li className="tex-white relative group">
+            <li onClick={handleHidingMenu} className="tex-white relative group">
               <NavLink
                 to={"/allServices"}
                 className="group-hover:text-[#ff3811]"
@@ -64,13 +70,16 @@ const Navbar = () => {
                 <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
               </NavLink>
             </li>
-            <li className="tex-white relative group">
+            <li onClick={handleHidingMenu} className="tex-white relative group">
               <NavLink to={"/blogs"} className="group-hover:text-[#ff3811]">
                 Blogs
                 <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
               </NavLink>
             </li>
-            <li className="tex-white relative group md:hidden ">
+            <li
+              onClick={handleHidingMenu}
+              className="tex-white relative group md:hidden "
+            >
               <NavLink to={"/contact"} className="group-hover:text-[#ff3811]">
                 Contact
                 <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
@@ -78,7 +87,10 @@ const Navbar = () => {
             </li>
             {user ? (
               <>
-                <li className="tex-white relative group">
+                <li
+                  onClick={handleHidingMenu}
+                  className="tex-white relative group"
+                >
                   <NavLink
                     to={"/myBookings"}
                     className="group-hover:text-[#ff3811]"
@@ -87,7 +99,10 @@ const Navbar = () => {
                     <span className="absolute left-0 right-0 bottom-0 top-[1.35rem] h-[.14rem] w-full rounded-md bg-[#ff3811] transform scale-x-0 origin-bottom transition-transform group-hover:scale-x-100 duration-300"></span>
                   </NavLink>
                 </li>
-                <li className="tex-white relative group">
+                <li
+                  onClick={handleHidingMenu}
+                  className="tex-white relative group"
+                >
                   <NavLink
                     to={"/myCart"}
                     className="group-hover:text-[#ff3811]"

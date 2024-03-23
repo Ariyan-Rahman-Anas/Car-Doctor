@@ -6,10 +6,8 @@ import PrimaryBtn from "../../Components/PrimaryBtn";
 import useAuth from "../../Hooks/useAuth";
 import PageShortBanner from "../../Components/PageShortBanner";
 import bannerBg from "./../../assets/images/checkout/blog.png";
-import spinner from "./../../assets/Spinner.gif";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-
 
 const MyCart = () => {
   const { user } = useAuth();
@@ -17,8 +15,8 @@ const MyCart = () => {
   const axiosSecure = useAxiosSecure();
   const [orderedProducts, setOrderedProducts] = useState([]);
 
-  const productPriceIs = orderedProducts.map((product) => product.price);
-  console.log(productPriceIs);
+  // const productPriceIs = orderedProducts.map((product) => product.price);
+  // console.log(productPriceIs);
 
   // const [productPrice, setProductPrice] = useState(productPriceIs);
   // setProductPrice(orderedProducts.map(price=>price.price))
@@ -33,17 +31,19 @@ const MyCart = () => {
     "Status",
   ];
 
+  //fetching the ordered products for the cart table
   useEffect(() => {
     axiosSecure.get(url).then((res) => setOrderedProducts(res.data));
   }, [axiosSecure, url]);
 
-  const [quantity, setQuantity] = useState(1);
-  const handleQuantityPlus = () => {
-    setQuantity(quantity + 1);
-  };
-  const handleQuantityMinus = () => {
-    setQuantity(quantity - 1);
-  };
+  // const [quantity, setQuantity] = useState(1);
+
+  // const handleQuantityPlus = () => {
+  //   setQuantity(quantity + 1);
+  // };
+  // const handleQuantityMinus = () => {
+  //   setQuantity(quantity - 1);
+  // };
 
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -61,9 +61,11 @@ const MyCart = () => {
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         icon: "warning",
+        cancelButtonColor: "#ff3811",
+        confirmButtonColor: "green",
         showCancelButton: true,
-        confirmButtonText: "Yes, Confirm it!",
-        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, Confirm",
+        cancelButtonText: "No, Cancel",
         reverseButtons: true,
       })
       .then((result) => {
@@ -86,25 +88,54 @@ const MyCart = () => {
             });
           swalWithBootstrapButtons.fire({
             title: "Deleted!",
-            text: "Service has been deleted with canceling the order.",
+            text: "Product has been deleted with canceling the order.",
             icon: "success",
+            confirmButtonColor: "green",
           });
         } else if (
-          /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
-            text: "Your ordered service is in the safe zone :)",
+            text: "Your ordered product is in the safe zone :)",
             icon: "error",
+            confirmButtonColor: "#ff3811",
           });
         }
       });
     // swl2 ends here
   };
 
+  const [quantity, setQuantity] = useState(1);
+
+  // ...
+  const handleQuantityChange = (id, newQuantity) => {
+    const updatedProducts = orderedProducts.map((product) => {
+      if (product._id === id) {
+        return { ...product, quantity: newQuantity };
+      }
+      return product;
+    });
+    setOrderedProducts(updatedProducts);
+  };
+
+  const handleQuantityPlus = (id) => {
+    const updatedQuantity =
+      orderedProducts.find((product) => product._id === id).quantity + 1;
+    handleQuantityChange(id, updatedQuantity);
+  };
+
+  const handleQuantityMinus = (id) => {
+    const updatedQuantity = Math.max(
+      1,
+      orderedProducts.find((product) => product._id === id).quantity - 1
+    );
+    handleQuantityChange(id, updatedQuantity);
+  };
+  // ...
+
   return (
-    <div>
+    <div className="px-2">
       <PageShortBanner
         location={"Cart"}
         BGImg={bannerBg}
@@ -137,17 +168,7 @@ const MyCart = () => {
                   </thead>
                   <tbody>
                     {orderedProducts?.map(
-                      (
-                        {
-                          _id,
-                          img,
-                          price,
-                          name,
-                          date,
-                          status,
-                        },
-                        index
-                      ) => {
+                      ({ _id, img, price, name, date, status }, index) => {
                         const isLast = index === orderedProducts?.length - 1;
                         const classes = isLast
                           ? "p-4"
@@ -190,8 +211,9 @@ const MyCart = () => {
                                 <Typography variant="small" color="blue-gray">
                                   <button
                                     className="text-xl h-5 w-5 rounded-md leading-5 text-center bg-gray-200 hover:text-white hover:bg-[#ff3811] duration-500 cursor-pointer "
-                                    onClick={handleQuantityMinus}
-                                    disabled={quantity === 1}
+                                    // onClick={handleQuantityMinus}
+                                    onClick={() => handleQuantityMinus(_id)}
+                                    // disabled={quantity === 1}
                                   >
                                     -
                                   </button>
@@ -205,7 +227,8 @@ const MyCart = () => {
                                 </Typography>
                                 <Typography variant="small" color="blue-gray">
                                   <button
-                                    onClick={handleQuantityPlus}
+                                    // onClick={handleQuantityPlus}
+                                    onClick={() => handleQuantityPlus(_id)}
                                     className="text-xl h-5 w-5 rounded-md leading-5 text-center bg-gray-200 hover:text-white hover:bg-[#ff3811] duration-500 cursor-pointer "
                                   >
                                     +

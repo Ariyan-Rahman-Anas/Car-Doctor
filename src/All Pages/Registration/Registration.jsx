@@ -20,7 +20,6 @@ const Registration = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
     createUser(data.email, data.password)
       .then(() => {
         navigate("/");
@@ -34,13 +33,12 @@ const Registration = () => {
 
   const handleGoogleSignUp = () => {
     googleSignIn()
-      .then((result) => {
+      .then(() => {
         navigate("/");
         toast.success("Registration Successful!");
-        console.log(result.user);
       })
       .catch((error) => {
-        console.log(error.message);
+        setRegisterError(error.message)
       });
   };
 

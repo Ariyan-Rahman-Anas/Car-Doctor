@@ -10,18 +10,22 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 
 const MyBookings = () => {
-  const {user} = useAuth()
+  const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
   const axiosSecure = useAxiosSecure();
   const url = `/bookings?email=${user?.email}`;
+
+  //fetching all of bookings form the database
   useEffect(() => {
     if (user.email) {
-    axiosSecure.get(url).then((res) => setBookings(res?.data));
+      axiosSecure.get(url).then((res) => setBookings(res?.data));
     }
   }, [url, axiosSecure, user.email]);
 
+  //bookings table head
   const TABLE_HEAD = ["N/A", "Service", "Price", "Date", "Status"];
 
+  //design of sweet alert2
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -30,7 +34,7 @@ const MyBookings = () => {
     buttonsStyling: true,
   });
 
-  // updatingCartItem
+  //function for updating the booking status 
   const handleUpdateItem = (id) => {
     fetch(`https://car-doctor-server-sigma-ruby.vercel.app/bookings/${id}`, {
       method: "PATCH",
@@ -41,7 +45,6 @@ const MyBookings = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           toast.success("Update Successful!");
           const remaining = bookings.filter((booking) => booking._id !== id);
@@ -53,7 +56,7 @@ const MyBookings = () => {
       });
   };
 
-  //deleting cart item
+  //deleting bookings item
   const handleDeleteCartItem = (id) => {
     // swl2 starts from here
     swalWithBootstrapButtons
@@ -61,9 +64,11 @@ const MyBookings = () => {
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         icon: "warning",
+        cancelButtonColor: "#ff3811",
+        confirmButtonColor: "green",
         showCancelButton: true,
-        confirmButtonText: "Yes, Confirm it!",
-        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, Confirm",
+        cancelButtonText: "No, Cancel",
         reverseButtons: true,
       })
       .then((result) => {
@@ -76,9 +81,7 @@ const MyBookings = () => {
           )
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
               if (data.deletedCount > 0) {
-                // alert("Deleted!")
                 const remainingCartItems = bookings.filter(
                   (booking) => booking._id !== id
                 );
@@ -87,17 +90,18 @@ const MyBookings = () => {
             });
           swalWithBootstrapButtons.fire({
             title: "Deleted!",
-            text: "Service has been deleted with canceling the order.",
+            text: "Service has been deleted with canceling the booking.",
             icon: "success",
+            confirmButtonColor: "green",
           });
         } else if (
-          /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
-            text: "Your ordered service is in the safe zone :)",
+            text: "Your booked service is in the safe zone :)",
             icon: "error",
+            confirmButtonColor: "#ff3811",
           });
         }
       });
@@ -105,7 +109,7 @@ const MyBookings = () => {
   };
 
   return (
-    <div>
+    <div className="px-2">
       <PageShortBanner
         pageTitle={"My Bookings"}
         location={"Home > My Bookings"}
@@ -267,8 +271,11 @@ const MyBookings = () => {
               <strong className="font-medium text-5xl">Oops!</strong>
               <p className="mb-5 font-extralight text-2xl mt-2 text-center ">
                 You did not confirm any service yet!
-                </p>
-                <PrimaryBtn value={"Book a Service"} link={"/allServices"}></PrimaryBtn>
+              </p>
+              <PrimaryBtn
+                value={"Book a Service"}
+                link={"/allServices"}
+              ></PrimaryBtn>
             </div>
           </div>
         )}

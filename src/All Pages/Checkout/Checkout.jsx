@@ -13,8 +13,9 @@ const Checkout = () => {
   const service = useLoaderData();
   const { _id, name, price, img } = service;
   const axiosSecure = useAxiosSecure();
-  const url = `/bookings`
+  const url = `/bookings`;
 
+  //design of sweet alert2
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -23,12 +24,15 @@ const Checkout = () => {
     buttonsStyling: true,
   });
 
+  //from react hook form for doing form validation
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
+  //function for booking a service
   const onSubmit = (data) => {
     const aBooking = {
       name: data?.name,
@@ -48,14 +52,16 @@ const Checkout = () => {
         title: "Are you sure?",
         text: "You won't be able to recheck this!",
         icon: "warning",
+        cancelButtonColor: "#ff3811",
+        confirmButtonColor: "green",
         showCancelButton: true,
-        confirmButtonText: "Yes, Confirm it!",
-        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, Confirm",
+        cancelButtonText: "No, Cancel",
         reverseButtons: true,
       })
       .then((result) => {
         if (result.isConfirmed) {
-          //   posting a bookings to the database
+          //   posting a bookings in the database
           axiosSecure
             .post(url, aBooking, {
               headers: {
@@ -64,25 +70,25 @@ const Checkout = () => {
             })
             .then((res) => {
               if (res?.data?.insertedId) {
-          toast.success("Service added to the Bookings");
-
+                toast.success("Service added to the Bookings");
               }
             });
           reset();
-          
+
           swalWithBootstrapButtons.fire({
             title: "Service Booked!",
             text: "We will contact you soon.",
             icon: "success",
+            confirmButtonColor: "green",
           });
         } else if (
-          /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
             text: "Booking Cancel :)",
             icon: "error",
+            confirmButtonColor: "#ff3811",
           });
         }
       });

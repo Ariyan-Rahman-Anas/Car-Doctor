@@ -13,28 +13,30 @@ import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const axiosSecure = useAxiosSecure();
-    const product = useLoaderData();
-  const { _id, name, img, rating, price, description } = product || {};
+  const product = useLoaderData();
+  const { name, img, rating, price, description } = product || {};
   const [rated, setRated] = React.useState(rating);
   const [restProducts, setRestProducts] = useState([]);
   const url = `/products`;
-    const productOrderingURL = `/orderedProducts`;
-    const { user } = useAuth();
+  const productOrderingURL = `/orderedProducts`;
+  const { user } = useAuth();
 
+  //fetching related products of this product
   useEffect(() => {
     axiosSecure.get(url).then((res) => setRestProducts(res.data));
   }, [axiosSecure, url]);
 
-  // creating a random number and a ending number for showing related services
+  // creating a random number and a ending number for showing a couple of related services
   const randomNumber = Math.ceil(Math.random() * 12);
-    const endPoint = randomNumber + 5;
-    
-    const currentDate = new Date()
-    const currentYear = currentDate.getFullYear()
-    const currentMonth = currentDate.getMonth() + 1
-    const todayDate = currentDate.getDate()
-  const aFullDate = `${currentYear}-${currentMonth}-${todayDate}`
-  
+  const endPoint = randomNumber + 5;
+
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth() + 1;
+  const todayDate = currentDate.getDate();
+  const aFullDate = `${currentYear}-${currentMonth}-${todayDate}`;
+
+  //design of sweet alert2
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -43,29 +45,32 @@ const ProductDetails = () => {
     buttonsStyling: true,
   });
 
+  //function for order a product
   const handleOrderProduct = () => {
-     const aProduct = {
-       name,
-       img,
-       rating,
-       price,
-       email: user.email,
-       date: aFullDate,
-     };
+    const aProduct = {
+      name,
+      img,
+      rating,
+      price,
+      email: user.email,
+      date: aFullDate,
+    };
     // swl2 starts from here
     swalWithBootstrapButtons
       .fire({
         title: "Are you sure?",
         text: "You won't be able to recheck this!",
         icon: "warning",
+        cancelButtonColor: "#ff3811",
+        confirmButtonColor: "green",
         showCancelButton: true,
-        confirmButtonText: "Yes, Confirm it!",
-        cancelButtonText: "No, cancel!",
+        confirmButtonText: "Yes, Confirm",
+        cancelButtonText: "No, Cancel",
         reverseButtons: true,
       })
       .then((result) => {
         if (result.isConfirmed) {
-          //   posting a product to the database
+          // posting a product in the database
           axiosSecure
             .post(productOrderingURL, aProduct, {
               headers: {
@@ -81,22 +86,22 @@ const ProductDetails = () => {
             title: "Order Confirmed!",
             text: "We will contact you soon.",
             icon: "success",
+            confirmButtonColor: "green",
           });
         } else if (
-          /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
+            confirmButtonColor: "#ff3811",
             text: "Order Cancel :)",
             icon: "error",
           });
         }
       });
     // swl2 ends here
-  }
-  
-  
+  };
+
   return (
     <div className="px-2">
       <PageShortBanner
