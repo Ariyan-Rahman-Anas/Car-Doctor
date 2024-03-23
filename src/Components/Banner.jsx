@@ -34,7 +34,7 @@ const Banner = () => {
         />
         <div
           style={{
-            background: `linear-gradient(to left, rgba(0,0,0,0.0), rgba(0,0,0,0.8))`,
+            background: `linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.8))`,
           }}
           className="text-white absolute left-0 top-0 w-full h-full md:flex items-center justify-start "
         >
@@ -42,7 +42,7 @@ const Banner = () => {
             <h1 className="text-4xl md:text-6xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] ">
               Affordable Price For Car Servicing
             </h1>
-            <p className="mt-12 mb-5 sm:w-2/3 md:w-1/2">
+            <p className="mt-12 mb-5 sm:w-2/3 md:w-1/2 ">
               Explore budget-friendly options for maintaining your vehicle
               without compromising on quality or reliability.
             </p>
@@ -66,7 +66,7 @@ const Banner = () => {
         />
         <div
           style={{
-            background: `linear-gradient(to left, rgba(0,0,0,0.0), rgba(0,0,0,0.8))`,
+            background: `linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.8))`,
           }}
           className="text-white absolute left-0 top-0 w-full h-full md:flex items-center justify-start "
         >
@@ -98,7 +98,7 @@ const Banner = () => {
         />
         <div
           style={{
-            background: `linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.1))`,
+            background: `linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.2))`,
           }}
           className="text-white absolute  right-0 top-0 w-full h-full md:flex items-center justify-center "
         >
@@ -130,15 +130,15 @@ const Banner = () => {
         />
         <div
           style={{
-            background: `linear-gradient(to top, rgba(0,0,0,0.99), rgba(0,0,0,0.0))`,
+            background: `linear-gradient(to top, rgba(0,0,0,0.99), rgba(0,0,0,0.2))`,
           }}
-          className="text-white absolute  right-0 top-0 w-full h-full flex items-end justify-center "
+          className="text-white absolute  right-0 top- bottom-0 pb-8 md:pb-0 w-full h-full flex items-end justify-center "
         >
           <div className="w-full p-5 md:p-20 flex flex-col items-start justify-end">
             <h1 className="text-4xl md:text-6xl md:w-4/5 lg:w-3/5 md:leading-[4.8rem] ">
               Electric Cars: Future of Driving{" "}
             </h1>
-            <p className="mt-12 mb-5 sm:w-2/3 md:w-1/2">
+            <p className="mt-8 mb-5 sm:w-2/3 md:w-1/2">
               Dive into the innovative world of electric vehicles and discover
               how they're reshaping the future of transportation.
             </p>
@@ -194,7 +194,7 @@ const Banner = () => {
         />
         <div
           style={{
-            background: `linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.1))`,
+            background: `linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0.2))`,
           }}
           className="text-white absolute left-0 right-0 top-0 w-full h-full md:flex items-center justify-center "
         >

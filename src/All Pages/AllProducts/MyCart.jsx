@@ -79,7 +79,7 @@ const MyCart = () => {
             .then((res) => res.json())
             .then((data) => {
               if (data.deletedCount > 0) {
-                toast.success("Item Deleted!");
+                toast.success("Product Deleted!");
                 const remainingCartItems = orderedProducts.filter(
                   (orderedProduct) => orderedProduct._id !== id
                 );

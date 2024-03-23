@@ -45,7 +45,7 @@ const Navbar = () => {
           <ul
             className={`flex flex-col md:flex-row items-center justify-center gap-x-8 gap-y-4 absolute md:static ${
               menu
-                ? "left-0 top-[5.5rem] right-0 bg-black rounded-md text-white bg-opacity0 w-full h-full "
+                ? "left-0 top-[5.5rem] right-0 bg-black md:bg-transparent rounded-md text-white md:text-black w-full h-full "
                 : "-left-[69rem]"
             }  duration-700 z-10 `}
           >
@@ -115,7 +115,7 @@ const Navbar = () => {
                   <div className="tex-white relative group text-center">
                     <div className="flex items-center justify-center">
                       <div className="flex flex-col items-center justify-center text-center">
-                        <div className="h-10 w-10 border-2 border-[#ff3811] rounded-full mt-4 mb-2 ">
+                        <div className="h-10 w-10 rounded-full mt-4 mb-2 ">
                           {user?.photoURL ? (
                             <img
                               src={user.photoURL}
@@ -123,7 +123,7 @@ const Navbar = () => {
                               className="rounded-full w-full "
                             ></img>
                           ) : (
-                            <div className="border2 w-fit text-white bg-[#ff3811] rounded-full ">
+                            <div className="w-fit text-white bg-[#ff3811] rounded-full ">
                               <FaRegUser className="p-1.5 w-fit text-4xl"></FaRegUser>
                             </div>
                           )}
@@ -162,7 +162,7 @@ const Navbar = () => {
           <div>
             {user ? (
               <div className="hidden md:block group relative w-fit rounded-full ">
-                <div className="border-[.09rem] w-fit rounded-full border-[#ff3811]  ">
+                <div className="w-fit rounded-full">
                   <div className="h-10 w-10 flex items-center justify-center cursor-pointer ">
                     {user.photoURL ? (
                       <img
@@ -171,18 +171,20 @@ const Navbar = () => {
                         className="w-full rounded-full "
                       />
                     ) : (
-                      <div className="border2 w-fit text-white bg-[#ff3811] rounded-full ">
+                      <div className="w-fit text-white bg-[#ff3811] rounded-full ">
                         <FaRegUser className="p-1.5 w-fit text-4xl"></FaRegUser>
                       </div>
                     )}
                   </div>
                 </div>
-                <div className="hidden group-hover:flex items-center justify-center text-sm text-center absolute right-0 z-40 rounded-lg  w-[20rem] h-[10rem] text-white bg-black backdrop-filter backdrop-blur-md border-2 border-transparent group-hover:border-[#ff3811] duration-500 ">
+                <div className="hidden group-hover:flex items-center justify-center text-sm text-center absolute right-0 z-40 rounded-lg  w-[20rem] h-[10rem] text-white bg-black backdrop-filter backdrop-blur-md border-[.09rem] border-transparent group-hover:border-[#ff3811] duration-500 ">
                   <div>
-                    <h1>
+                    <h1 className="font-semibold">
                       {user?.displayName ? user.displayName : "Mr. Not Given"}{" "}
                     </h1>
-                    <p>{user?.email ? user.email : "not given"} </p>
+                    <p className="text-sm mt-1">
+                      {user?.email ? user.email : "not given"}{" "}
+                    </p>
                     <button onClick={handleLogOut} className="mt-5">
                       <PrimaryBtn
                         link={"/login"}

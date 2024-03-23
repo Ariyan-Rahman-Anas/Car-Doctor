@@ -19,10 +19,10 @@ const Footer = () => {
             <Link>
               <FaGoogle className="text-2xl   hover:text-[#ff3811] duration-500 "></FaGoogle>
             </Link>
-            <Link>
+            <Link to={"https://www.facebook.com/ariyanrahmananas69/"}>
               <FaFacebookF className="text-2xl   hover:text-[#ff3811] duration-500 "></FaFacebookF>
             </Link>
-            <Link>
+            <Link to={"https://www.linkedin.com/in/ariyanrahmananas/"}>
               <FaLinkedin className="text-2xl   hover:text-[#ff3811] duration-500 "></FaLinkedin>
             </Link>
             <Link>

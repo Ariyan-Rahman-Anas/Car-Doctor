@@ -36,7 +36,7 @@ const CoreFeature = () => {
               className="w-[4rem] h-[4rem] mx-auto group-hover:scale-110 duration-500 "
             />
           </div>
-          <p className="m-2 text-white font-semibold">Expert Team</p>
+          <p className="m-2 text-white font-semibold">Be on-time</p>
         </div>
         <div className="border-[.09rem]  rounded-md h-[8rem] 2xl:h-[11rem] w-[8rem] 2xl:w-[12rem] hover:bg-gray-200 duration-500 group">
           <div className="p-5 pb-0">
@@ -46,7 +46,7 @@ const CoreFeature = () => {
               className="w-[4rem] h-[4rem] mx-auto group-hover:scale-110 duration-500 "
             />
           </div>
-          <p className="m-2 font-semibold">Expert Team</p>
+          <p className="m-2 font-semibold">Live Support</p>
         </div>
         <div className="border-[.09rem]  rounded-md h-[8rem] 2xl:h-[11rem] w-[8rem] 2xl:w-[12rem] hover:bg-gray-200 duration-500 group">
           <div className="p-5 pb-0">
@@ -56,7 +56,7 @@ const CoreFeature = () => {
               className="w-[4rem] h-[4rem] mx-auto group-hover:scale-110 duration-500 "
             />
           </div>
-          <p className="m-2 font-semibold">Expert Team</p>
+          <p className="m-2 font-semibold">Solution</p>
         </div>
         <div className="border-[.09rem]  rounded-md h-[8rem] 2xl:h-[11rem] w-[8rem] 2xl:w-[12rem] hover:bg-gray-200 duration-500 group">
           <div className="p-5 pb-0">
@@ -66,7 +66,7 @@ const CoreFeature = () => {
               className="w-[4rem] h-[4rem] mx-auto group-hover:scale-110 duration-500 "
             />
           </div>
-          <p className="m-2 font-semibold">Expert Team</p>
+          <p className="m-2 font-semibold">Secured</p>
         </div>
         <div className="border-[.09rem]  rounded-md h-[8rem] 2xl:h-[11rem] w-[8rem] 2xl:w-[12rem] hover:bg-gray-200 duration-500 group">
           <div className="p-5 pb-0">
@@ -76,7 +76,7 @@ const CoreFeature = () => {
               className="w-[4rem] h-[4rem] mx-auto group-hover:scale-110 duration-500 "
             />
           </div>
-          <p className="m-2 font-semibold">Expert Team</p>
+          <p className="m-2 font-semibold">Available</p>
         </div>
       </div>
     </div>

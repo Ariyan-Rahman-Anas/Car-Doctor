@@ -88,9 +88,7 @@ const ProductDetails = () => {
             icon: "success",
             confirmButtonColor: "green",
           });
-        } else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
             confirmButtonColor: "#ff3811",
@@ -124,7 +122,7 @@ const ProductDetails = () => {
             <h1 className="font-normal text-3xl ">{name}</h1>
             <p className="text-sm text-gray-600 mt-2 ">{description}</p>
           </div>
-          <div className="mt-4">
+          <div className="mt-14">
             <h1 className="text-3xl font-normal mt-6 ">
               3 Simple Steps to Process
             </h1>
@@ -188,7 +186,7 @@ const ProductDetails = () => {
               ))}
             </div>
           </div>
-          <div className="download text-white bg-black rounded-md p-5 my-5 ">
+          <div className="download text-white bg-black rounded-md p-5 my-10 ">
             <h1 className="font-semibold text-2xl">Download</h1>
             <div className="mt-3 flex flex-col gap-4">
               <div className="flex items-center justify-between rounded-md px-4 py-2 text-gray-300 bg-gray-800 group hover:bg-transparent duration-500 ">
@@ -217,7 +215,7 @@ const ProductDetails = () => {
               </div>
             </div>
           </div>
-          <div className="help relative text-white bg-black rounded-md p-5 pb- my-5 text-center text-sm ">
+          <div className="help relative text-white bg-black rounded-md p-5 my-10 text-center text-sm ">
             <div className="w-1/3  mx-auto mb-3">
               <img src={logo} alt="car doctor logo" className="w-full" />
             </div>
@@ -236,7 +234,9 @@ const ProductDetails = () => {
               <strong>Get A Quote</strong>
             </Link>
           </div>
-          <p className="font-semibold text-3xl mt-8 mb-5">Price: ${price}</p>
+          <p className="font-semibold text-3xl text-center mt-8 mb-5">
+            Price: ${price}
+          </p>
           <Link onClick={handleOrderProduct}>
             <div className="px-[1.2rem] py-1.5 rounded-full font-normal text-white bg-[#ff3811] border-[.09rem] border-transparent hover:border-[#ff3811] hover:text-[#ff3811] hover:bg-white duration-500 text-center ">
               Order Now
