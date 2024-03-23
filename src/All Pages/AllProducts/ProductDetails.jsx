@@ -176,7 +176,7 @@ const ProductDetails = () => {
             <div className="mt-3 flex flex-col gap-3">
               {restProducts?.slice(randomNumber, endPoint).map((aProduct) => (
                 <Link
-                  to={`/serviceDetails/${aProduct._id}`}
+                  to={`/productDetails/${aProduct._id}`}
                   key={aProduct.id}
                   className="flex items-center justify-between bg-white px-4 py-3 rounded-md hover:text-white hover:bg-[#ff3811] duration-500 group "
                 >
