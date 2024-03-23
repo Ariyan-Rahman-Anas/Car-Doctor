@@ -23,7 +23,6 @@ Car Doctor is an all-in-one web platform designed to provide a comprehensive exp
 
 
 ## Technologies Used:
-- Material Tailwind
 - Tailwind CSS
 - React JS
 - Firebase
@@ -52,3 +51,6 @@ npm start
 
 ## Contributing:
 **Contributions are welcome! Feel free to submit pull requests or open issues for any enhancements, bug fixes, or new features you'd like to see.**
+
+## Thank you!
+## Happy Coding!
