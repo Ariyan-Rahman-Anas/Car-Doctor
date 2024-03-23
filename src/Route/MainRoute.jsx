@@ -38,7 +38,11 @@ const MainRoute = createBrowserRouter([
       },
       {
         path: "productDetails/:id",
-        element: <ProductDetails></ProductDetails>,
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://car-doctor-server-sigma-ruby.vercel.app/products/${params.id}`
