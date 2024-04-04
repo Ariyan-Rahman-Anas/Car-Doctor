@@ -71,7 +71,7 @@ const MyCart = () => {
       .then((result) => {
         if (result.isConfirmed) {
           fetch(
-            `https://car-doctor-server-sigma-ruby.vercel.app/orderedProducts/${id}`,
+            `https://car-doctor-server-green-delta.vercel.app/orderedProducts/${id}`,
             {
               method: "DELETE",
             }
@@ -92,9 +92,7 @@ const MyCart = () => {
             icon: "success",
             confirmButtonColor: "green",
           });
-        } else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
             text: "Your ordered product is in the safe zone :)",

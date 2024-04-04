@@ -8,6 +8,7 @@ const Service = () => {
   const axiosSecure = useAxiosSecure();
   const url = `/services`;
   const [services, setServices] = useState([]);
+  console.log("services:", services )
 
   useEffect(() => {
     axiosSecure.get(url).then((res) => setServices(res?.data));

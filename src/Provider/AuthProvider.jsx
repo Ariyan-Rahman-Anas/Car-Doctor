@@ -10,7 +10,6 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
-import axios from "axios";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -44,34 +43,6 @@ const AuthProvider = ({ children }) => {
       setUser(currentUser);
       console.log("current user is: ", currentUser);
       setLoading(false);
-      const currentUserEmail = currentUser?.email;
-      const loggedEmail = { email: currentUserEmail };
-      // if user exist then issue a token
-      if (currentUser) {
-        axios
-          .post(
-            "https://car-doctor-server-sigma-ruby.vercel.app/jwt",
-            loggedEmail,
-            {
-              withCredentials: true,
-            }
-          )
-          .then((res) => {
-            console.log("token response from auth", res.data);
-          });
-      } else {
-        axios
-          .post(
-            "https://car-doctor-server-sigma-ruby.vercel.app/logout",
-            loggedEmail,
-            {
-              withCredentials: true,
-            }
-          )
-          .then((res) => {
-            console.log("logged out ", res.data);
-          });
-      }
     });
     return () => {
       return unSubscribe;

@@ -7,7 +7,6 @@ import { PiWarningCircle } from "react-icons/pi";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
-import axios from "axios";
 
 const LogIn = () => {
   const { signIn, googleSignIn } = useAuth();
@@ -22,21 +21,6 @@ const LogIn = () => {
   const onSubmit = (data) => {
     signIn(data.email, data.password)
       .then(() => {
-        //getting access token from jwt
-        fetch("https://car-doctor-server-sigma-ruby.vercel.app/jwt", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify({ email: data?.email }),
-          credentials: "include",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.success) {
-              navigate(location?.state ? location?.state : "/");
-            }
-          });
         navigate(location?.state ? location?.state : "/");
         toast.success("Log in Successful!");
         setLogInError("");

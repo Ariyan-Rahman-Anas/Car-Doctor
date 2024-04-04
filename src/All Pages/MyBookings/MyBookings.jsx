@@ -34,9 +34,9 @@ const MyBookings = () => {
     buttonsStyling: true,
   });
 
-  //function for updating the booking status 
+  //function for updating the booking status
   const handleUpdateItem = (id) => {
-    fetch(`https://car-doctor-server-sigma-ruby.vercel.app/bookings/${id}`, {
+    fetch(`https://car-doctor-server-green-delta.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -74,7 +74,7 @@ const MyBookings = () => {
       .then((result) => {
         if (result.isConfirmed) {
           fetch(
-            `https://car-doctor-server-sigma-ruby.vercel.app/bookings/${id}`,
+            `https://car-doctor-server-green-delta.vercel.app/bookings/${id}`,
             {
               method: "DELETE",
             }
@@ -94,9 +94,7 @@ const MyBookings = () => {
             icon: "success",
             confirmButtonColor: "green",
           });
-        } else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
             text: "Your booked service is in the safe zone :)",

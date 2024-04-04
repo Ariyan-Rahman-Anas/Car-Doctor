@@ -11,8 +11,8 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 const Testimonial = () => {
   const axiosSecure = useAxiosSecure();
   const [feedbacks, setFeedbacks] = useState([]);
-  const url = "/reviews"
-  
+  const url = "/reviews";
+
   useEffect(() => {
     axiosSecure.get(url).then((res) => setFeedbacks(res?.data));
   }, [axiosSecure]);
