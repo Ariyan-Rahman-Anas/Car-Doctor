@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import SectionHead from "./SectionHead";
 import ServiceCard from "./ServiceCard";
 import PrimaryBtn from "./PrimaryBtn";
-import useAxiosSecure from "../Hooks/useAxiosSecure";
+import axios from "axios";
 
 const Service = () => {
-  const axiosSecure = useAxiosSecure();
-  const url = `/services`;
+  const url = "https://car-doctor-server-flame-one.vercel.app/services";
   const [services, setServices] = useState([]);
-  console.log("services:", services )
+  console.log("services:", services);
 
   useEffect(() => {
-    axiosSecure.get(url).then((res) => setServices(res?.data));
-  }, [axiosSecure, url]);
+    axios
+      .get(url, { withCredentials: true })
+      .then((res) => setServices(res?.data));
+  }, [url]);
 
   return (
     <div className="text-center my-[5rem] px-2 ">

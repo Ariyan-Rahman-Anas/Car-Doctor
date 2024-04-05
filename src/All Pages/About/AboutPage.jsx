@@ -1,4 +1,5 @@
 import About from "../../Components/About";
+import Testimonial from "../../Components/Testimonial";
 
 const AboutPage = () => {
   const aboutData = [
@@ -53,6 +54,9 @@ const AboutPage = () => {
           for all your automotive needs. Contact us now to get started!
         </p>
       </div>
+
+      <Testimonial></Testimonial>
+
     </div>
   );
 };

@@ -1,16 +1,13 @@
-import { useNavigate } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import useAuth from "../../Hooks/useAuth";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import bannerBg from "./../../assets/images/checkout/writeABlog.png";
 import toast from "react-hot-toast";
 import SectionHead from "../../Components/SectionHead";
+import axios from "axios";
 
 const WriteABlogPage = () => {
-  const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
-  const url = `/blogs`;
-  const navigate = useNavigate();
+  const url = `https://car-doctor-server-flame-one.vercel.app/blogs`;
 
   //function for submitting the blog writing form
   const handleSubmitBlog = (e) => {
@@ -39,18 +36,13 @@ const WriteABlogPage = () => {
     };
 
     //posting the blog to the database using axiosSecure
-    axiosSecure
-      .post(url, aBlog, {
-        headers: {
-          "content-type": "application/json",
-        },
-      })
-      .then((res) => {
+    axios.post(url, aBlog)
+      .then(res => {
         if (res?.data?.insertedId) {
-          toast.success("Thanks for your valuable blog!");
-          navigate("/blogs");
+                toast.success("Thanks for your valuable blog!");
         }
-      });
+    })
+
   };
   return (
     <div className="px-2">

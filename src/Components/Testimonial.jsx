@@ -6,16 +6,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Keyboard, Pagination, Navigation } from "swiper/modules";
-import useAxiosSecure from "../Hooks/useAxiosSecure";
+import axios from "axios";
 
 const Testimonial = () => {
-  const axiosSecure = useAxiosSecure();
   const [feedbacks, setFeedbacks] = useState([]);
-  const url = "/reviews";
+  const url = "https://car-doctor-server-flame-one.vercel.app/reviews";
 
   useEffect(() => {
-    axiosSecure.get(url).then((res) => setFeedbacks(res?.data));
-  }, [axiosSecure]);
+    axios.get(url).then((res) => setFeedbacks(res.data));
+  }, []);
 
   const [rated, setRated] = React.useState(feedbacks?.rating);
 

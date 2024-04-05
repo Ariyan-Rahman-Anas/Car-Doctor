@@ -2,15 +2,17 @@ import { useEffect, useState } from "react";
 import SectionHead from "./SectionHead";
 import ProductCard from "./ProductCard";
 import PrimaryBtn from "./PrimaryBtn";
-import useAxiosSecure from "../Hooks/useAxiosSecure";
+import axios from "axios";
 
 const PopularProducts = () => {
-  const axiosSecure = useAxiosSecure();
-  const url = `/products`
+  const url = "https://car-doctor-server-flame-one.vercel.app/products";
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    axiosSecure.get(url).then((res) => setProducts(res?.data));
-  }, [axiosSecure, url]);
+    axios
+      .get(url, { withCredentials: true })
+      .then((res) => setProducts(res?.data));
+  }, [url]);
 
   return (
     <div className="px-2 my-[5rem] text-center ">

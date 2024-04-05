@@ -1,12 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import PageShortBanner from "../../Components/PageShortBanner";
 import bannerBG from "./../../assets/images/checkout/blog.png";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import { FaRegUser } from "react-icons/fa";
 import { FaRegThumbsDown, FaRegThumbsUp } from "react-icons/fa";
+import axios from "axios";
 
 const BlogDetailsPage = () => {
   const { user } = useAuth();
@@ -24,17 +24,14 @@ const BlogDetailsPage = () => {
     CTA,
   } = blogDetails || {};
 
-  const axiosSecure = useAxiosSecure();
-  const url = `/blogComments/${_id}`;
+  const url = `https://car-doctor-server-flame-one.vercel.app/blogComments/${_id}`;
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const randomValueForLiking = Math.ceil(Math.random() * 250);
 
   useEffect(() => {
-    axiosSecure.get(url).then((res) => {
-      setComments(res?.data);
-    });
-  }, [url, axiosSecure]);
+    axios.get(url).then(res=>{setComments(res?.data)})
+  },[url])
 
   const handleSubmitComment = (e) => {
     e.preventDefault();
@@ -71,23 +68,15 @@ const BlogDetailsPage = () => {
       disliking: 0,
       commentingTime,
     };
-
     setNewComment(""); // Reset the new comment state
 
     //posting a comment
-    axiosSecure
-      .post(url, aComment, {
-        headers: {
-          "content-type": "application/json",
-        },
-      })
-      .then((res) => {
-        if (res?.data?.insertedId) {
-          toast.success("Thanks for your comment!");
-          // Update local state with the new comment
-          setComments((prevComments) => [...prevComments, aComment]);
-        }
-      });
+    axios.post(url, aComment).then((res) => {
+      if (res?.data?.insertedId) {
+        toast.success("Thanks for your comment!");
+        setComments((prevComments) => [...prevComments, aComment]);
+      }
+    });
   };
 
   const handleLike = (commentId) => {

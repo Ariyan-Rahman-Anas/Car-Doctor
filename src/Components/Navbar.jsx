@@ -146,7 +146,7 @@ const Navbar = () => {
                 </li>
               </>
             ) : (
-              <li className="md:hidden tex-white relative group">
+              <li onClick={handleHidingMenu} className="md:hidden tex-white relative group">
                 <PrimaryBtn value={"Appointment"} link={"/login"}></PrimaryBtn>
               </li>
             )}

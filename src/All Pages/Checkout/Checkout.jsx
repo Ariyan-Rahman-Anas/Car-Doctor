@@ -6,14 +6,13 @@ import { useForm } from "react-hook-form";
 import { PiWarningCircle } from "react-icons/pi";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import axios from "axios";
 
 const Checkout = () => {
   const { user } = useContext(AuthContext);
   const service = useLoaderData();
   const { _id, name, price, img } = service;
-  const axiosSecure = useAxiosSecure();
-  const url = `/bookings`;
+  const url = `https://car-doctor-server-flame-one.vercel.app/bookings`;
 
   //design of sweet alert2
   const swalWithBootstrapButtons = Swal.mixin({
@@ -60,30 +59,21 @@ const Checkout = () => {
         reverseButtons: true,
       })
       .then((result) => {
-        if (result.isConfirmed) {
           //   posting a bookings in the database
-          axiosSecure
-            .post(url, aBooking, {
-              headers: {
-                "content-type": "application/json",
-              },
-            })
-            .then((res) => {
-              if (res?.data?.insertedId) {
-                toast.success("Service added to the Bookings");
-              }
-            });
+        if (result.isConfirmed) {
+          axios.post(url, aBooking).then((res) => {
+            if (res?.data?.insertedId) {
+              toast.success("Service added to the Bookings");
+            }
+          });
           reset();
-
           swalWithBootstrapButtons.fire({
             title: "Service Booked!",
             text: "We will contact you soon.",
             icon: "success",
             confirmButtonColor: "green",
           });
-        } else if (
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
             text: "Booking Cancel :)",

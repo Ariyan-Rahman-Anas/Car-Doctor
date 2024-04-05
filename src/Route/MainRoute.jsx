@@ -45,7 +45,7 @@ const MainRoute = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://car-doctor-server-green-delta.vercel.app/products/${params.id}`
+            `https://car-doctor-server-flame-one.vercel.app/products/${params.id}`
           ),
       },
       {
@@ -61,7 +61,7 @@ const MainRoute = createBrowserRouter([
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
           fetch(
-            `https://car-doctor-server-green-delta.vercel.app/services/${params.id}`
+            `https://car-doctor-server-flame-one.vercel.app/services/${params.id}`
           ),
       },
       {
@@ -73,7 +73,7 @@ const MainRoute = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://car-doctor-server-green-delta.vercel.app/services/${params.id}`
+            `https://car-doctor-server-flame-one.vercel.app/services/${params.id}`
           ),
       },
       {
@@ -97,7 +97,7 @@ const MainRoute = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://car-doctor-server-green-delta.vercel.app/blogs/${params.id}`
+            `https://car-doctor-server-flame-one.vercel.app/blogs/${params.id}`
           ),
       },
       {

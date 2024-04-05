@@ -4,27 +4,26 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
 import logo from "./../../assets/Logo2.svg";
 import { useEffect, useState } from "react";
-import useAxiosSecure from "./../../Hooks/useAxiosSecure";
 import React from "react";
 import { Rating } from "@material-tailwind/react";
 import toast from "react-hot-toast";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const ProductDetails = () => {
-  const axiosSecure = useAxiosSecure();
   const product = useLoaderData();
   const { name, img, rating, price, description } = product || {};
   const [rated, setRated] = React.useState(rating);
   const [restProducts, setRestProducts] = useState([]);
-  const url = `/products`;
-  const productOrderingURL = `/orderedProducts`;
+  const url = `https://car-doctor-server-flame-one.vercel.app/products`;
+  const productOrderingURL = `https://car-doctor-server-flame-one.vercel.app/orderedProducts`;
   const { user } = useAuth();
 
   //fetching related products of this product
   useEffect(() => {
-    axiosSecure.get(url).then((res) => setRestProducts(res.data));
-  }, [axiosSecure, url]);
+    axios.get(url).then(res=>setRestProducts(res?.data))
+  },[url])
 
   // creating a random number and a ending number for showing a couple of related services
   const randomNumber = Math.ceil(Math.random() * 12);
@@ -69,19 +68,13 @@ const ProductDetails = () => {
         reverseButtons: true,
       })
       .then((result) => {
-        if (result.isConfirmed) {
           // posting a product in the database
-          axiosSecure
-            .post(productOrderingURL, aProduct, {
-              headers: {
-                "content-type": "application/json",
-              },
-            })
-            .then((res) => {
-              if (res?.data?.insertedId) {
-                toast.success("Product added to the Cart");
-              }
-            });
+        if (result.isConfirmed) {
+          axios.post(productOrderingURL, aProduct).then((res) => {
+            if (res?.data?.insertedId) {
+              toast.success("Product added to the Cart");
+            }
+          });
           swalWithBootstrapButtons.fire({
             title: "Order Confirmed!",
             text: "We will contact you soon.",

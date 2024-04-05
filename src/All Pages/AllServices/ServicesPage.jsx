@@ -3,7 +3,7 @@ import SectionHead from "./../../Components/SectionHead";
 import ServiceCard from "./../../Components/ServiceCard";
 import PageShortBanner from "../../Components/PageShortBanner";
 import ImgBg from "./../../assets/images/checkout/myBookings.png";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import axios from "axios";
 
 const ServicesPage = () => {
   const [services, setServices] = useState([]);
@@ -13,21 +13,23 @@ const ServicesPage = () => {
   const numberOfPages = Math.ceil(count / itemPerPage);
   const pages = [...Array(numberOfPages).keys()];
 
-  const axiosSecure = useAxiosSecure();
-  const url = `/services?page=${currentPage}&size=${itemPerPage}`;
-  const servicesCountURL = `/servicesCount`;
+  const url = `https://car-doctor-server-flame-one.vercel.app/services?page=${currentPage}&size=${itemPerPage}`;
 
-  useEffect(() => {
-    axiosSecure.get(servicesCountURL).then((res) => {
-      setCount(res?.data.count);
-    });
-  }, [axiosSecure, servicesCountURL]);
+  const servicesCountURL = `https://car-doctor-server-flame-one.vercel.app/servicesCount`;
 
+  //fetching services by the pagination
   useEffect(() => {
-    axiosSecure.get(url).then((res) => {
-      setServices(res?.data);
-    });
-  }, [axiosSecure, url, currentPage, itemPerPage]);
+    axios
+      .get(servicesCountURL, { withCredentials: true })
+      .then((res) => setCount(res?.data.count));
+  }, [servicesCountURL]);
+
+  //fetching some services in all all services page
+  useEffect(() => {
+    axios
+      .get(url, { withCredentials: true })
+      .then((res) => setServices(res?.data));
+  }, [url]);
 
   const handleItemPerPage = (e) => {
     const value = parseInt(e.target.value);

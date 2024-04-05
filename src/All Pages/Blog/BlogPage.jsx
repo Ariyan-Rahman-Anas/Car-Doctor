@@ -1,21 +1,18 @@
 import PageShortBanner from "../../Components/PageShortBanner";
 import blogBG from "./../../assets/images/checkout/blog.png";
 import PrimaryBtn from "../../Components/PrimaryBtn";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
 import BlogBigCard from "./BlogBigCard";
 import SectionHead from "../../Components/SectionHead";
 import BlogSmallCard from "./BlogSmallCard";
+import axios from "axios";
 
 const BlogPage = () => {
-  const axiosSecure = useAxiosSecure();
-  const url = "/blogs";
+  const url = "https://car-doctor-server-flame-one.vercel.app/blogs";
   const [blogs, setBlogs] = useState([]);
 
   //fetching all of blogs from the database
-  useEffect(() => {
-    axiosSecure.get(url).then((res) => setBlogs(res?.data));
-  }, [axiosSecure]);
+  useEffect(()=>{axios.get(url).then(res=>{setBlogs(res?.data)})},[])
 
   return (
     <div className="px-2">

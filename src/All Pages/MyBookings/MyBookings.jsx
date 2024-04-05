@@ -6,21 +6,22 @@ import { Card, Typography, CardBody } from "@material-tailwind/react";
 import PrimaryBtn from "./../../Components/PrimaryBtn";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
+import axios from "axios";
 
 const MyBookings = () => {
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
-  const axiosSecure = useAxiosSecure();
-  const url = `/bookings?email=${user?.email}`;
+  const url = `https://car-doctor-server-flame-one.vercel.app/bookings?email=${user?.email}`;
 
   //fetching all of bookings form the database
   useEffect(() => {
-    if (user.email) {
-      axiosSecure.get(url).then((res) => setBookings(res?.data));
+    if (user?.email) {
+      axios
+        .get(url, { withCredentials: true })
+        .then((res) => setBookings(res?.data));
     }
-  }, [url, axiosSecure, user.email]);
+  }, [url, user.email]);
 
   //bookings table head
   const TABLE_HEAD = ["N/A", "Service", "Price", "Date", "Status"];
@@ -36,7 +37,7 @@ const MyBookings = () => {
 
   //function for updating the booking status
   const handleUpdateItem = (id) => {
-    fetch(`https://car-doctor-server-green-delta.vercel.app/bookings/${id}`, {
+    fetch(`https://car-doctor-server-flame-one.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -74,7 +75,7 @@ const MyBookings = () => {
       .then((result) => {
         if (result.isConfirmed) {
           fetch(
-            `https://car-doctor-server-green-delta.vercel.app/bookings/${id}`,
+            `https://car-doctor-server-flame-one.vercel.app/bookings/${id}`,
             {
               method: "DELETE",
             }

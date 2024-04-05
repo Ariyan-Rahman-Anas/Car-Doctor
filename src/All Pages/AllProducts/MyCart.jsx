@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { Card, Typography, CardBody } from "@material-tailwind/react";
 import { RxCrossCircled } from "react-icons/rx";
 import PrimaryBtn from "../../Components/PrimaryBtn";
@@ -8,19 +7,12 @@ import PageShortBanner from "../../Components/PageShortBanner";
 import bannerBg from "./../../assets/images/checkout/blog.png";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const MyCart = () => {
   const { user } = useAuth();
-  const url = `/orderedProducts?email=${user?.email}`;
-  const axiosSecure = useAxiosSecure();
+  const url = `https://car-doctor-server-flame-one.vercel.app/orderedProducts?email=${user?.email}`;
   const [orderedProducts, setOrderedProducts] = useState([]);
-
-  // const productPriceIs = orderedProducts.map((product) => product.price);
-  // console.log(productPriceIs);
-
-  // const [productPrice, setProductPrice] = useState(productPriceIs);
-  // setProductPrice(orderedProducts.map(price=>price.price))
-  // console.log(orderedProducts.map(aItem=>aItem.price))
 
   const TABLE_HEAD = [
     "N/A",
@@ -33,17 +25,8 @@ const MyCart = () => {
 
   //fetching the ordered products for the cart table
   useEffect(() => {
-    axiosSecure.get(url).then((res) => setOrderedProducts(res.data));
-  }, [axiosSecure, url]);
-
-  // const [quantity, setQuantity] = useState(1);
-
-  // const handleQuantityPlus = () => {
-  //   setQuantity(quantity + 1);
-  // };
-  // const handleQuantityMinus = () => {
-  //   setQuantity(quantity - 1);
-  // };
+    axios.get(url).then(res=>setOrderedProducts(res?.data))
+  },[url])
 
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -71,7 +54,7 @@ const MyCart = () => {
       .then((result) => {
         if (result.isConfirmed) {
           fetch(
-            `https://car-doctor-server-green-delta.vercel.app/orderedProducts/${id}`,
+            `https://car-doctor-server-flame-one.vercel.app/orderedProducts/${id}`,
             {
               method: "DELETE",
             }
@@ -105,7 +88,6 @@ const MyCart = () => {
   };
 
   const [quantity, setQuantity] = useState(1);
-
   // ...
   const handleQuantityChange = (id, newQuantity) => {
     const updatedProducts = orderedProducts.map((product) => {

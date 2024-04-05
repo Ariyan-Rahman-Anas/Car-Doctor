@@ -4,12 +4,11 @@ import PageShortBanner from "../../Components/PageShortBanner";
 import ImgBg from "./../../assets/images/checkout/myBookings.png";
 import SectionHead from "./../../Components/SectionHead";
 import toast from "react-hot-toast";
-import useAxiosSecure from "./../../Hooks/useAxiosSecure";
 import useAuth from "./../../Hooks/useAuth";
+import axios from "axios";
 
 const ContactPage = () => {
-  const axiosSecure = useAxiosSecure();
-  const url = `/reviews`;
+  const url = `https://car-doctor-server-flame-one.vercel.app/reviews`;
   const { user } = useAuth();
 
   //function for submitting the review taking form
@@ -36,17 +35,11 @@ const ContactPage = () => {
     form.reset();
 
     //posting the review in the database
-    axiosSecure
-      .post(url, aReview, {
-        headers: {
-          "content-type": "application/json",
-        },
-      })
-      .then((res) => {
-        if (res?.data?.insertedId) {
-          toast.success("Thanks for your valuable review!");
-        }
-      });
+    axios.post(url, aReview).then((res) => {
+      if (res?.data?.insertedId) {
+        toast.success("Thanks for your valuable review!");
+      }
+    });
   };
 
   return (

@@ -4,19 +4,19 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { FiFileText } from "react-icons/fi";
 import logo from "./../assets/Logo2.svg";
 import { useEffect, useState } from "react";
-import useAxiosSecure from "./../Hooks/useAxiosSecure";
+import axios from "axios";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
   const { _id, name, price, img, description, facility } = service || {};
-
   const [restServices, setRestServices] = useState([]);
+  const url = `https://car-doctor-server-flame-one.vercel.app/services`;
 
-  const axiosSecure = useAxiosSecure();
-  const url = `/services`;
   useEffect(() => {
-    axiosSecure.get(url).then((res) => setRestServices(res.data));
-  }, [axiosSecure, url]);
+    axios
+      .get(url, { withCredentials: true })
+      .then((res) => setRestServices(res?.data));
+  }, [url]);
 
   //creating a random number and a ending number for showing related services
   const randomNumber = Math.ceil(Math.random() * 70);
@@ -168,7 +168,9 @@ const ServiceDetails = () => {
               <strong>Get A Quote</strong>
             </Link>
           </div>
-          <p className="font-semibold text-3xl text-center mt-8 mb-5">Price: ${price}</p>
+          <p className="font-semibold text-3xl text-center mt-8 mb-5">
+            Price: ${price}
+          </p>
           <Link to={`/checkout/${_id}`}>
             <div className="px-[1.2rem] py-1.5 rounded-full font-normal text-white bg-[#ff3811] border-[.09rem] border-transparent hover:border-[#ff3811] hover:text-[#ff3811] hover:bg-white duration-500 text-center ">
               Proceed Checkout
